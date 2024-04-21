@@ -1,0 +1,68 @@
+/*
+** ──────────────────────────────────────────────────
+** ─██████████████─██████──██████─████████──████████─
+** ─██░░░░░░░░░░██─██░░██──██░░██─██░░░░██──██░░░░██─
+** ─██░░██████████─██░░██──██░░██─████░░██──██░░████─
+** ─██░░██─────────██░░██──██░░██───██░░░░██░░░░██───
+** ─██░░██─────────██░░██──██░░██───████░░░░░░████───
+** ─██░░██──██████─██░░██──██░░██─────██░░░░░░██─────
+** ─██░░██──██░░██─██░░██──██░░██───████░░░░░░████───
+** ─██░░██──██░░██─██░░██──██░░██───██░░░░██░░░░██───
+** ─██░░██████░░██─██░░██████░░██─████░░██──██░░████─
+** ─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░██──██░░░░██─
+** ─██████████████─██████████████─████████──████████─
+** ──────────────────────────────────────────────────
+*/
+@import "/vendor/gux/gux.wxss";
+
+.tooltip {
+  position: relative;
+  left: 20px;
+}
+
+.tooltip .text {
+  position: relative;
+  /* border: 1px solid #b56d4d;
+  background: #b56d4d; */
+  color: white;
+  text-align: center;
+  width: 60px;
+  left: -20px;
+  top: 20px;
+}
+
+.tooltip .triangle {
+  position: relative;
+  top: 18px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 10px 8px 0 8px;
+  transform: rotate(0deg);
+}
+
+/* .tooltip::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #b56d4d;
+  top: 32px;
+  left: 0px;
+  z-index: 5;
+} */
+
+/* .tooltip::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #bbb;
+  top: 32px;
+  left: 0px;
+} */

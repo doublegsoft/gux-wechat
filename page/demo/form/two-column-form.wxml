@@ -1,0 +1,4 @@
+<gx-navigation-bar id="navigationBar" title="编辑表单"></gx-navigation-bar>
+<view style="margin-top: {{marginTop}}px;">
+  <gx-two-column-form id="form" fields="{{fields}}" labelWidth="150" />
+</view>

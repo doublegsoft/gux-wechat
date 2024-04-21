@@ -1,0 +1,12 @@
+<view style="height: 100vh;">
+  <gx-tabs id="tabs">
+    <view wx:for="{{images}}" wx:key="text" wx:for-item="item" 
+          style="flex: 0 0 auto; border-radius: 5px;" 
+          class="gx-ml-8 gx-b-1" 
+          bind:tap="doClick"
+          data-value="{{item.text}}日">
+      <image style="width: 200px; height: 80px;" 
+             src="/asset/image/demo/food.png"></image>
+    </view>
+  </gx-tabs>
+</view>

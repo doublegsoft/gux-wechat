@@ -1,0 +1,4 @@
+<gx-navigation-bar id="navigationBar" title="无数据示例" />
+<view style="margin-top: {{marginTop}}px;">
+  <gx-list-vew url="/api/no-data"></gx-list-vew>
+</view>

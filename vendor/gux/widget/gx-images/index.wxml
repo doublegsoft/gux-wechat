@@ -1,0 +1,9 @@
+<view class="images">
+  <view class='image' wx:for="{{images}}" wx:for-item="image" wx:key="url" bindtap="onViewImage" 
+        data-url="{{image.url}}">
+    <image mode="aspectFill" src="{{image.url}}" style="width: 80px; height: 80px;"></image>
+  </view>
+  <view wx:if="{{readonly !== true}}" class='image' bindtap="onChooseImage">
+    <text class="fas fa-plus" style="color: #bbb;"></text>
+  </view>
+</view>

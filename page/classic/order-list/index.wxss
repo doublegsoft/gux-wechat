@@ -1,0 +1,46 @@
+/* card.wxss */
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.info {
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.address {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+}
+
+.description {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+}
+
+.actions {
+  display: flex;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #007bff;
+  text-align: center;
+  margin: 0 4px;
+}

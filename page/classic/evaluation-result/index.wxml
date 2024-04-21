@@ -1,0 +1,37 @@
+<view class="gx-pos-relative" style="height: {{heightOfPage}}px; background: linear-gradient(180deg, hsla(132, 43%, 42%, 1) 0%, hsla(113, 66%, 80%, 1) 100%); top: {{topOfPage}}px;">
+  <view class="gx-pos-top" style="top: {{topOfBack}}px; left: 8px; z-index: 9999;">
+    <view class="gx-wh-{{heightOfBack}} gx-b-round gx-b-1 gx-d-flex gx-bg-success" bind:tap="onNavigateBack">
+      <text class="fas fa-chevron-left gx-fs-20 gx-m-auto"></text>
+    </view>
+  </view>
+  <view class="gx-m-16 gx-p-8 gx-b-r10 gx-bg-light gx-pos-relative" style="top: {{topOfContent}}px;">
+    <text>生长发育监测这是对儿童的生长发育进行连续的监测（通常测定年龄段的体重和身高）。生长发育监测可由专业人员在国家卫生服务部门下属的诊疗所进行或由经过培训的社区人员在村庄里进行。其主要目标是评价各个儿童的营养状况和筹集地方资源以支持与营养有关的一些活动。对于那些孩子具有营养危险的家庭可以予以粮食补助和／或提出营养忠告。儿童往往每月接受一次检查。</text>
+  </view>
+  <view class="gx-m-16 gx-p-8 gx-b-r10 gx-bg-light gx-pos-relative" style="top: {{topOfContent}}px;">
+    <view class="gx-section-title gx-fb">风险评估</view>
+    <view class="gx-row">
+      <view class="gx-24-06 gx-pos-relative">
+        <text class="gx-pos-absolute" style="bottom: 0;">免疫力</text>
+      </view>
+      <view class="gx-24-18">
+        <gx-heat-bar id="gxHeatBar" value="{{50}}" title="中等" startColor="#f9d423" endColor="#ff4e50"></gx-heat-bar>
+      </view>
+    </view>
+    <view class="gx-row">
+      <view class="gx-24-06 gx-pos-relative">
+        <text class="gx-pos-absolute" style="bottom: 0;">防御力</text>
+      </view>
+      <view class="gx-24-18">
+        <gx-heat-bar id="gxHeatBar" value="{{80}}" title="高等" startColor="#f9d423" endColor="#ff4e50"></gx-heat-bar>
+      </view>
+    </view>
+    <view class="gx-row">
+      <view class="gx-24-06 gx-pos-relative">
+        <text class="gx-pos-absolute" style="bottom: 0;">攻击力</text>
+      </view>
+      <view class="gx-24-18">
+        <gx-heat-bar id="gxHeatBar" value="{{100}}" title="完美" startColor="#f9d423" endColor="#ff4e50"></gx-heat-bar>
+      </view>
+    </view>
+  </view>
+</view>

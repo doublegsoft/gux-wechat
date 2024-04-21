@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "gx-navigation-bar":"/vendor/gux/widget/gx-navigation-bar",
+    "gx-bottom-sheet":"/vendor/gux/widget/gx-bottom-sheet"
+  }
+}

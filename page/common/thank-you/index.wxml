@@ -1,0 +1,13 @@
+<view style="height: 100vh;">
+  <view class="gx-d-flex" style="height: 75vh;">
+    <view class="content">
+      <view class="theme-image far fa-handshake"></view>
+      <view style="margin-top: 16px;">
+        <text class="title">感谢！</text>
+        <text class="description">此处可以说明文字描述一下按钮的操作</text>
+      </view>
+    </view>
+  </view>
+  <button class="primary">查看详情</button>
+  <button class="secondary" bind:tap="gotoHome" style="margin-top: 16px;">返回首页</button>
+</view>

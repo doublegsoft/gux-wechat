@@ -1,0 +1,14 @@
+<view style="height: 100vh;">
+  <gx-tabs id="tabs">
+    <view wx:for="{{dates}}" wx:key="text" wx:for-item="item" 
+          style="flex: 0 0 auto; border-radius: 5px;" 
+          class="gx-ml-8 gx-b-1 gx-wh-48 {{item.checked ? 'gx-bg-primary' : ''}}" 
+          bind:tap="doClick"
+          data-value="{{item.text}}日">
+      <view class="{{item.checked ? 'gx-text-reversed' : 'gx-color-primary'}}" 
+            style="text-align:center;">{{item.text}}日</view>
+      <view class="gx-fs-14 {{item.checked ? 'gx-text-reversed' : 'gx-color-primary'}}" 
+            style="text-align:center;">周{{item.text}}</view>
+    </view>
+  </gx-tabs>
+</view>

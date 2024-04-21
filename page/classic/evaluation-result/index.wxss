@@ -1,0 +1,51 @@
+@import "/vendor/gux/gux.wxss";
+
+page {
+  height: 100%;
+}
+
+.heat-range {
+  background: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);
+}
+
+.tooltip {
+  position: relative;
+  left: 20px;
+}
+
+.tooltip .text {
+  position: relative;
+  border: 1px solid #b56d4d;
+  background: #b56d4d;
+  color: white;
+  text-align: center;
+  width: 60px;
+  left: -20px;
+  top: 10px;
+}
+
+.tooltip:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #b56d4d;
+  top: 32px;
+  left: 0px;
+  z-index: 5;
+}
+
+.tooltip:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #bbb;
+  top: 32px;
+  left: 0px;
+}

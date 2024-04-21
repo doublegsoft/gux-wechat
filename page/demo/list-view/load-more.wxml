@@ -1,0 +1,14 @@
+<gx-navigation-bar id="navigationBar" title="加载更多示例" />
+<view style="margin-top: {{marginTop}}px;">
+  <gx-list-vew local="{{items}}" height="{{height}}" enableLoadMore="true">
+    <view class="gx-d-flex align-items-center list-group-item gx-bl-0 gx-br-0" style="padding: 8px 16px;" wx:for="{{items}}" wx:key="id" wx:for-item="item">
+      <image src="{{item.image}}" class="avatar"></image>
+      <view class="pl-2">
+        <text>{{item.name}}</text>
+        <view class="small text-muted">{{item.secondary}}</view>
+        <view class="font-10">{{item.tertiary}}</view>
+      </view>
+      <view style="margin-left: auto;">{{item.status}}</view>
+    </view>
+  </gx-list-vew>
+</view>

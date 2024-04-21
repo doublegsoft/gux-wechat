@@ -1,0 +1,47 @@
+<view style="height: 100vh;">
+  <view class="gx-pos-top" style="top: {{topOfBack}}px; left: 8px; z-index: 9999;">
+    <view class="gx-wh-{{heightOfBack}} gx-b-round gx-b-1 gx-d-flex gx-bg-success" bind:tap="onNavigateBack">
+      <text class="fas fa-chevron-left gx-fs-20 gx-m-auto"></text>
+    </view>
+  </view>
+  <image class="gx-pos-relative" src="/asset/image/demo/food.png" mode="widthFix" 
+  style="width: 100%; top: -140px;"></image>
+  <view class="gx-pos-relative" style="top: -140px">
+    <view class="gx-mx-16">
+      <view class="gx-my-16 gx-fs-20 gx-text-primary">田径运动员营养膳食套餐</view>
+      <view class="gx-fs-14 gx-text-secondary" style="text-indent: 28px;">
+        膳食宝塔根据各类食物在膳食中的地位和应占的比重共分5层。其中每类食物摄入量都有新的调整。
+      </view>
+    </view>
+    <view class="gx-m-16 gx-d-flex gx-fs-14">
+      <view class="gx-px-12 gx-h-32 gx-b-round gx-lh-32 gx-bg-success-lighter gx-color-success gx-mr-8">营养得很</view>
+      <view class="gx-px-12 gx-h-32 gx-lh-32 gx-b-round gx-bg-success-lighter gx-color-success">非常巴适</view>
+    </view>
+    <view class="gx-d-flex gx-mx-16">
+      <view>
+        <text class="gx-color-error gx-fs-16 gx-fb">￥</text>
+        <text class="gx-color-error gx-fs-24 gx-fb">199</text>
+        <text class="gx-ml-16 gx-text-secondary gx-fs-18" style="text-decoration: line-through;">399</text>
+      </view>
+      <view class="gx-ml-auto gx-d-flex">
+        <view class="gx-wh-32 gx-b-round gx-b-1 gx-d-flex" bind:tap="">
+          <text class="fas fa-minus gx-fs-20 gx-m-auto"></text>
+        </view>
+        <view class="gx-fs-20" style="width: 64px; text-align: center;">0</view>
+        <view class="gx-wh-32 gx-b-round gx-b-1 gx-d-flex" bind:tap="">
+          <text class="fas fa-plus gx-fs-20 gx-m-auto"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="gx-pos-bottom gx-h-56 gx-w-full gx-d-flex gx-p-8 gx-bt-1" 
+        style="bottom: {{bottomOfOrder}}px;">
+    <view class="gx-lh-40">
+      <text class="fas fa-shopping-cart gx-color-success gx-fs-24 gx-mr-16"></text>
+      <text class="gx-text-secondary">请选择您喜爱的餐食</text>
+    </view>
+    <view class="gx-ml-auto">
+      <button class="gx-bg-success gx-fs-15" style="width: 96px;">选好了</button>
+    </view>
+  </view>
+</view>

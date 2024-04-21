@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "gx-heat-bar":"/vendor/gux/widget/gx-heat-bar/index"
+  }
+}

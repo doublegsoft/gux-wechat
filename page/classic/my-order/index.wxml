@@ -1,0 +1,15 @@
+<view class="card">
+  <view class="card-header">
+    <text>{{name}}</text>
+  </view>
+  <view class="card-body">
+    <view class="card-content">
+      <text>地址：{{address}}</text>
+    </view>
+    <view class="card-actions">
+      <button class="action" bindtap="evaluate">评价</button>
+      <button class="action" bindtap="applyAfterSales">申请售后</button>
+      <button class="action" bindtap="contactMerchant">联系商家</button>
+    </view>
+  </view>
+</view>

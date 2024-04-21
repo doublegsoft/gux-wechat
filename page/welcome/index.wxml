@@ -1,0 +1,12 @@
+<view style="height: 100vh;">
+  <view class="gx-d-flex" style="height: 75vh;">
+    <view class="content">
+      <image src="/asset/image/demo/welcome.png" mode="aspectFit"></image>
+      <view style="margin-top: 16px">
+        <text class="title">欢迎进入GUX橱窗</text>
+        <text class="description">在这里您会找到适合自己的营养餐，种类丰富，好吃又健康</text>
+      </view>
+    </view>
+  </view>
+  <button class="primary" bind:tap="gotoHome">进入应用</button>
+</view>

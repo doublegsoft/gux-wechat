@@ -1,0 +1,146 @@
+/*
+** ──────────────────────────────────────────────────
+** ─██████████████─██████──██████─████████──████████─
+** ─██░░░░░░░░░░██─██░░██──██░░██─██░░░░██──██░░░░██─
+** ─██░░██████████─██░░██──██░░██─████░░██──██░░████─
+** ─██░░██─────────██░░██──██░░██───██░░░░██░░░░██───
+** ─██░░██─────────██░░██──██░░██───████░░░░░░████───
+** ─██░░██──██████─██░░██──██░░██─────██░░░░░░██─────
+** ─██░░██──██░░██─██░░██──██░░██───████░░░░░░████───
+** ─██░░██──██░░██─██░░██──██░░██───██░░░░██░░░░██───
+** ─██░░██████░░██─██░░██████░░██─████░░██──██░░████─
+** ─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░██──██░░░░██─
+** ─██████████████─██████████████─████████──████████─
+** ──────────────────────────────────────────────────
+*/
+@import "/asset/font/fontawesome.wxss";
+@import "/vendor/gux/gux.wxss";
+
+.input_view {
+  width: 700rpx;
+  height: 500rpx;
+  background: #fff;
+  margin: 25rpx auto;
+  border-radius: 10rpx;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.title {
+  display: block;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #aaa;
+}
+
+.input_box {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  height: 90rpx;
+  border-bottom: 1px solid #efefef;
+}
+
+.input_label {
+  font-size: 35rpx;
+  font-weight: bold;
+  margin-right: 5rpx;
+}
+
+.display {
+  display: flex;
+  justify-content: space-between;
+  /* margin-top: 157rpx; */
+  width: 100%;
+}
+
+.clear {
+  width: 147rpx;
+  color: var(--color-error);
+  text-align: center;
+  line-height: 88rpx;
+}
+
+.confirm {
+  width: 147rpx;
+  color: var(--color-success);
+  text-align: center;
+  line-height: 88rpx;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  padding-left: 40rpx;
+  font-size: 35rpx;
+  background: #fff;
+}
+
+.content {
+  display: flex;
+  font-size: 35rpx;
+  line-height: 90rpx;
+  font-weight: 700;
+}
+
+.cursor-insert {
+  position: absolute;
+  top: 0rpx;
+  right: -1rpx;
+}
+
+.cursor {
+  width: 2rpx;
+  height: 48
+  rpx;
+  background: #666;
+  border-radius: 6rpx;
+  animation: twinkling 0.9s infinite;
+}
+
+@-webkit-keyframes twinkling {
+  0% {
+    background: #fff;
+  }
+
+  100% {
+    background: #666;
+  }
+}
+
+.default-content {
+  color: #999;
+  font-size: 38rpx;
+  font-weight: 600;
+}
+
+
+.keyboard {
+  height: 0;
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  transition: height 0.3s;
+}
+
+.keyboard.shown {
+  height: 490rpx;
+}
+
+.keys {
+  overflow: hidden;
+}
+
+.key {
+  box-sizing: border-box;
+  float: left;
+  width: 250rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  border-left: 1px solid var(--color-divider);
+  border-top: 1px solid var(--color-divider);
+}

@@ -1,0 +1,9 @@
+<view style="{{visible ? '' : 'display: none;'}}">
+  <!-- <div class="navigable-page-tile {{displaying ? '' : 'masking'}}"></div>
+  <div class="navigable-page-tile {{displaying ? '' : 'masking'}}"></div>
+  <div class="navigable-page-tile {{displaying ? '' : 'masking'}}"></div>
+  <div class="navigable-page-tile {{displaying ? '' : 'masking'}}"></div>
+  <div class="navigable-page-tile {{displaying ? '' : 'masking'}}"></div>
+  <div class="navigable-page-tile {{displaying ? '' : 'masking'}}"></div> -->
+  <slot></slot>
+</view>

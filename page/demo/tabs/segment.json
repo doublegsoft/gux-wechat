@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "gx-tabs": "/vendor/gux/widget/gx-tabs/index"
+  }
+}

@@ -1,0 +1,29 @@
+@import "/vendor/gux/gux.wxss";
+
+view.content {
+  margin: auto; 
+  align-items: center; 
+  justify-items: center;
+  text-align: center;
+}
+
+view.theme-image {
+  font-size: 128px; 
+  color: var(--color-light);
+}
+
+button.primary {
+  width: 80%; 
+  height: 48px; 
+  background-color: var(--color-text-secondary);
+  color: white; 
+  line-height: 32px; 
+  font-size: 20px;
+}
+
+text.title {
+  font-size: 22px;
+  text-align: center;
+  display: block;
+  color: var(--color-text-secondary); 
+}

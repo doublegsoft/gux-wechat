@@ -1,0 +1,46 @@
+<!--
+ ### ──────────────────────────────────────────────────
+ ### ─██████████████─██████──██████─████████──████████─
+ ### ─██░░░░░░░░░░██─██░░██──██░░██─██░░░░██──██░░░░██─
+ ### ─██░░██████████─██░░██──██░░██─████░░██──██░░████─
+ ### ─██░░██─────────██░░██──██░░██───██░░░░██░░░░██───
+ ### ─██░░██─────────██░░██──██░░██───████░░░░░░████───
+ ### ─██░░██──██████─██░░██──██░░██─────██░░░░░░██─────
+ ### ─██░░██──██░░██─██░░██──██░░██───████░░░░░░████───
+ ### ─██░░██──██░░██─██░░██──██░░██───██░░░░██░░░░██───
+ ### ─██░░██████░░██─██░░██████░░██─████░░██──██░░████─
+ ### ─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░██──██░░░░██─
+ ### ─██████████████─██████████████─████████──████████─
+ ### ──────────────────────────────────────────────────
+ -->
+<view class="keyboard {{shown && 'shown'}}">
+  <view class="display">
+    <view class="clear" bindtap="doClear">清空</view>
+    <view class="input">
+      <view class="content" wx:if="{{content.length}}">
+        <view wx:for="{{content}}" wx:key="index" data-str-index="{{index + 1}}">
+          <view>{{item}}<view class="cursor cursor-insert" wx:if="{{cursorIndex === index + 1}}"></view>
+          </view>
+        </view>
+      </view>
+      <view class="cursor" wx:if="{{!cursorIndex}}"></view>
+    </view>
+    <view class="confirm" bindtap="doConfirm">确定</view>
+  </view>
+  <view class="keys">
+    <text class="key" data-key="1" catch:tap="doTapKey">1</text>
+    <text class="key" data-key="2" catch:tap="doTapKey">2</text>
+    <text class="key" data-key="3" catch:tap="doTapKey">3</text>
+    <text class="key" data-key="4" catch:tap="doTapKey">4</text>
+    <text class="key" data-key="5" catch:tap="doTapKey">5</text>
+    <text class="key" data-key="6" catch:tap="doTapKey">6</text>
+    <text class="key" data-key="7" catch:tap="doTapKey">7</text>
+    <text class="key" data-key="9" catch:tap="doTapKey">8</text>
+    <text class="key" data-key="9" catch:tap="doTapKey">9</text>
+    <text wx:if="{{input == 'number'}}" class="key gx-bb-1" data-key="." catch:tap="doTapKey">.</text>
+    <text wx:elif="{{input == 'mobile'}}" class="key gx-bb-1"></text>
+    <text wx:elif="{{input == 'id'}}" class="key gx-bb-1" data-key="X" catch:tap="doTapKey">X</text>
+    <text class="key gx-bb-1" data-key="0" bind:tap="doTapKey">0</text>
+    <text class="key gx-bb-1 fas fa-backspace" data-key="backspace" catch:tap="doTapKey"></text>
+  </view>
+</view>

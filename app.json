@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "page/welcome/index",
+    "page/index",
+    "page/demo/list-view/no-data",
+    "page/demo/list-view/pull-to-refresh",
+    "page/demo/list-view/load-more",
+    "page/common/search/index",
+    "page/common/success/index",
+    "page/common/failure/index",
+    "page/common/privacy-policy/index",
+    "page/common/certification/index",
+    "page/common/no-internet/index",
+    "page/common/thank-you/index",
+    "page/common/congratulation/index",
+    "page/classic/food-ordering/index",
+    "page/classic/evaluation-result/index",
+    "page/classic/my-order/index",
+    "page/classic/order-list/index",
+    "page/classic/display-window/index",
+    
+    "page/demo/tabs/date",
+    "page/demo/tabs/image",
+    "page/demo/tabs/segment",
+    "page/demo/form/two-column-form"
+    
+  ],
+  "subpackages": [],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

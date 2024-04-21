@@ -1,0 +1,184 @@
+/*
+** ──────────────────────────────────────────────────
+** ─██████████████─██████──██████─████████──████████─
+** ─██░░░░░░░░░░██─██░░██──██░░██─██░░░░██──██░░░░██─
+** ─██░░██████████─██░░██──██░░██─████░░██──██░░████─
+** ─██░░██─────────██░░██──██░░██───██░░░░██░░░░██───
+** ─██░░██─────────██░░██──██░░██───████░░░░░░████───
+** ─██░░██──██████─██░░██──██░░██─────██░░░░░░██─────
+** ─██░░██──██░░██─██░░██──██░░██───████░░░░░░████───
+** ─██░░██──██░░██─██░░██──██░░██───██░░░░██░░░░██───
+** ─██░░██████░░██─██░░██████░░██─████░░██──██░░████─
+** ─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░██──██░░░░██─
+** ─██████████████─██████████████─████████──████████─
+** ──────────────────────────────────────────────────
+*/
+@import "/asset/font/fontawesome.wxss";
+
+.tab-bar {
+  --icon-active: #fff;
+  --icon-inactive: #4c83f0;
+  --icon-hover: #99a3ba;
+  --text: #4c83f0;
+  --circle: #4c83f0;
+  --background: #fafafa;
+  --shadow: rgba(18, 22, 33, .1);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  /* border-radius: 0 0 12px 12px; */
+  background: var(--background);
+  width: 100%;
+  height: 72px;
+  padding: 0 12px;
+  box-shadow: 0 8px 16px var(--shadow);
+  z-index: 9999;
+}
+
+.tab-bar > view {
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+.tab-bar > view label {
+  flex: 0 0 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.tab-bar > view label text, .tab-bar > view label span {
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.2, 0.64, 0.48, 1.12), opacity 0.4s ease, color 0.4s ease;
+  transform: translateY(var(--y)) scale(var(--s));
+}
+
+.tab-bar > view label text {
+  --y: -12px;
+  --s: 0.84;
+  position: relative;
+  left: -3px;
+  font-size: 32px;
+  width: 24px;
+  height: 24px;
+  margin: auto;
+  color: var(--icon-inactive);
+  transform-origin: 50% 50%;
+}
+
+.tab-bar > view label.active text {
+  --s: 0.76;
+  --y: -32px;
+  color: var(--icon-active);
+}
+
+.tab-bar > view label span {
+  --y: -12px;
+  --s: 0.92;
+  font-size: 10px;
+  font-weight: 500;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  bottom: 0;
+  opacity: 0;
+  color: var(--text);
+  transform-origin: 50% 0;
+}
+
+/* .tab-bar > view label:hover text {
+  color: var(--icon-hover);
+} */
+
+.tab-bar > view label:active text {
+  --s: 0.76;
+}
+
+.tab-bar > view input {
+  display: none;
+}
+
+.tab-bar > view.active-0 label + span {
+  --x: 0;
+}
+
+.tab-bar > view.active-1 label + span {
+  --x: 100%;
+}
+
+.tab-bar > view.active-2 label + span {
+  --x: 200%;
+}
+
+.tab-bar > view.active-3 label + span {
+  --x: 300%;
+}
+
+.tab-bar > view.active-4 label + span {
+  --x: 400%;
+}
+
+.tab-bar > view.active-5 label + span {
+  --x: 500%;
+}
+
+.tab-bar > view label.active image {
+  --y: -28px;
+  --s: 1;
+  color: var(--icon-active);
+}
+
+.tab-bar > view label.active span {
+  --s: 1;
+  --y: -20px;
+  opacity: 1;
+}
+
+.tab-bar > view > span {
+  --x: 0;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transition: transform 0.4s cubic-bezier(0.2, 0.64, 0.48, 1.12);
+  transform: translateX(var(--x));
+}
+
+.tab-bar > view > span:after {
+  content: '';
+  width: 44px;
+  height: 44px;
+  display: block;
+  border-radius: 50%;
+  background: var(--circle);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.tab-bar > view.active-0 > span:after {
+  margin: -14px 0 0 -20px;
+}
+
+.tab-bar > view.active-1 > span:after {
+  margin: -14px 0 0 -22px;
+}
+
+.tab-bar > view.active-2 > span:after {
+  margin: -14px 0 0 -23px;
+}
+
+.tab-bar > view.active-3 > span:after {
+  margin: -14px 0 0 -23px;
+}
+
+.tab-bar > view.active-4 > span:after {
+  margin: -14px 0 0 -23px;
+}

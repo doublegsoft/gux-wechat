@@ -1,0 +1,36 @@
+<!--
+ ### ──────────────────────────────────────────────────
+ ### ─██████████████─██████──██████─████████──████████─
+ ### ─██░░░░░░░░░░██─██░░██──██░░██─██░░░░██──██░░░░██─
+ ### ─██░░██████████─██░░██──██░░██─████░░██──██░░████─
+ ### ─██░░██─────────██░░██──██░░██───██░░░░██░░░░██───
+ ### ─██░░██─────────██░░██──██░░██───████░░░░░░████───
+ ### ─██░░██──██████─██░░██──██░░██─────██░░░░░░██─────
+ ### ─██░░██──██░░██─██░░██──██░░██───████░░░░░░████───
+ ### ─██░░██──██░░██─██░░██──██░░██───██░░░░██░░░░██───
+ ### ─██░░██████░░██─██░░██████░░██─████░░██──██░░████─
+ ### ─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░██──██░░░░██─
+ ### ─██████████████─██████████████─████████──████████─
+ ### ──────────────────────────────────────────────────
+ -->
+<scroll-view 
+  wx:if="{{items.length > 0}}" 
+  style="position: relative; top: {{top}}px; height: {{height}};"
+  scroll-y="true" 
+  bindscroll="onScroll"
+  bindscrolltoupper="onScrollToUpper" 
+  bindscrolltolower="onScrollToLower" 
+  bindtouchstart="onTouchStart" 
+  bindtouchend="onTouchEnd" 
+  bindtouchmove="onTouchMove">
+  <view class="refreshing" hidden="{{!isRefreshing}}">
+    <text style="line-height: 50px; margin: auto;">内容更新中...</text>
+  </view>
+  <slot></slot>
+  <view class="no-more-data gx-mt-8" wx:if="{{noMoreData && enableLoadMore}}">没有更多数据</view>
+  <view class="loading gx-mt-8" wx:if="{{isLoading && enableLoadMore}}">正在加载更多内容...</view>
+</scroll-view>
+<view wx:else class="no-data">
+  <image src="/asset/image/no-data.png" class="no-data-img"></image>
+  <view style="margin-top:24px; font-size: 16px;">没有任何数据</view>
+</view>

@@ -1,0 +1,16 @@
+@import '/asset/font/fontawesome.wxss';
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.images .image {
+  margin: 2rpx;
+  height: 80px;
+  width: 80px;
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,14 @@
+<view style="height: 100vh;">
+  <view class="gx-d-flex" style="height: 75vh;">
+    <view class="content">
+      <view class="gx-pos-relative" style="top: 32px; width: 128px;">
+        <view class="theme-image fas fa-wifi"></view>
+        <view class="theme-image fas fa-slash gx-pos-relative" style="top: -128px;"></view>
+      </view>
+      <view style="margin-top: 16px; ">
+        <text class="title">没有连接到互联网</text>
+      </view>
+    </view>
+  </view>
+  <button class="primary">返回重试</button>
+</view>

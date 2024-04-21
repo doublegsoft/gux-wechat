@@ -1,0 +1,16 @@
+@import "/vendor/gux/gux.wxss";
+
+view.paragraph {
+  text-indent: 24px;
+}
+
+view.paragraph text {
+  font-size: 12px;
+  font-family: 宋体;
+  color: rgb(102, 102, 102);
+}
+
+view.paragraph text.emphasis {
+  font-weight: bolder;
+  color: black;
+}

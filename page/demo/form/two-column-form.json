@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "gx-two-column-form":"/vendor/gux/widget/gx-two-column-form",
+    "gx-navigation-bar":"/vendor/gux/widget/gx-navigation-bar"
+  }
+}

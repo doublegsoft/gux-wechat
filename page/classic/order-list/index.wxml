@@ -1,0 +1,12 @@
+<!-- card.wxml --><view class="card">
+  <view class="info">
+    <view class="title">{{ title }}</view>
+    <view class="address">{{ address }}</view>
+    <view class="description">{{ description }}</view>
+  </view>
+  <view class="actions">
+    <button class="action-btn" bindtap="handleReview">评价</button>
+    <button class="action-btn" bindtap="handleApplyAfterSale">申请售后</button>
+    <button class="action-btn" bindtap="handleContact">联系商家</button>
+  </view>
+</view>
