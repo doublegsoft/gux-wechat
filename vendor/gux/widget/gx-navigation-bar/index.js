@@ -13,6 +13,8 @@
 ** ─██████████████─██████████████─████████──████████─
 ** ──────────────────────────────────────────────────
 */
+const { gx } = require('../../common/gx');
+
 Component({
 
   properties: {
@@ -39,7 +41,17 @@ Component({
     bottom: {
       type: Number,
       value: 0,
-    }
+    },
+
+    background: {
+      type: String,
+      value: 'var(--color-background)',
+    },
+
+    foreground: {
+      type: String,
+      value: 'var(--color-text-primary)',
+    },
   },
   
   data: {
@@ -55,7 +67,7 @@ Component({
       let rect = wx.getMenuButtonBoundingClientRect();
       
       this.setData({
-        height: info.safeArea.top + rect.height + 4 + this.data.bottom,
+        height: this.getHeight(),
         topOfTitle: rect.top + (rect.height - 22) / 2,
         topOfBack: rect.top,
         heightOfBack: rect.height,
@@ -67,13 +79,13 @@ Component({
   methods: {
     
     doNavigateBack(ev) {
-      wx.navigateBack();
+      gx.navigateBack();
     },
 
     getHeight() {
       let info = wx.getSystemInfoSync();
       let rect = wx.getMenuButtonBoundingClientRect();
-      return info.safeArea.top + rect.height + 4 + this.data.bottom;
+      return info.safeArea.top + rect.height + 6 + this.data.bottom + 8;
     }
 
   }

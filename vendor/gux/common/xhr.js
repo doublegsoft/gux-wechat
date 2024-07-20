@@ -5,7 +5,9 @@
  *
  * @version 1.0.0 - Created on Jan 26, 2019.
  */
-const xhr = {};
+const xhr = {
+  host: '',
+};
 
 /**
  * @private
@@ -75,8 +77,8 @@ xhr.get = function (opts) {
 
 xhr.post = function (opts) {
   let url = opts.url;
-  if (typeof HOST !== "undefined" && url.indexOf("http") == -1) {
-    url = HOST + url;
+  if (url.indexOf("http") == -1) {
+    url = xhr.host + url;
     opts.url = url;
   }
   xhr.request(opts, "POST");
@@ -156,8 +158,9 @@ xhr.chain = function (opts) {
 xhr.promise = function (xhrOpt, error) {
   return new Promise(function (resolve, reject) {
     let url = xhrOpt.url;
-    if (url.indexOf("https://") == -1 && url.indexOf("http://") == -1) {
-      url = "https://api.cq-fyy.com" + xhrOpt.url;
+    if (url.indexOf("http") == -1) {
+      url = xhr.host + url;
+      xhrOpt.url = url;
     }
     wx.request({
       url: url,
@@ -188,8 +191,9 @@ xhr.promise = function (xhrOpt, error) {
 xhr.promise2 = function (xhrOpt, error) {
   return new Promise(function (resolve, reject) {
     let url = xhrOpt.url;
-    if (url.indexOf("https://") == -1 && url.indexOf("http://") == -1) {
-      url = "https://api.cq-fyy.com" + xhrOpt.url;
+    if (url.indexOf("http") == -1) {
+      url = xhr.host + url;
+      xhrOpt.url = url;
     }
     wx.request({
       url: url,

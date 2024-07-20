@@ -1,0 +1,105 @@
+/* index.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #D8D8D8;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #C0C0C0;
+}
+
+.back-button, .circle-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.indicator-dots {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 2px;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.side-buttons {
+  position: absolute;
+  right: 20px;
+}
+
+.side-button {
+  width: 40px;
+  height: 40px;
+  margin: 10px 0;
+  border-radius: 50%;
+  background-color: #FFF;
+}
+
+.bottom-content {
+  padding: 20px;
+  background-color: #F0F0F0;
+}
+
+.text-lines .line {
+  height: 10px;
+  margin: 5px 0;
+  background-color: #B0B0B0;
+}
+
+.diamonds {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.diamond, .diamond-empty {
+  width: 15px;
+  height: 15px;
+  margin: 2px;
+  transform: rotate(45deg);
+}
+
+.diamond {
+  background-color: #000;
+}
+
+.diamond-empty {
+  background-color: #FFF;
+  border: 1px solid #000;
+}
+
+.bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #C0C0C0;
+}
+
+.plus-button, .heart-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #000;
+  color: #FFF;
+}

@@ -14,8 +14,8 @@
  ### ──────────────────────────────────────────────────
  -->
 <scroll-view 
-  wx:if="{{items.length > 0}}" 
-  style="position: relative; top: {{top}}px; height: {{height}};"
+  wx:if="{{local && local.length > 0}}" 
+  style="position: relative; top: {{top}}px; height: {{height}}px;"
   scroll-y="true" 
   bindscroll="onScroll"
   bindscrolltoupper="onScrollToUpper" 
@@ -28,7 +28,10 @@
   </view>
   <slot></slot>
   <view class="no-more-data gx-mt-8" wx:if="{{noMoreData && enableLoadMore}}">没有更多数据</view>
-  <view class="loading gx-mt-8" wx:if="{{isLoading && enableLoadMore}}">正在加载更多内容...</view>
+  <view class="loading gx-mt-8" wx:if="{{isLoading}}">
+    <view class="fas fa-spinner fa-spin gx-fs-24 gx-mr-16"></view>
+    <view>正在加载更多内容...</view>
+  </view>
 </scroll-view>
 <view wx:else class="no-data">
   <image src="/asset/image/no-data.png" class="no-data-img"></image>

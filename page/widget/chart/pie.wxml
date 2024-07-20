@@ -1,0 +1,9 @@
+<gx-navigation-bar id="navigationBar" title="饼状图形"></gx-navigation-bar>
+<view style="margin-top: {{marginTop}}px;">
+  <view style="height: 200px">
+    <ec-canvas id="pie_chart_0" canvas-id="pie_chart_canvas_0" ec="{{ ec0 }}"></ec-canvas>
+  </view>
+  <view style="height: 200px">
+    <ec-canvas id="pie_chart_1" canvas-id="pie_chart_canvas_1" ec="{{ ec1 }}"></ec-canvas>
+  </view>
+</view>

@@ -1,0 +1,46 @@
+<gx-navigation-bar id="navigationBar" title="骨架页面209" />
+<view class="container" style="margin-top: {{marginTop}}px;">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <input type="text" class="search-input" placeholder="Search..."/>
+    <button class="search-button">🔍</button>
+  </view>
+
+  <!-- 日历部分 -->
+  <view class="calendar">
+    <view class="calendar-row">
+      <block wx:for="{{daysOfWeek}}" wx:key="{{index}}">
+        <text class="calendar-day">{{item}}</text>
+      </block>
+    </view>
+    <view class="calendar-row" wx:for="{{calendarRows}}" wx:key="index">
+      <block wx:for="{{item}}" wx:key="day">
+        <view class="calendar-cell" wx:if="{{item}}">
+          <button class="calendar-date" data-date="{{item}}" bindtap="onDateSelect">{{item}}</button>
+        </view>
+        <view class="calendar-cell" wx:else>
+          <text class="calendar-empty"></text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 开关控件 -->
+  <view class="toggle-switch">
+    <view class="switch-button" bindtap="onToggleSwitch">◯</view>
+  </view>
+
+  <!-- 按钮组 -->
+  <view class="button-group">
+    <button class="button">🔄</button>
+    <button class="button">⏩</button>
+    <button class="button">❤️</button>
+  </view>
+
+  <!-- 底部导航 -->
+  <view class="footer">
+    <button class="footer-button">🏠</button>
+    <button class="footer-button">📝</button>
+    <button class="footer-button">🛒</button>
+  </view>
+</view>

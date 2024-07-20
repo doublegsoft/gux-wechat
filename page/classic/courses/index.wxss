@@ -1,0 +1,147 @@
+@import "/vendor/gux/gux.wxss";
+
+.container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tab styles */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  color: #888;
+}
+
+.tab.active {
+  color: #ff7700;
+  border-bottom: 2px solid #ff7700;
+}
+
+/* Search bar styles */
+.search-bar {
+  display: flex;
+  margin-top: 10px;
+  background: white;
+  width: calc(100%-32rpx)!important;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-bar .search-btn {
+  padding: 5px 10px;
+  background-color: #ff7700;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Content styles */
+.content {
+  display: flex;
+  margin-top: 20px;
+}
+
+.sidebar {
+  width: 25%;
+}
+
+.category {
+  padding: 10px;
+  color: #888;
+}
+
+.category.active {
+  color: #ff7700;
+  font-weight: bold;
+}
+
+.main-content {
+  width: 75%;
+  padding-left: 20px;
+  position: relative;
+}
+
+.sub-tabs {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sub-tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  color: #888;
+}
+
+.sub-tab.active {
+  color: #ff7700;
+  border-bottom: 2px solid #ff7700;
+}
+
+/* Course list styles */
+.course-list {
+  font-size: 14px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.course-list::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 6px;
+  bottom: 0;
+  width: 2px;
+  background-color: #ff7700;
+}
+
+.course-item {
+  list-style: none;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.course-item::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  background-color: #ff7700;
+  border-radius: 50%;
+}
+
+.course-date {
+  font-size: 12px;
+  color: #888;
+}
+
+.apply-btn {
+  background-color: #ff7700;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  width: 48px!important;
+  height: 26px!important;
+}
+
+.apply-btn:hover {
+  background-color: #e66000;
+}

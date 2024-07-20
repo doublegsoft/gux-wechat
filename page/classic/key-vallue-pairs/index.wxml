@@ -1,0 +1,28 @@
+<gx-navigation-bar id="navigationBar" title="成对现实" />
+<view class="container" style="margin-top: {{marginTop}}px;">
+  <view class="item">
+    <view class="title">Name</view>
+    <view class="dots"></view>
+    <view class="value">John Doe</view>
+  </view>
+  <view class="item">
+    <view class="title">Email</view>
+    <view class="dots"></view>
+    <view class="value">johndoe@example.com</view>
+  </view>
+  <view class="item">
+    <view class="title">Address</view>
+    <view class="dots"></view>
+    <view class="value">1234 Elm Street</view>
+  </view>
+  <view class="item">
+    <view class="title">Occupation</view>
+    <view class="dots"></view>
+    <view class="value">Senior Software</view>
+  </view>
+  <view class="item">
+    <view class="title">Long Title Example</view>
+    <view class="dots"></view>
+    <view class="value">ellipsis</view>
+  </view>
+</view>

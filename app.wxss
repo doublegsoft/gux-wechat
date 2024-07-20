@@ -1,0 +1,23 @@
+@import '/vendor/gux/gux.wxss';
+
+.search-bar {
+  display: flex;
+  padding: 14rpx 20rpx;
+  width: calc(100%-64rpx);
+  margin: 0 32rpx;
+  height: 80rpx;
+  background: #F5F5F5;
+  border-radius: 16rpx;
+  border: 2rpx solid rgba(255, 255, 255, 0.05);
+}
+
+.search-bar .icon {
+  margin-right: 24rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.search-bar .placeholder {
+  color: #999999;
+  font-size: 24rpx;
+}

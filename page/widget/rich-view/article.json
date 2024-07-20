@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "gx-rich-view": "/vendor/gux/widget/gx-rich-view/index",
+    "gx-navigation-bar": "/vendor/gux/widget/gx-navigation-bar/index"
+  }
+}

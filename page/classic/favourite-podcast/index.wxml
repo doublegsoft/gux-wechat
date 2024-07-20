@@ -1,0 +1,26 @@
+<gx-navigation-bar id="navigationBar" title="加载更多示例" />
+<view class="container" style="margin-top: {{marginTop}}px;">
+  <image class="logo" src="/images/logo.png" />
+  <text class="title">Favourite Podcasts</text>
+  <image class="notification-icon" src="/images/notification.png" />
+  
+  <view class="podcast-list">
+    <block wx:for="{{podcasts}}" wx:key="id">
+      <view class="podcast-item">
+        <image class="podcast-image" src="{{item.image}}" />
+        <view class="podcast-info">
+          <text class="podcast-title">{{item.title}}</text>
+          <text class="podcast-category">{{item.category}}</text>
+          <text class="podcast-duration">{{item.duration}}</text>
+        </view>
+        <button class="play-button" data-id="{{item.id}}" bindtap="playPodcast">▶️</button>
+      </view>
+    </block>
+  </view>
+  
+  <view class="footer">
+    <button class="footer-button" bindtap="goHome">🏠</button>
+    <button class="footer-button selected" bindtap="goFavorites">💜</button>
+    <button class="footer-button" bindtap="goProfile">👤</button>
+  </view>
+</view>

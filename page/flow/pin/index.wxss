@@ -1,0 +1,60 @@
+@import "/app.wxss";
+
+.container {
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.form-row {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+}
+
+.input {
+  flex: 2;
+  padding: 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+.sms {
+  flex: 2;
+  padding: 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  font-size: 16px;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+.pin-input {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.pin-input input {
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  margin: 0 5px;
+  font-size: 20px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.button {
+  flex: 1;
+  padding: 8px 4px;
+  background-color: #1aad19;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  font-size: 14px;
+  height: 36px;
+  white-space: nowrap;
+}

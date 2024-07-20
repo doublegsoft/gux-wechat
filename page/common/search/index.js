@@ -1,10 +1,12 @@
+const { sdk } = require('@/sdk/gux');
+
 Page({
 
   data: {
     marginTop: 0,
 
     title: '搜索',
-    tooltip: '搜索任意东西',
+    tooltip: '输入搜索条件',
   },
 
   onLoad(opts) {
@@ -25,6 +27,25 @@ Page({
         marginTop: navbar.getHeight(),
       });
     }
+    this.doFetchCriteria();
   },
 
+  gotoBackWithCriteria(ev) {
+    const pages = getCurrentPages();
+    const prevPage = pages[pages.length - 2]; 
+    if (prevPage.doSearch) {
+      prevPage.doSearch(ev.currentTarget.dataset.text);
+    }
+
+    wx.navigateBack();
+  },
+
+  doFetchCriteria() {
+    sdk.fetchSearchCriteria({}).then(resp => {
+      this.setData({
+        history: resp.history,
+        category: resp.category,
+      })
+    });
+  },
 })

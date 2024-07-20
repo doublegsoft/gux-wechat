@@ -5,24 +5,8 @@ Page({
     marginTop: 0,
   },
 
-  onLoad() {
-    wx.hideHomeButton();
-
-    let navbar = this.selectComponent('#navigationBar');
-    this.setData({
-      marginTop: navbar.getHeight(),
-    });
-
-    // wx.showLoading({
-    //   title: '加载中',
-    // })
-    
-    // setTimeout(function () {
-    //   wx.hideLoading()
-    // }, 2000)
-  },
-
   onShow() {
+    wx.hideHomeButton();
     let navbar = this.selectComponent('#navigationBar');
     this.setData({
       marginTop: navbar.getHeight(),
@@ -31,37 +15,37 @@ Page({
 
   gotoListView_NoData() {
     wx.navigateTo({
-      url: '/page/demo/list-view/no-data',
+      url: '/page/widget/list-view/no-data',
     })
   },
 
   gotoListView_LoadMore() {
     wx.navigateTo({
-      url: '/page/demo/list-view/load-more',
+      url: '/page/widget/list-view/load-more',
     })
   },
 
   gotoForm_TwoColumnForm() {
     wx.navigateTo({
-      url: '/page/demo/form/two-column-form',
+      url: '/page/widget/form/two-column-form',
     })
   },
 
   gotoTabs_Date() {
     wx.navigateTo({
-      url: '/page/demo/tabs/date',
+      url: '/page/widget/tabs/date',
     })
   },
 
   gotoTabs_Image() {
     wx.navigateTo({
-      url: '/page/demo/tabs/image',
+      url: '/page/widget/tabs/image',
     })
   },
 
   gotoTabs_Segment() {
     wx.navigateTo({
-      url: '/page/demo/tabs/segment',
+      url: '/page/widget/tabs/segment',
     })
   },
 
@@ -161,54 +145,6 @@ Page({
     })
   },
 
-  gotoSearch() {
-    wx.navigateTo({
-      url: '/page/common/search/index',
-    });
-  },
-
-  gotoSuccess() {
-    wx.navigateTo({
-      url: '/page/common/success/index',
-    });
-  },
-
-  gotoFailure() {
-    wx.navigateTo({
-      url: '/page/common/failure/index',
-    });
-  },
-
-  gotoNoInternet() {
-    wx.navigateTo({
-      url: '/page/common/no-internet/index',
-    });
-  },
-
-  gotoThankYou() {
-    wx.navigateTo({
-      url: '/page/common/thank-you/index',
-    });
-  },
-
-  gotoCongratulation() {
-    wx.navigateTo({
-      url: '/page/common/congratulation/index',
-    });
-  },
-
-  gotoPrivacyPolicy() {
-    wx.navigateTo({
-      url: '/page/common/privacy-policy/index',
-    });
-  },
-
-  gotoCertification() {
-    wx.navigateTo({
-      url: '/page/common/certification/index',
-    });
-  },
-
   gotoFoodOrdering() {
     wx.navigateTo({
       url: '/page/classic/food-ordering/index',
@@ -239,6 +175,12 @@ Page({
     });
   },
 
+  gotoCreditCard() {
+    wx.navigateTo({
+      url: '/page/classic/credit-card/index',
+    });
+  },
+
   /*!
   ** 底部弹出。
   */
@@ -247,7 +189,16 @@ Page({
     bs.show();
   },
 
-  doHideBottomSheet(ev) {
-    console.log(ev);
-  }
+  doShowDrawer(ev) {
+    let d = this.selectComponent('#drawer');
+    d.show();
+  },
+
+  doShowAd(ev) {
+    let ad = this.selectComponent('#ad');
+    ad.show({
+      title: '我是标题',
+      content: '我是主要内容\n还支持反斜杠n手动换行',
+    });
+  },
 })

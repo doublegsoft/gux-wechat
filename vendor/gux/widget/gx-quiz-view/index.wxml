@@ -1,0 +1,43 @@
+<!--
+ ### ──────────────────────────────────────────────────
+ ### ─██████████████─██████──██████─████████──████████─
+ ### ─██░░░░░░░░░░██─██░░██──██░░██─██░░░░██──██░░░░██─
+ ### ─██░░██████████─██░░██──██░░██─████░░██──██░░████─
+ ### ─██░░██─────────██░░██──██░░██───██░░░░██░░░░██───
+ ### ─██░░██─────────██░░██──██░░██───████░░░░░░████───
+ ### ─██░░██──██████─██░░██──██░░██─────██░░░░░░██─────
+ ### ─██░░██──██░░██─██░░██──██░░██───████░░░░░░████───
+ ### ─██░░██──██░░██─██░░██──██░░██───██░░░░██░░░░██───
+ ### ─██░░██████░░██─██░░██████░░██─████░░██──██░░████─
+ ### ─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░██──██░░░░██─
+ ### ─██████████████─██████████████─████████──████████─
+ ### ──────────────────────────────────────────────────
+ -->
+<view class="container gx-p-16">
+  <view class="gx-d-flex">
+    <progress percent="{{completed / questionnaireQuestions.length * 100}}" active
+              backgroundColor="#F4F3F6" activeColor="#31CD63" active-mode="forwards"
+              class="gx-w-full gx-mr-16"></progress>
+    <view class="gx-ml-auto gx-fs-14 gx-text-secondary">{{completed}}/{{questionnaireQuestions.length}}</view>
+  </view>
+  <scroll-view class="question" scroll-y="true">
+    <view wx:if="{{currentQuestion.questionnaireQuestionType == 'single'}}"
+          class="gx-fb gx-fs-22" 
+          style="margin-top:30px;line-height:36px;">
+      {{currentQuestion.questionnaireQuestionName}}
+    </view>
+    <view wx:for="{{currentQuestion.options}}" 
+          wx:key="questionnaireQuestionOptionId" 
+          class="gx-d-flex option {{item.checked && 'active'}}"
+          data-questionnaire-question-option-id="{{item.questionnaireQuestionOptionId}}"
+          bind:tap="doTapOption">
+      <view class="gx-d-flex gx-mr-8 gx-b-round symbol">
+        <text wx:if="{{item.checked}}" class="gx-m-auto gx-fb fas fa-check"></text>
+        <text wx:else class="gx-m-auto gx-fb">{{index+1}}</text>
+      </view>
+      <view class="gx-fs-16 text">{{item.questionnaireQuestionOptionName}}</view>
+    </view>
+    <view wx:if="{{currentQuestion.questionnaireQuestionType == 'multiple'}}">
+    </view>
+  </scroll-view>
+</view>

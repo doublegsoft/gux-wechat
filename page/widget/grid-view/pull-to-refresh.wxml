@@ -1,0 +1,60 @@
+<gx-navigation-bar id="navigationBar" title="栅格列表（下拉刷新）" />
+<view class="gx-pos-relative" style="top:{{top}}px;padding:8px;overflow:hidden;">
+  <view class="search-bar" style="margin-bottom: 8px;">
+    <icon type="search" color="#999" class="icon" />
+    <input type="text" style="flex: 1;" placeholder-class="placeholder" placeholder="搜索" 
+           bind:tap="gotoSearch" value="{{searchCriteria}}" disabled="true" />
+  </view>
+  <gx-grid-vew id="listMerchandise" local="{{oddItems}}" height="{{viewHeight - 48}}" 
+               enableLoadMore="{{true}}" bind:doLoad="doReload">
+    <view class="gx-row">
+      <view class="gx-24-12">
+        <view class="gx-m-8 gx-mr-8" wx:for="{{oddItems}}" wx:key="contactId"
+              wx:for-item="item">
+          <view class="card product-card">
+            <view class="position-relative">
+              <image src="/asset/image/demo/t-shirt.png" mode="heightFix" 
+                     style="height:180px;"/>
+              <view class="sale-badge">在售</view>
+            </view>
+            <view class="card-body text-center">
+              <view class="card-title gx-mb-8">透气汗衫</view>
+              <view class="product-price gx-color-primary">
+                <view class="price-icon fas fa-dollar-sign"></view>
+                <view>254.99</view>
+              </view>
+            </view>
+            <view class="card-footer">
+              <view class="fas fa-shopping-cart gx-color-primary"></view>
+              <view class="fas fa-star gx-color-warning"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="gx-24-12">
+        <view class="gx-m-8 gx-ml-8" wx:for="{{evenItems}}" wx:key="contactId"
+              wx:for-item="item">
+          <view class="card product-card position-relative">
+            <span class="badge badge-verified">热销</span>
+            <image src="/asset/image/demo/shoe.png" mode="widthFix" style="width:100%;" />
+            <view class="card-body">
+              <text class="card-title">这是一双鞋</text>
+              <view class="rating gx-mt-8">
+                <text class="fas fa-star"></text>
+                <text class="fas fa-star"></text>
+                <text class="fas fa-star"></text>
+                <text class="fas fa-star"></text>
+                <text class="fas fa-star-half-alt"></text>
+              </view>
+              <view class="list">
+                <view class="list-item"><text class="fas fa-check-circle gx-mr-16"></text>清爽</view>
+                <view class="list-item"><text class="fas fa-check-circle gx-mr-16"></text>舒适</view>
+              </view>
+              <button class="btn btn-purchase gx-mt-8" style="width:120px;">立即购买</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </gx-grid-vew>
+</view>

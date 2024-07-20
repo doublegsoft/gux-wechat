@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "gx-navigation-bar": "/vendor/gux/widget/gx-navigation-bar/index",
+    "gx-tabs": "/vendor/gux/widget/gx-tabs/index"
+  }
+}

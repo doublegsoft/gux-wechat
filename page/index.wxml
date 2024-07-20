@@ -1,137 +1,304 @@
 <gx-navigation-bar id="navigationBar" title="首页" backable="{{false}}"></gx-navigation-bar>
 <view style="margin-top: {{marginTop}}px;">
   <view class="gx-m-8 gx-fs-14">
-    <text class="fas fa-list-ul"></text>
-    <text class="gx-ml-8">列表示例</text>
+    <text class="gx-ml-8 fas fa-list-ul"></text>
+    <text class="gx-ml-8 gx-fb gx-fs-15">交互设计</text>
   </view>
   <view>
-    <navigator bindtap="gotoListView_NoData" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
+    <navigator bindtap="doShowBottomSheet" url="#" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">底部弹出</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator bindtap="doShowDrawer" url="#" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">左侧弹出</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator bindtap="doShowAd" url="#" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">广告弹出</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+  </view>
+  <view class="gx-m-8 gx-fs-14">
+    <text class="gx-ml-8 fas fa-list-ul"></text>
+    <text class="gx-ml-8 gx-fb gx-fs-15">列表示例</text>
+  </view>
+  <view>
+    <navigator bindtap="gotoListView_NoData" url="#" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <view class="gx-tile-body" style="width: 200px;">传统列表（无数据）</view>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
-    <navigator bindtap="gotoListView_LoadMore" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
+    <navigator url="/page/widget/list-view/pull-to-refresh" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <text class="gx-tile-body">传统列表（下拉刷新）</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
-    <navigator bindtap="gotoListView_LoadMore" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
+    <navigator bindtap="gotoListView_LoadMore" url="#" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <text class="gx-tile-body">传统列表（加载更多）</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
   </view>
   <view class="gx-m-8 gx-fs-14">
-    <text class="fas fa-list-ul"></text>
-    <text class="gx-ml-8">页签示例</text>
+    <text class="gx-ml-8 fas fa-list-ul"></text>
+    <text class="gx-ml-8 gx-fb gx-fs-15">栅格示例</text>
   </view>
   <view>
-    <navigator bindtap="gotoTabs_Date" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
-      <view class="gx-tile-body" style="width: 200px;">日期页签</view>
+    <navigator url="/page/widget/grid-view/pull-to-refresh" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">栅格列表（下拉刷新）</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
-    <navigator bindtap="gotoTabs_Image" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
-      <view class="gx-tile-body" style="width: 200px;">图片宣传</view>
-      <view class="fas fa-angle-right gx-fs-18 access"></view>
-    </navigator>
-    <navigator bindtap="gotoTabs_Segment" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
-      <view class="gx-tile-body" style="width: 200px;">分隔浏览</view>
+    <navigator url="/page/widget/grid-view/load-more" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">栅格列表（加载更多）</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
   </view>
   <view class="gx-m-8 gx-fs-14">
-    <text class="fas fa-bars"></text>
-    <text class="gx-ml-8">表单示例</text>
+    <text class="gx-ml-8 fas fa-list-ul"></text>
+    <text class="gx-ml-8 gx-fb gx-fs-15">页签示例</text>
   </view>
   <view>
-    <navigator bindtap="gotoForm_TwoColumnForm" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
+    <navigator bindtap="gotoTabs_Date" url="#" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <view class="gx-tile-body" style="width: 200px;">分页页签（日期）</view>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator bindtap="gotoTabs_Image" url="#" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <view class="gx-tile-body" style="width: 200px;">分页页签（图片）</view>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator bindtap="gotoTabs_Segment" url="#" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <view class="gx-tile-body" style="width: 200px;">分页页签（分隔）</view>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/widget/calendar/calendar-on-top" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <view class="gx-tile-body" style="width: 200px;">日历导航</view>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/widget/tabs/swiper" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <view class="gx-tile-body" style="width: 200px;">滑动页签</view>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+  </view>
+  <view class="gx-m-8 gx-fs-14">
+    <text class="gx-ml-8 fas fa-list-ul"></text>
+    <text class="gx-ml-8 gx-fb gx-fs-15">表单示例</text>
+  </view>
+  <view>
+    <navigator bindtap="gotoForm_TwoColumnForm" url="#" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <view class="gx-tile-body">编辑表单</view>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
-    <navigator bindtap="gotoListView_LoadMore" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
+    <navigator bindtap="gotoListView_LoadMore" url="#" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <text class="gx-tile-body">只读表单</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
-    <navigator bindtap="gotoListView_LoadMore" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
+    <navigator bindtap="gotoListView_LoadMore" url="#" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <text class="gx-tile-body">花式表单</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
   </view>
   <view class="gx-m-8 gx-fs-14">
-    <text class="fas fa-file"></text>
-    <text class="gx-ml-8">通用页面</text>
+    <text class="gx-ml-8 fas fa-list-ul"></text>
+    <text class="gx-ml-8 gx-fb gx-fs-15">整体部件</text>
   </view>
   <view>
-    <navigator bindtap="gotoSearch" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
+    <navigator url="/page/widget/rich-view/article" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">浏览文章</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/widget/quiz-view/test" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">简短测试</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+  </view>
+  <view class="gx-m-8 gx-fs-14">
+    <text class="gx-ml-8 fas fa-list-ul"></text>
+    <text class="gx-ml-8 gx-fb gx-fs-15">图标示例</text>
+  </view>
+  <view>
+    <navigator url="/page/widget/chart/pie" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <view class="gx-tile-body">饼状图形</view>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+  </view>
+  <view class="gx-m-8 gx-fs-14">
+    <text class="gx-ml-8 fas fa-list-ul"></text>
+    <text class="gx-ml-8 gx-fb gx-fs-15">部件设计</text>
+  </view>
+  <view>
+    <navigator url="/page/classic/credit-card/index" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">信用卡</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/classic/shoe-in-grid/index" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">橱窗中的鞋</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/classic/shoe-in-order/index" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">订单中的鞋</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/classic/traffic/index" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">网络流量</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/classic/favourite-podcast/index" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">广播收藏</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/classic/profile/index" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">用户概况</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/classic/key-vallue-pairs/index" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">成对显示</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/classic/scroll-notification/index" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">通知公告</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+  </view>
+  <view class="gx-m-8 gx-fs-14">
+    <text class="gx-ml-8 fas fa-list-ul"></text>
+    <text class="gx-ml-8 gx-fb gx-fs-15">经典页面</text>
+  </view>
+  <view>
+    <navigator bindtap="gotoFoodOrdering" url="#" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">膳食订购</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator bindtap="gotoEvaluationResult" url="#" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">身体评估</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/classic/profile/index" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">我的档案</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/classic/courses/index" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">课程橱窗</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+  </view>
+  <view class="gx-m-8 gx-fs-14">
+    <text class="gx-ml-8 fas fa-list-ul"></text>
+    <text class="gx-ml-8 gx-fb gx-fs-15">骨架页面</text>
+  </view> 
+  <view> 
+    <navigator url="/page/classic/skeleton003/index" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">骨架页面003</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/classic/skeleton101/index" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">骨架页面101</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/classic/skeleton206/index" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">骨架页面206</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/classic/skeleton209/index" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">骨架页面209</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+    <navigator url="/page/classic/skeleton210/index" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">骨架页面210</text>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+  </view>
+  <view class="gx-m-8 gx-fs-14">
+    <text class="gx-ml-8 fas fa-list-ul"></text>
+    <text class="gx-ml-8 gx-fb gx-fs-15">通用页面</text>
+  </view>
+  <view>
+    <navigator url="/page/common/search/index" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <text class="gx-tile-body">搜索</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
-    <navigator bindtap="gotoSuccess" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
+    <navigator url="/page/common/success/index?title=成功啦&description=" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <text class="gx-tile-body">成功提示</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
-    <navigator bindtap="gotoFailure" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
+    <navigator url="/page/common/failure/index?title=出错啦&description=还没有找到出错的原因" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <text class="gx-tile-body">错误提示</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
-    <navigator bindtap="gotoNoInternet" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
+    <navigator url="/page/common/no-internet/index" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <text class="gx-tile-body">没有连接</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
-    <navigator bindtap="gotoThankYou" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
+    <navigator url="/page/common/thank-you/index" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <text class="gx-tile-body">感谢</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
-    <navigator bindtap="gotoCongratulation" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
+    <navigator url="/page/common/congratulation/index" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <text class="gx-tile-body">恭喜</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
-    <navigator bindtap="gotoPrivacyPolicy" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
+    <navigator url="/page/common/privacy-policy/index" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <text class="gx-tile-body">隐私政策</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
-    <navigator bindtap="gotoCertification" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
+    <navigator url="/page/common/certification/index" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <text class="gx-tile-body">实名认证协议</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
   </view>
   <view class="gx-m-8 gx-fs-14">
-    <text class="fas fa-file-image"></text>
-    <text class="gx-ml-8">滑动弹出</text>
+    <text class="gx-ml-8 fas fa-list-ul"></text>
+    <text class="gx-ml-8 gx-fb gx-fs-15">常用流程</text>
   </view>
   <view>
-    <navigator bindtap="doShowBottomSheet" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
-      <text class="gx-tile-body">底部弹出</text>
+    <navigator url="/page/flow/payment/index" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">支付流程</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
-  </view>
-  <view class="gx-m-8 gx-fs-14">
-    <text class="fas fa-file-image"></text>
-    <text class="gx-ml-8">经典页面</text>
-  </view>
-  <view>
-    <navigator bindtap="gotoFoodOrdering" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
-      <text class="gx-tile-body">膳食订购</text>
+    <navigator url="/page/flow/pin/index" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">短信验证</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
-    <navigator bindtap="gotoEvaluationResult" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
-      <text class="gx-tile-body">身体评估</text>
-      <view class="fas fa-angle-right gx-fs-18 access"></view>
-    </navigator>
-    <navigator bindtap="gotoMyOrder" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
-      <text class="gx-tile-body">我的订单</text>
-      <view class="fas fa-angle-right gx-fs-18 access"></view>
-    </navigator>
-    <navigator bindtap="gotoMerchandises" url="#" class="gx-tile gx-py-12 gx-fs-14" role="navigator">
-      <text class="gx-tile-body">商品橱窗</text>
+    <navigator url="/page/flow/signup/index" 
+               class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <text class="gx-tile-body">用户注册</text>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
   </view>
 </view>
 <gx-bottom-sheet id="bottomSheet" height="{{600}}">
   <scroll-view scroll-y="{{true}}">
-  <view class="gx-m-16 gx-fs-14">
-    <view class="gx-px-12 gx-h-32 gx-b-round gx-lh-32 gx-bg-success-lighter gx-color-success" catch:tap="doHideBottomSheet">营养得很</view>
-    <view catch:tap="doHideBottomSheet" class="gx-mt-8 gx-px-12 gx-h-32 gx-lh-32 gx-b-round gx-bg-success-lighter gx-color-success">非常巴适</view>
-    <view catch:tap="doHideBottomSheet" class="gx-mt-8 gx-px-12 gx-h-32 gx-lh-32 gx-b-round gx-bg-success-lighter gx-color-success">非常巴适</view>
-    <view catch:tap="doHideBottomSheet" class="gx-mt-8 gx-px-12 gx-h-32 gx-lh-32 gx-b-round gx-bg-success-lighter gx-color-success">非常巴适</view>
-  </view>
-</scroll-view>
+    <view class="gx-m-16 gx-fs-14">
+      <view class="gx-px-12 gx-h-32 gx-b-round gx-lh-32 gx-bg-success-lighter gx-color-success" catch:tap="doHideBottomSheet">营养得很</view>
+      <view catch:tap="doHideBottomSheet" class="gx-mt-8 gx-px-12 gx-h-32 gx-lh-32 gx-b-round gx-bg-success-lighter gx-color-success">非常巴适</view>
+      <view catch:tap="doHideBottomSheet" class="gx-mt-8 gx-px-12 gx-h-32 gx-lh-32 gx-b-round gx-bg-success-lighter gx-color-success">非常巴适</view>
+      <view catch:tap="doHideBottomSheet" class="gx-mt-8 gx-px-12 gx-h-32 gx-lh-32 gx-b-round gx-bg-success-lighter gx-color-success">非常巴适</view>
+    </view>
+  </scroll-view>
 </gx-bottom-sheet>
+<gx-drawer id="drawer" width="{{300}}">
+  <scroll-view scroll-y="{{true}}">
+    <view class="gx-m-16 gx-fs-14">
+      <view class="gx-px-12 gx-h-32 gx-b-round gx-lh-32 gx-bg-success-lighter gx-color-success" catch:tap="doHideBottomSheet">营养得很</view>
+      <view catch:tap="doHideBottomSheet" class="gx-mt-8 gx-px-12 gx-h-32 gx-lh-32 gx-b-round gx-bg-success-lighter gx-color-success">非常巴适</view>
+      <view catch:tap="doHideBottomSheet" class="gx-mt-8 gx-px-12 gx-h-32 gx-lh-32 gx-b-round gx-bg-success-lighter gx-color-success">非常巴适</view>
+      <view catch:tap="doHideBottomSheet" class="gx-mt-8 gx-px-12 gx-h-32 gx-lh-32 gx-b-round gx-bg-success-lighter gx-color-success">非常巴适</view>
+    </view>
+  </scroll-view>
+</gx-drawer>
+<gx-ad id="ad">
+  <image src="/asset/image/demo/t-shirt.png" mode="aspectFit" style="width:100%;"></image>
+</gx-ad>

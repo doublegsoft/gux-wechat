@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "gx-calendar":"/vendor/gux/widget/gx-calendar",
+    "gx-navigation-bar":"/vendor/gux/widget/gx-navigation-bar"
+  }
+}

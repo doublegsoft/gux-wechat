@@ -19,7 +19,7 @@
 .input_view {
   width: 700rpx;
   height: 500rpx;
-  background: #fff;
+  background: #C5C9D0;
   margin: 25rpx auto;
   border-radius: 10rpx;
   padding: 40rpx;
@@ -47,11 +47,12 @@
   margin-right: 5rpx;
 }
 
-.display {
+.feedback {
   display: flex;
   justify-content: space-between;
   /* margin-top: 157rpx; */
   width: 100%;
+  margin-bottom: -8px;
 }
 
 .clear {
@@ -74,7 +75,7 @@
   width: 80%;
   padding-left: 40rpx;
   font-size: 35rpx;
-  background: #fff;
+  background: #C5C9D0;
 }
 
 .content {
@@ -119,11 +120,12 @@
 .keyboard {
   height: 0;
   width: 100%;
-  background: #fff;
+  background:#C5C9D0;
   position: fixed;
   bottom: 0;
   left: 0;
   transition: height 0.3s;
+  z-index: 9999;
 }
 
 .keyboard.shown {
@@ -132,15 +134,20 @@
 
 .keys {
   overflow: hidden;
+  padding: 4px;
 }
 
 .key {
+  margin: 4px;
+  background: #fff;
   box-sizing: border-box;
+  font-weight: bold;
+  font-size: 20px;
   float: left;
-  width: 250rpx;
   height: 90rpx;
+  border-radius: 8px;
   text-align: center;
   line-height: 90rpx;
-  border-left: 1px solid var(--color-divider);
-  border-top: 1px solid var(--color-divider);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-divider);
 }

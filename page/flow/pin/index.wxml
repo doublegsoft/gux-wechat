@@ -1,0 +1,38 @@
+<gx-navigation-bar id="navigationBar" title="短信验证码" />
+<view class="container gx-pos-relative" style="top:{{top}}px;height:{{viewHeight}}px;">
+  <view>
+    <input name="mobile" placeholder="请输入手机号" disabled 
+           type="number" maxlength="11" class="input" value="{{mobile}}"
+           bind:tap="doInputMobile"/>
+    <view class="gx-d-flex gx-mt-16">
+      <input name="sms" placeholder="请输入验证码" disabled class="sms" bind:tap="doInputPin"/>
+      <button class="button" bind:tap="doRequest">
+      {{waiting4Pin ? '请在' + countdown + '秒内验证' : '获取验证码'}}
+      </button>
+    </view>
+  </view>
+  <gx-dialog id="dialogPin" height="200" top="120">
+    <view>
+      <text class="gx-fs-18">短信验证码：</text>
+      <view class="pin-input" style="margin-top: 30px;">
+        <input value="{{code0}}" disabled="{{true}}"
+                maxlength="1" data-index="0" />
+        <input value="{{code1}}" disabled="{{true}}"
+                maxlength="1" data-index="1" />
+        <input value="{{code2}}" disabled="{{true}}"
+                maxlength="1" data-index="2" />
+        <input value="{{code3}}" disabled="{{true}}"
+                maxlength="1" data-index="3" />
+      </view>
+      <button class="gx-bg-success gx-text-primary-reversed" 
+              bind:tap="doCancelInputPin"
+              style="margin-top: 32px;">取消</button>
+    </view>
+  </gx-dialog>
+  <gx-dialog id="dialogCaptcha" height="264" top="120">
+    <gx-slide-captcha id="captcha" backgroundImage="/asset/image/demo/shoe.png" 
+                      bind:didSucceeded="didSucceeded"/>
+  </gx-dialog>
+</view>
+<gx-typepad id="typepad4pin" bind:didTapKey="didTapKey4Pin"></gx-typepad>
+<gx-typepad id="typepad4mobile"></gx-typepad>

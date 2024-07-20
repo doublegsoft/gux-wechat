@@ -1,0 +1,65 @@
+<gx-navigation-bar id="navigationBar" title="课程橱窗" />
+<view class="container gx-pos-relative" style="top:{{top}}px;">
+  <view class="tabs">
+    <button class="tab" data-current="0" bindtap="switchTab">日期</button>
+    <button class="tab active" data-current="1" bindtap="switchTab">课程</button>
+  </view>
+
+  <view class="search-bar">
+    <input placeholder="搜索" />
+    <view class="search-btn" style="height:34px;">🔍</view>
+  </view>
+
+  <view class="content">
+    <view class="sidebar gx-fs-14">
+      <view class="category active">全部分类</view>
+      <view class="category">智慧家族</view>
+      <view class="category">商业模式</view>
+      <view class="category">创新营销</view>
+      <view class="category">新颖股权</view>
+      <view class="category">团队打造</view>
+      <view class="category">企业文化</view>
+      <view class="category">领导优悠</view>
+      <view class="category">运营管理</view>
+    </view>
+
+    <view class="main-content">
+      <view class="sub-tabs">
+        <button class="sub-tab active">推荐</button>
+        <button class="sub-tab">近期课程</button>
+      </view>
+      <view class="course-list gx-mt-8">
+        <view class="course-item gx-d-flex">
+          <view>
+            <view class="course-title">第138届《商业思维》</view>
+            <view class="course-date">9月8日-9月11日 福州市</view>
+            <view class="course-link">商业思维更多课期</view>
+          </view>
+          <button class="apply-btn gx-ml-auto">申请</button>
+        </view>
+        <view class="course-item gx-d-flex">
+          <view>
+            <view class="course-title">第137届《商业思维》</view>
+            <view class="course-date">8月8日-8月11日 福州市</view>
+          </view>
+          <button class="apply-btn gx-ml-auto">申请</button>
+        </view>
+        <view class="course-item gx-d-flex">
+          <view>
+            <view class="course-title">第136届《商业思维》</view>
+            <view class="course-date">7月8日-7月11日 福州市</view>
+          </view>
+          <button class="apply-btn gx-ml-auto">申请</button>
+        </view>
+        <view class="course-item gx-d-flex">
+          <view>
+            <view class="course-title">第1届《商业操盘手》</view>
+            <view class="course-date">6月27日-6月30日 苏州市</view>
+            <view class="course-link">商业思维更多课期</view>
+          </view>
+          <button class="apply-btn gx-ml-auto">申请</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

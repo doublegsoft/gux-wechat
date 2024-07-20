@@ -1,0 +1,48 @@
+<gx-navigation-bar id="navigationBar" title="骨架页面003" />
+<view class="container" style="margin-top: {{marginTop}}px;">
+  <!-- 顶部导航栏 -->
+  <view class="navbar">
+    <button class="back-button" bindtap="onBackTap">←</button>
+    <button class="menu-button" bindtap="onMenuTap">⚫</button>
+  </view>
+
+  <!-- 中间滚动区域 -->
+  <scroll-view class="middle-section" scroll-y="true">
+    <view class="card" wx:for="{{cards}}" wx:key="index">
+      <button class="refresh-button">⟳</button>
+      <view class="card-content">
+        <text>{{item.title}}</text>
+        <text>{{item.subtitle}}</text>
+      </view>
+      <button class="favorite-button">❤️</button>
+    </view>
+    <button class="next-button" bindtap="onNextTap">→</button>
+  </scroll-view>
+
+  <!-- 底部项目和按钮 -->
+  <view class="item-list">
+    <view class="item" wx:for="{{items}}" wx:key="index">
+      <view class="item-left">
+        <checkbox checked="{{item.checked}}"></checkbox>
+        <view class="item-text">
+          <text>{{item.mainText}}</text>
+          <text class="sub-text">{{item.subText}}</text>
+        </view>
+      </view>
+      <view class="item-buttons">
+        <button class="item-button" bindtap="onDecrease" data-index="{{index}}">-</button>
+        <text>{{item.count}}</text>
+        <button class="item-button" bindtap="onIncrease" data-index="{{index}}">+</button>
+        <button class="item-button" bindtap="onRefresh" data-index="{{index}}">⟳</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部导航 -->
+  <view class="bottom-nav">
+    <button class="nav-button" bindtap="onHomeTap">🏠</button>
+    <button class="nav-button" bindtap="onCartTap">🛒</button>
+    <button class="nav-button" bindtap="onProfileTap">👤</button>
+    <button class="nav-button" bindtap="onShopTap">🛍</button>
+  </view>
+</view>

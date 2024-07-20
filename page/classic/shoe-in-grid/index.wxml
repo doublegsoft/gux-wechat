@@ -1,0 +1,18 @@
+<gx-navigation-bar id="navigationBar" title="加载更多示例" />
+<view class="container" style="margin-top: {{marginTop}}px;">
+  <view class="card">
+    <image class="product-image" src="/asset/image/demo/shoe.png" />
+    <view class="product-info" style="width: 100%;">
+      <view class="badge">BEST SELLER</view>
+      <view class="product-name">Nike Club Max</view>
+      <view style="display: flex; width: 100%;">
+        <view class="product-price">$47.7</view>
+        <view class="color-options" style="margin-left: auto;">
+          <view class="color-dot blue"></view>
+          <view class="color-dot yellow"></view>
+        </view>
+      </view>
+    </view>
+    <image class="favorite-icon" src="/images/heart.png" />
+  </view>
+</view>

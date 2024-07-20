@@ -1,0 +1,17 @@
+<gx-navigation-bar id="navigationBar" title="信用卡" />
+<view class="container" style="margin-top: {{marginTop}}px;">
+  <view class="card">
+    <view class="card-number">4562 1122 4595 7852</view>
+    <view class="card-holder">AR Jonson</view>
+    <view class="card-details">
+      <view class="expiry-date">
+        <text>Expiry Date</text>
+        <text>24/2000</text>
+      </view>
+      <view class="cvv">
+        <text>CVV</text>
+        <text>6986</text>
+      </view>
+    </view>
+  </view>
+</view>

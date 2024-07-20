@@ -1,0 +1,93 @@
+/* 根容器 */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 20px;
+  background-color: #f0f4f8;
+}
+
+/* 顶部区域 */
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.top-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-text text {
+  font-size: 16px;
+}
+
+.sub-text {
+  color: gray;
+  font-size: 14px;
+}
+
+.top-switch {
+  margin-left: 10px;
+}
+
+/* 中间大容器 */
+.middle-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.content-placeholder {
+  width: 80%;
+  height: 60%;
+  background-color: #d3dce6;
+  border-radius: 20px;
+}
+
+/* 底部项目 */
+.bottom-section {
+  padding: 10px 0;
+}
+
+.bottom-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.item-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-text text {
+  font-size: 16px;
+}
+
+.item-switch {
+  margin-left: 10px;
+}
+
+/* 底部大按钮 */
+.bottom-button {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.bottom-button button {
+  width: 80%;
+  height: 50px;
+  font-size: 18px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}

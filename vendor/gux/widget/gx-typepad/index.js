@@ -25,6 +25,8 @@ Component({
     shown: false,
     
     input: 'number',
+
+    headless: false,
     
     /*!
     ** 关闭时的回调函数。
@@ -33,7 +35,9 @@ Component({
 
     cursorIndex: '', // 插入光标位置
 
-    contentLengthMax: 18 // 最大长度6(不包含.)
+    contentLengthMax: 18, // 最大长度6(不包含.)
+
+    keyWidth: 0,
   },
   
   methods: {
@@ -47,6 +51,7 @@ Component({
       }
       this.setData({
         shown: false,
+        height: 0,
         content: [],
       });
     },
@@ -55,10 +60,14 @@ Component({
     ** 显示键盘。
     */
     show(opt) {
+      let info = wx.getSystemInfoSync();
       this.setData({
         input: opt.input,
+        headless: opt.headless || false,
         shown: true,
+        height: 261 + (info.screenHeight - info.safeArea.bottom) - (opt.headless === true ? 45 : 0) + 8,
         content: [],
+        keyWidth: ((info.screenWidth - 32) / 3),
       });
     },
 
@@ -78,6 +87,7 @@ Component({
       }
       this.setData({
         shown: false,
+        height: 0,
       });
       this.onClosed = null;
     },
@@ -91,6 +101,7 @@ Component({
       }
       this.setData({
         shown: false,
+        height: 0,
       });
       this.onClosed = null;
     },
@@ -114,7 +125,7 @@ Component({
       } = this.data
       switch (key) {
         case '.':
-          if (strLen < contentLengthMax && content.indexOf('.') === -1) { // 已有一个点的情况下
+          if (strLen < contentLengthMax && content.indexOf('.') === -1) { 
             content.length < 1 ? content = '0.' : content += '.'
           }
           break
@@ -152,7 +163,10 @@ Component({
       this.setData({
         content: content.split('')
       }) // 转为数组
-    },
 
+      this.triggerEvent('didTapKey', {
+        key: key,
+      })
+    },
   },
 })

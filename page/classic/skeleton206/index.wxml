@@ -1,0 +1,39 @@
+<gx-navigation-bar id="navigationBar" title="骨架页面206" />
+<view class="container" style="margin-top: {{marginTop}}px;">
+  <!-- 顶部导航栏 -->
+  <view class="top-bar">
+    <button class="back-button">返回</button>
+    <view class="circle-button"></view>
+  </view>
+  
+  <!-- 中间内容区域 -->
+  <view class="main-content">
+    <!-- 圆点指示器 -->
+    <view class="indicator-dots">
+      <view class="dot" wx:for="{{5}}" wx:key="*this"></view>
+    </view>
+    <!-- 右侧按钮 -->
+    <view class="side-buttons">
+      <button class="side-button"></button>
+      <button class="side-button"></button>
+    </view>
+  </view>
+
+  <!-- 底部内容区域 -->
+  <view class="bottom-content">
+    <view class="text-lines">
+      <view class="line" wx:for="{{4}}" wx:key="*this"></view>
+    </view>
+    <view class="diamonds">
+      <view class="diamond" wx:for="{{8}}" wx:key="*this"></view>
+      <view class="diamond-empty" wx:for="{{4}}" wx:key="*this"></view>
+      <view class="diamond" wx:for="{{4}}" wx:key="*this"></view>
+    </view>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="bottom-bar">
+    <button class="plus-button">+</button>
+    <button class="heart-button">❤️</button>
+  </view>
+</view>

@@ -1,0 +1,55 @@
+<gx-navigation-bar id="navigationBar" title="支付流程" background="#F4F9F4" />
+<view class="container gx-pos-relative" style="top:{{top}}px;">
+  <view class="header">
+    <image class="logo" src="/asset/image/demo/welcome.png" mode="aspectFit" />
+    <view style="margin-left: 16px;">
+      <view class="title">点击授权昵称和头像</view>
+      <view class="account">账号：990400133251573</view>
+    </view>
+  </view>
+  
+  <view class="health-beans">
+    <view class="bean-header">
+      <text class="bean-title">健康豆</text>
+      <text class="bean-count">346</text>
+    </view>
+    <progress class="bean-progress" percent="70" show-info active></progress>
+    <view class="bean-footer">
+      <text>每天一小豆，健康一大步</text>
+      <text class="bean-explanation">健康豆说明</text>
+    </view>
+  </view>
+  
+  <view class="actions">
+    <button class="action-button">电商订单</button>
+    <button class="action-button">样品派送订单</button>
+    <button class="action-button">卡券</button>
+    <button class="action-button">退款/售后</button>
+  </view>
+  
+  <view class="benefits">
+    <text class="benefits-title">健康权益</text>
+    <view class="benefits-list">
+      <button class="benefit-item">饮食习惯分析</button>
+      <button class="benefit-item">易胖风险评估</button>
+      <button class="benefit-item">饮食习惯分析</button>
+      <button class="benefit-item">加一点骨力测试</button>
+    </view>
+  </view>
+  
+  <view class="health-records">
+    <text class="records-title">健康档案</text>
+    <view class="records-list">
+      <button class="record-item">基础档案</button>
+      <button class="record-item">测评报告</button>
+      <button class="record-item">营养食谱</button>
+    </view>
+  </view>
+  
+  <view class="footer">
+    <button class="footer-button">首页</button>
+    <button class="footer-button">计划日历</button>
+    <button class="footer-button">探索</button>
+    <button class="footer-button">我的</button>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<gx-navigation-bar id="navigationBar" title="加载更多示例" />
+<view class="container" style="margin-top: {{marginTop}}px;">
+  <image class="router-image" src="/images/router.png" />
+  <text class="title">TRAFFIC RANKING</text>
+  <view class="item">
+    <view style="display: flex;">
+      <text class="device-name">Macbook Air 13</text>
+      <text class="traffic-amount">2.3G</text>
+    </view>
+    <view class="progress">
+      <view class="progress-bar" style="width: 80%;"></view>
+    </view>
+  </view>
+  <view class="item">
+    <view style="display: flex;">
+      <text class="device-name">Macbook Pro</text>
+      <text class="traffic-amount">3.2G</text>
+    </view>
+    <view class="progress">
+      <view class="progress-bar" style="width: 95%;"></view>
+    </view>
+  </view>
+  <view class="item">
+    <view style="display: flex;">
+      <text class="device-name">iPhone 15 Pro Max</text>
+      <text class="traffic-amount">789MB</text>
+    </view>
+    <view class="progress">
+      <view class="progress-bar" style="width: 50%;"></view>
+    </view>
+  </view>
+</view>

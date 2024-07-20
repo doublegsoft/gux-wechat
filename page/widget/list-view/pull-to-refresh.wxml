@@ -1,0 +1,41 @@
+<gx-navigation-bar id="navigationBar" title="传统列表（下拉刷新）" />
+<view class="gx-pos-relative" style="top:{{top}}px;padding:8px;">
+  <view class="search-bar" style="margin-bottom: 8px;">
+    <icon type="search" color="#999" class="icon" />
+    <input type="text" style="flex: 1;" placeholder-class="placeholder" placeholder="搜索" 
+           bind:tap="gotoSearch" value="{{searchCriteria}}" disabled="true" />
+  </view>
+  <gx-list-vew id="listEmployee" local="{{items}}" height="{{viewHeight - 48}}" 
+               enableLoadMore="{{true}}" bind:doLoad="doReload">
+    <view class="list-group-item gx-bl-0 gx-br-0" style="padding: 8px 16px;" wx:for="{{items}}" wx:key="id" wx:for-item="item">
+      <view class="gx-d-flex" style="align-items: center;">
+        <image class="gx-wh-36 gx-b-round" src="{{item.image}}" />
+        <view class="pl-2" style="flex: 1; display: flex; flex-direction: column;">
+          <text>{{item.merchandiseName}}</text>
+          <view class="text text-muted gx-fs-12">{{item.description}}</view>
+        </view>
+        <view class="ms-auto gx-color-error gx-fb">{{item.price}}</view>
+      </view>
+      <view class="gx-d-flex">
+        <view class="gx-p-8" style="flex: 1;">
+          <text class="text-muted gx-fs-12">欢迎程度</text>
+          <view class="progress gx-mt-4">
+            <view class="progress-bar progress-bar-custom gx-bg-primary" style="width: 60%;"></view>
+          </view>
+        </view>
+        <view class="gx-p-8" style="flex: 1;">
+          <text class="text-muted gx-fs-12">库存</text>
+          <view class="progress gx-mt-4">
+            <view class="progress-bar progress-bar-custom gx-bg-success" style="width: 50%;"></view>
+          </view>
+        </view>
+        <view class="gx-p-8" style="flex: 1;">
+          <text class="text-muted gx-fs-12">综合评分</text>
+          <view class="progress gx-mt-4">
+            <view class="progress-bar progress-bar-custom gx-bg-secondary" style="width: 70%;"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </gx-list-vew>
+</view>

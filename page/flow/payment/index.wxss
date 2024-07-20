@@ -1,0 +1,26 @@
+@import '/app.wxss';
+
+.modal-body {
+  text-align: center;
+}
+.price {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.pin-input {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.pin-input input {
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  margin: 0 5px;
+  font-size: 20px;
+  border: 1px solid rgba(0,0,0,0.1);
+}

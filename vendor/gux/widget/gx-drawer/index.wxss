@@ -1,0 +1,18 @@
+@import "/vendor/gux/gux.wxss";
+
+/* Drawer 样式 */
+.gx-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  transform: translateX(-100%);
+}
+
+/* Drawer 内容样式 */
+.gx-drawer-content {
+  padding: 32rpx;
+}

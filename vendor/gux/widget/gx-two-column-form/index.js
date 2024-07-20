@@ -13,7 +13,12 @@
 ** ─██████████████─██████████████─████████──████████─
 ** ──────────────────────────────────────────────────
 */
+const { util } = require("../../common/util");
+
 Component({
+
+  externalClasses: ['input-group-ex', 'field-ex'],
+  
   properties: {
 
     fields: {
@@ -28,20 +33,9 @@ Component({
       observer: "setReadonly"
     },
 
-    values: {
-      type: Object,
-      value: {},
-      observer: "setValues",
-    },
-
-    rules: {
-      type: Object,
-      value: {},
-    },
-
     labelWidth: {
       type: Number,
-      value: "120",
+      value: 120,
     },
   },
 
@@ -49,9 +43,6 @@ Component({
 
     fields: [],
 
-    values: {},
-
-    shownTypepad: false,
   },
 
   lifetimes: {
@@ -75,14 +66,15 @@ Component({
     hide: function () {},
     resize: function () {},
   },
-  methods: {
 
+  methods: {
     setValues(values) {
       for (let i = 0; i < this.data.fields.length; i++) {
         let field = this.data.fields[i];
         field.value = values[field.name];
         // 转换
         if (field.input === 'select') {
+          if (!field.options) field.options = {values:[]};
           for (let i = 0; i < field.options.values.length; i++) {
             if (field.value === field.options.values[i].value) {
               field.text = field.options.values[i].text;
@@ -105,6 +97,15 @@ Component({
       });
     },
 
+    getValues() {
+      let ret = {};
+      for (let i = 0; i < this.data.fields.length; i++) {
+        let field = this.data.fields[i];
+        ret[field.name] = field.value;
+      }
+      return ret;
+    },
+
     setFields(newData, oldData) {
       if (newData != oldData) {
         this.setData({
@@ -118,13 +119,20 @@ Component({
       for (let i = 0; i < fields.length; i++) {
         let field = fields[i];
         if (field.name === name) {
-          if (Array.isArray(value)) {
-            field.values = {};
-            for (let v of value) {
-              field.values[v] = true;
+          if (field.input == 'select') {
+            let index = parseInt(value);
+            value = field.options.values[index].value;
+            field.text = field.options.values[index].text;
+          }
+          if (Array.isArray(field.value)) {
+            if (Array.isArray(value)) {
+              field.value.concat(value);
+            } else {
+              field.value.push(value);
             }
-          } 
-          field.value = value;
+          } else {
+            field.value = value;
+          }
         }
       }
       this.setData({
@@ -139,18 +147,7 @@ Component({
     },
 
     onSelectValue(e) {
-      let fields = [...this.data.fields]
-      for (let i = 0; i < fields.length; i++) {
-        let field = fields[i];
-        if (field.name === e.currentTarget.id) {
-          let index = parseInt(e.detail.value);
-          field.text = field.options.values[index].text;
-          field.value = e.detail.value;
-        }
-      }
-      this.setData({
-        fields: fields,
-      });
+      this.setValue(e.currentTarget.id, e.detail.value);
     },
 
     onChangeSwitch(e) {
@@ -162,6 +159,7 @@ Component({
           } else if (field.value == 'T') {
             field.value = 'F';
           }
+          break;
         }
       }
       this.setData({
@@ -181,6 +179,24 @@ Component({
       select.show({
         ...e.target.dataset,
       })
+    },
+
+    /*!
+    ** 点击【segment】类型的单选按钮触发事件。
+    */
+    doClickSegment(ev) {
+      const name = ev.currentTarget.dataset.name;
+      const value = ev.currentTarget.dataset.value;
+      this.setValue(name, value);
+    },
+
+    /*!
+    ** 点击【single】类型的单选按钮触发事件。
+    */
+    doClickSingle(ev) {
+      const name = ev.currentTarget.dataset.name;
+      const value = ev.currentTarget.dataset.value;
+      this.setValue(name, value);
     },
 
     /*!
@@ -242,5 +258,16 @@ Component({
         ...ev.target.dataset,
       });
     },
-  },
+
+    didAddImage(ev) {
+      let name = '';
+      let value = '';
+      for (let k in ev.detail) {
+        name = k;
+        value = ev.detail[k];
+      }
+      this.setValue(name, value);
+    },
+
+  }, /* methods */
 });

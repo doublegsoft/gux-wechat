@@ -1,0 +1,33 @@
+<gx-navigation-bar id="navigationBar" title="支付流程" />
+<view class="gx-pos-relative" style="top:{{top}}px;height:{{viewHeight}}px;">
+  <view class="gx-d-flex gx-pos-absolute gx-w-full gx-px-16" 
+        style="height:48px;bottom:0px;align-items: center;">
+    <view class="gx-fs-18 gx-fb">合计：312.45元</view>
+    <button class="gx-ml-auto gx-text-reversed gx-bg-primary" 
+            style="width:120px;margin-right:0;" bind:tap="doPay">立即支付</button>
+  </view>
+  <gx-dialog id="dialog" height="240" top="120">
+    <view>
+      <text class="gx-fs-20">红旗商贸科技有限责任公司</text>
+      <view class="price">¥1000.00</view>
+      <view class="pin-input">
+        <input value="{{password0}}" disabled="{{true}}"
+               type="password" maxlength="1" data-index="0" />
+        <input value="{{password1}}" disabled="{{true}}"
+               type="password" maxlength="1" data-index="1" />
+        <input value="{{password2}}" disabled="{{true}}"
+               type="password" maxlength="1" data-index="2" />
+        <input value="{{password3}}" disabled="{{true}}"
+               type="password" maxlength="1" data-index="3" />
+        <input value="{{password4}}" disabled="{{true}}"
+               type="password" maxlength="1" data-index="4" />
+        <input value="{{password5}}" disabled="{{true}}"
+               type="password" maxlength="1" data-index="5" />
+      </view>
+      <button class="gx-bg-success gx-text-primary-reversed" 
+              bind:tap="doCancel"
+              style="margin-top: 32px;">取消</button>
+    </view>
+  </gx-dialog>
+</view>
+<gx-typepad id="typepad" bind:didTapKey="didTapKey"></gx-typepad>

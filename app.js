@@ -1,7 +1,8 @@
-// app.js
+const { util } = require("@/vendor/gux/common/util");
+
 App({
   
-  sdk: 'v1-test',
+  sdk: 'stdbiz-test',
 
   host: 'http://localhost:8888',
 
@@ -18,7 +19,35 @@ App({
       }
     });
   },
+
   globalData: {
     userInfo: null
-  }
+  },
+
+  sysinfo: null,
+
+  onShowPage(page, offset) {
+    offset = offset || 0;
+    if (!this.sysinfo) {
+      this.sysinfo = wx.getSystemInfoSync();
+    }
+    let navbar = page.selectComponent('#navigationBar');
+    if (navbar != null) {
+      page.setData({
+        top: navbar.getHeight(),
+        viewHeight: this.sysinfo.safeArea.bottom - navbar.getHeight() - offset,
+        viewWidth: this.sysinfo.screenWidth,
+      });
+    } else {
+      let rect = wx.getMenuButtonBoundingClientRect();
+      page.setData({
+        topOfBack: rect.top,
+        heightOfBack: rect.height,
+        top: this.sysinfo.safeArea.top,
+        viewHeight: this.sysinfo.safeArea.bottom - offset,
+        bottonHeight: this.sysinfo.screenHeight - this.sysinfo.safeArea.height - this.sysinfo.safeArea.top,
+        viewWidth: this.sysinfo.screenWidth,
+      });
+    } 
+  },
 })

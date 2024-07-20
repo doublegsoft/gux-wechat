@@ -13,6 +13,12 @@
  ### ─██████████████─██████████████─████████──████████─
  ### ──────────────────────────────────────────────────
  -->
-<view class="horizontal {{alwaysOnTop === true ? 'sticky-top' : ''}}">
-  <slot bind:tap="onClick"></slot>
+<view class="{{alwaysOnTop === true ? 'sticky-top' : ''}}">
+  <scroll-view class="tabs" scroll-x="true" scroll-left="{{scrollLeft}}"
+               scroll-with-animation="true">
+    <view wx:for="{{items}}" wx:key="index" 
+          class="tab-item {{currentTabIndex == index? 'active' : ''}}" 
+          data-current="{{index}}" bind:tap="doClickTabItem">{{item}}</view>
+  </scroll-view>
+  <slot></slot>
 </view>

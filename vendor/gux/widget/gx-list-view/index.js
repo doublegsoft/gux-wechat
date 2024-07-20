@@ -85,11 +85,6 @@ Component({
   },
 
   pageLifetimes: {
-    
-    show: function() {
-      this.data.screenHeight = wx.getSystemInfoSync().screenHeight;
-      this.doRefresh();
-    },
 
   },
 
@@ -138,6 +133,7 @@ Component({
       if (this.data.onDataLoaded) {
         this.data.onDataLoaded(this.data.items);
       }
+      
       return ret;
     },
     
@@ -191,7 +187,6 @@ Component({
         }
       } else if (offset < 0 && offset < -100) {
         if (this.data.enableLoadMore === true) {
-          console.log("doLoadMore")
           this.setData({
             isLoading: true, 
           });
@@ -237,9 +232,52 @@ Component({
       
     },
 
+    /*!
+    ** 滚动条滑动到底部触发的事件。
+    */
     onScrollToLower(ev) {
-      
+      if (this.data.enableLoadMore !== true) {
+        return;
+      }
+      this.triggerEvent('doLoad', {});
     },
+
+    /*!
+    ** 显示加载数据的进度栏。
+    **
+    ** @public
+    */
+    showLoading(items) {
+      this.setData({isLoading: true});
+    },
+
+    /*!
+    ** 隐藏加载数据的进度栏。
+    **
+    ** @public
+    */
+    hideLoading(items) {
+      this.setData({isLoading: false});
+    },
+
+    /*!
+    ** 显示刷新数据的进度栏。
+    **
+    ** @public
+    */
+    showRefreshing(items) {
+      this.setData({isRefreshing: true});
+    },
+
+    /*!
+    ** 隐藏刷新数据的进度栏。
+    **
+    ** @public
+    */
+    hideRefreshing(items) {
+      this.setData({isRefreshing: false});
+    },
+
   },
 })
 

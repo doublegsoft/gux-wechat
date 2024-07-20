@@ -1,0 +1,47 @@
+/* card.wxss */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.card {
+  width: 90%;
+  max-width: 400px;
+  background: linear-gradient(135deg, #4b79a1, #283e51);
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 4px 8px
+  rgba(0, 0, 0, 0.2);
+  font-family: 'Arial', sans-serif;
+  }
+  
+  .card-number {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  }
+  
+  .card-holder {
+  font-size: 18px;
+  margin-bottom: 20px;
+  }
+  
+  .card-details {
+  display: flex;
+  justify-content: space-between;
+  }
+  
+  .card-details view {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-details text {
+    font-size: 14px;
+  }
+  
+  

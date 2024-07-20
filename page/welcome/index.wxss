@@ -1,5 +1,13 @@
 @import "/vendor/gux/gux.wxss";
 
+.page {
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+
 view.content {
   margin: auto; 
   align-items: center; 
@@ -36,8 +44,22 @@ text.title {
   display: block;
 }
 
-text.description {
-  padding-top: 8px;
-  font-size: 18px;
+view.description {
+  padding-top: 24px;
+  font-size: 16px;
   color: var(--color-text-secondary);
+}
+
+button.enter {
+  background-color: #22C678;
+  position: relative;
+  top: 50px;
+  width: 185px;
+  height: 55px;
+  color: white;
+  font-size: 18px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,0 +1,137 @@
+/* 全局样式 */
+.container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+/* 搜索栏样式 */
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-button {
+  margin-left: 8px;
+  padding: 8px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+/* 日历样式 */
+.calendar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.calendar-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.calendar-day,
+.calendar-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 2px;
+}
+
+.calendar-date {
+  background-color: #fff;
+}
+
+.calendar-date.selected {
+  background-color: #000;
+  color: #fff;
+}
+
+.calendar-empty {
+  width: 32px;
+  height: 32px;
+  margin: 2px;
+}
+
+/* 开关控件样式 */
+.toggle-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.switch-button {
+  width: 60px;
+  height: 30px;
+  background-color: #000;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+}
+
+.switch-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* 按钮组样式 */
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.button {
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+/* 底部导航样式 */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: #ccc;
+  padding: 8px;
+  border-top: 1px solid #999;
+}
+
+.footer-button {
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}

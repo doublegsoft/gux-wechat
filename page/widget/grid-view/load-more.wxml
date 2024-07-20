@@ -1,0 +1,44 @@
+<gx-navigation-bar id="navigationBar" title="栅格列表（加载更多）" />
+<view class="gx-pos-relative" style="top:{{top}}px;">
+  <gx-grid-vew id="listMerchandise" local="{{items}}" height="{{height}}" 
+               enableLoadMore="{{true}}" bind:doLoad="doReload">
+               <view class="gx-row">
+      <view class="gx-24-12">
+        <view class="gx-b-1 gx-m-8 gx-mr-4" style="padding: 16px 16px;" wx:for="{{oddItems4GridContact}}" wx:key="contactId" wx:for-item="item">
+          <div class="card product-card">
+            <div class="position-relative">
+              <image src="https://via.placeholder.com/150" alt="Product Image" />
+              <div class="sale-badge">SALE</div>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Gazelle Super x Alltimers Shoes</h5>
+              <div class="product-price">
+                <div class="price-icon">
+                  <image src="https://img.icons8.com/ios-filled/50/000000/us-dollar-circled.png" alt="Price Icon" />
+                </div>
+                254.99
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="icon">
+                <image src="https://img.icons8.com/ios-filled/50/000000/heart.png" alt="Favorite Icon" />
+              </div>
+              <div class="icon">
+                <image src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png" alt="Cart Icon" />
+              </div>
+            </div>
+          </div>
+        </view>
+      </view>
+      <view class="gx-24-12">
+        <view class="gx-b-1 gx-m-8 gx-ml-4" style="padding: 16px 16px;" wx:for="{{evenItems4GridContact}}" wx:key="contactId" wx:for-item="item">
+        <view class="d-flex" style="align-items:center;">  
+          <view>  
+            <view class="gx-text-primary gx-fs-14">{{item.contactName}}</view>
+          </view>  
+        </view>  
+        </view>
+      </view>
+    </view>
+  </gx-grid-vew>
+</view>

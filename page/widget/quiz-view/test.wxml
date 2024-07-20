@@ -1,0 +1,9 @@
+<gx-navigation-bar id="navigationBar" title="小测试" />
+<view class="page gx-pos-relative" style="top:{{top}}px;height:{{viewHeight}}px;">
+  <gx-quiz-view id="quiz" questionnaireQuestions="{{questionnaireQuestions}}" 
+                bind:didTapOption="didTapOption" />
+  <view class="gx-d-flex gx-pos-absolute gx-w-full gx-px-16" 
+        style="height:48px;bottom:0px;align-items: center;">
+    <button class="continue {{optionTapped && 'active'}}" bind:tap="doContinue">继续</button>
+  </view>
+</view>

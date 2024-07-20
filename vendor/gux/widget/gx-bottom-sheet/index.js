@@ -42,27 +42,27 @@ Component({
       let info = wx.getSystemInfoSync();
       let marginBottom = info.screenHeight - info.safeArea.bottom;
 
-      var animation = wx.createAnimation({
-        duration: 300,
+      let animation = wx.createAnimation({
+        duration: 600,
         timingFunction: 'ease',
       })
       this.animation = animation
-      animation.translateY(100).step();
+      animation.translateY(info.screenHeight - this.data.height).step();
       this.setData({
         animationData: animation.export(),
         isOpen: true,
         contentHeight: this.data.height - marginBottom,
       });
-      console.log(this.data.contentHeight);
     },
 
     hide: function() {
-      var animation = wx.createAnimation({
-        duration: 300,
+      let info = wx.getSystemInfoSync();
+      let animation = wx.createAnimation({
+        duration: 600,
         timingFunction: 'ease',
       })
       this.animation = animation
-      animation.translateY(0).step()
+      animation.translateY(info.screenHeight).step()
       this.setData({
         animationData: animation.export(),
         isOpen: false,

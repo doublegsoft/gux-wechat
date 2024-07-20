@@ -1,4 +1,5 @@
-const { xhr } = require("../../vendor/gux/common/xhr");
+const app = getApp();
+const { xhr } = require("@/vendor/gux/common/xhr");
 
 Page({
 
@@ -7,11 +8,7 @@ Page({
   },
 
   onShow() {
-    // xhr.promise({
-    //   url: 'https://gitee.com/alltobenice/COVID-19/raw/master/README.md',
-    // }).then(resp => {
-    //   console.log(resp);
-    // })
+
   },
 
   gotoHome() {

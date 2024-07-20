@@ -1,0 +1,21 @@
+<gx-navigation-bar id="navigationBar" title="加载更多示例" />
+<view class="container" style="margin-top: {{marginTop}}px;">
+  <view class="card">
+    <image class="product-image" src="/images/shoe.png" />
+    <view class="product-details">
+      <text class="product-name">Nike Air Max</text>
+      <text class="product-price">$64.95</text>
+      <view class="quantity-control">
+        <button class="quantity-btn" bindtap="decreaseQuantity"
+                style="margin-right: 48px!important;">-</button>
+        <text class="quantity">{{quantity}}</text>
+        <button class="quantity-btn" bindtap="increaseQuantity" 
+                style="margin-left: 48px!important;">+</button>
+      </view>
+    </view>
+    <view>
+      <view class="product-size">XXL</view>
+      <image class="delete-icon" src="/images/delete.png" bindtap="deleteProduct"/>
+    </view>
+  </view>
+</view>

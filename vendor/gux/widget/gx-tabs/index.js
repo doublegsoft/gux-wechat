@@ -30,34 +30,31 @@ Component({
       value: [],
     },
 
-    align: {
-      type: String,
-      value: 'center',
-    },
-
-    onClick: {
-      type: Function,
-    },
-
   },
 
   data: {
+
+    currentTabIndex: 0,
 
   },
 
   lifetimes: {
     attached() {
-      // console.log(this.data.onClick, typeof this.data.onClick);
+      
     }
   },
 
   methods: {
 
-    onClick(ev) {
-      if (this.data.onClick) {
-      this.data.onClick(ev);
-      }
-    }
+    doClickTabItem(ev) {
+      let index = ev.target.dataset.current;
+      this.setData({
+        currentTabIndex: index,
+      });
+      this.triggerEvent('didClickTabItem', {
+        index: index,
+      });
+    },
     
   }
 });

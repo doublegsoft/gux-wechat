@@ -1,0 +1,23 @@
+<view class="captcha-container">
+  <!-- <view class="captcha-image">
+    <image src="{{backgroundImage}}" class="captcha-bg"></image>
+    <image src="{{puzzleImage}}" class="captcha-puzzle" style="left: {{puzzleLeft}}px; top: {{puzzleTop}}px;"></image>
+  </view> -->
+  <canvas id="captchaImage" type="2d"
+          style="width: 100%; height: 200px;"></canvas>
+  <view class="slider-container">
+    <view class="slider-background"></view>
+    <view class="slider-mask" style="width: 0px;">
+      <view id="captchaSlider" class="slider" style="left: {{sliderValue}}px;" 
+            bind:touchstart="doTouchStartSlider"
+            bind:touchend="doTouchEndSlider"
+            bind:touchmove="doTouchMoveSlider">
+        <text class="fas fa-arrow-right slider-icon"></text>
+      </view>
+    </view>
+    <text class="slider-text" data-text="向右滑动填充拼图"></text>
+  </view>
+  <!-- <view class="captcha-slider">
+    <slider bindchange="onSliderChange" max="{{maxSlide}}" step="1" value="{{sliderValue}}"></slider>
+  </view> -->
+</view>

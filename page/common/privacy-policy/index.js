@@ -1,14 +1,9 @@
+const app = getApp();
+
 Page({
 
-  data: {
-
+  onShow() { 
+    app.onShowPage(this);
   },
 
-  onLoad(options) {
-
-  },
-
-  gotoHome() {
-    wx.navigateBack();
-  }
 })

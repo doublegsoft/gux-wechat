@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "gx-list-vew": "/vendor/gux/widget/gx-list-view/index",
-    "gx-navigation-bar": "/vendor/gux/widget/gx-navigation-bar/index"
-  }
-}

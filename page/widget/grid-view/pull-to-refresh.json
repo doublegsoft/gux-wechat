@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "gx-grid-vew": "/vendor/gux/widget/gx-grid-view/index",
+    "gx-navigation-bar": "/vendor/gux/widget/gx-navigation-bar/index"
+  }
+}

@@ -1,0 +1,6 @@
+<gx-navigation-bar id="navigationBar" title="通知公告" />
+<view class="container" style="margin-top: {{marginTop}}px;">
+  <scroll-view class="scroll-view" scroll-x="{{true}}" scroll-left="{{scrollLeft}}">
+    <view class="scroll-content">{{notificationText}}</view>
+  </scroll-view>
+</view>

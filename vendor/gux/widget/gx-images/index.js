@@ -8,10 +8,22 @@ Component({
       value: [],
     },
 
+    name: {
+      type: String,
+    },
+
     readonly: {
       type: Boolean,
       value: false,
-    }
+    },
+
+    onAddImage: {
+      type: Function,
+    },
+
+    onDelImage: {
+      type: Function,
+    },
 
   },
 
@@ -35,7 +47,10 @@ Component({
           } 
           this.setData({
             images: imgs,
-          })
+          });
+          let detail = {};
+          detail[this.data.name] = imgs[imgs.length - 1];
+          this.triggerEvent('didAddImage', detail);
         },
       });
     },

@@ -1,0 +1,33 @@
+<gx-navigation-bar id="navigationBar" title="骨架页面101" />
+<view class="container" style="margin-top: {{marginTop}}px;">
+  <!-- 顶部区域 -->
+  <view class="top-section">
+    <view class="top-text">
+      <text>Title Line 1</text>
+      <text class="sub-text">Subtitle Line 2</text>
+    </view>
+    <switch class="top-switch" checked="{{topSwitchChecked}}" bindchange="onTopSwitchChange"></switch>
+  </view>
+  
+  <!-- 中间大容器 -->
+  <view class="middle-container">
+    <!-- 可以是图片或视频的占位符 -->
+    <view class="content-placeholder"></view>
+  </view>
+  
+  <!-- 底部项目 -->
+  <view class="bottom-section">
+    <view class="bottom-item" wx:for="{{bottomItems}}" wx:key="index">
+      <view class="item-text">
+        <text>{{item.mainText}}</text>
+        <text class="sub-text">{{item.subText}}</text>
+      </view>
+      <switch class="item-switch" checked="{{item.checked}}" bindchange="onItemSwitchChange"></switch>
+    </view>
+  </view>
+
+  <!-- 底部大按钮 -->
+  <view class="bottom-button">
+    <button bindtap="onButtonTap">Big Button</button>
+  </view>
+</view>

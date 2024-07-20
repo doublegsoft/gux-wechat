@@ -1,0 +1,81 @@
+/* 根容器 */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 10px;
+  background-color: #f0f4f8;
+}
+
+/* 顶部图标菜单 */
+.top-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background-color: #d3dce6;
+  border-radius: 10px;
+}
+
+/* 列表视图 */
+.list-view {
+  flex: 1;
+  margin: 20px 0;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.circle {
+  width: 24px;
+  height: 24px;
+  border: 2px solid black;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.text {
+  flex: 1;
+}
+
+.main-text {
+  display: block;
+  font-weight: bold;
+}
+
+.sub-text {
+  display: block;
+  color: gray;
+}
+
+.checkmark {
+  font-size: 24px;
+  color: gray;
+}
+
+/* 底部导航栏 */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.nav-circle {
+  width: 24px;
+  height: 24px;
+  background-color: #ffffff;
+  border: 2px solid black;
+  border-radius: 50%;
+}

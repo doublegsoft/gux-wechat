@@ -1,0 +1,24 @@
+<gx-navigation-bar id="navigationBar" title="骨架页面003" />
+<view class="container" style="margin-top: {{marginTop}}px;">
+  <!-- 顶部图标菜单 -->
+  <view class="top-icons">
+    <view class="icon" wx:for="{{icons}}" wx:key="index"></view>
+  </view>
+  
+  <!-- 列表视图 -->
+  <view class="list-view">
+    <view class="list-item" wx:for="{{listItems}}" wx:key="index">
+      <view class="circle"></view>
+      <view class="text">
+        <text class="main-text">{{item.mainText}}</text>
+        <text class="sub-text">{{item.subText}}</text>
+      </view>
+      <view class="checkmark">&#10003;</view>
+    </view>
+  </view>
+
+  <!-- 底部导航栏 -->
+  <view class="bottom-nav">
+    <view class="nav-circle" wx:for="{{navItems}}" wx:key="index"></view>
+  </view>
+</view>

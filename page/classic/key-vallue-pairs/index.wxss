@@ -1,0 +1,39 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  overflow: hidden; /* 确保内容不溢出 */
+}
+
+.title {
+  flex: 0 0 auto; /* 固定宽度以适应内容 */
+  margin-right: 10px; /* 与后续部分的间隔 */
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+}
+
+.dots {
+  flex: 1; /* 自动扩展以占据剩余空间 */
+  border-bottom: 1px dashed #ccc; /* 使用虚线来表示省略号 */
+  margin: 0 10px; /* 控制点和文本之间的间距 */
+}
+
+.value {
+  flex: 0 1 auto; /* 自动扩展以适应内容 */
+  color: #666;
+  word-wrap: break-word; /* 自动换行 */
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}

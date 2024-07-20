@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "gx-quiz-view": "/vendor/gux/widget/gx-quiz-view/index",
+    "gx-navigation-bar": "/vendor/gux/widget/gx-navigation-bar/index"
+  }
+}

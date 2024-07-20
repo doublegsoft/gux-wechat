@@ -1,4 +1,5 @@
-<view style="padding-left: 12px; padding-right: 12px;">
+<gx-navigation-bar id="navigationBar" title="实名认证" />
+<view class="gx-pos-relative" style="top:{{top}}px;padding-left: 12px; padding-right: 12px;">
   <view style="width:100%;margin:auto;">
     <view style="text-align:center">
       <view style="font-size:19px;font-family:'方正小标宋简体';font-weight:bold;">个人实名认证服务协议</view>

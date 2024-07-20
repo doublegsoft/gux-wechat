@@ -1,0 +1,19 @@
+@import "/app.wxss";
+
+button.continue.active {
+  background-color: #45C486;
+  color: #F4F3F6;
+}
+
+button.continue {
+  background-color: #747475;
+  color: #EDE8E2;
+  width: 185px;
+  height: 45px;
+  font-size: 18px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}

@@ -18,7 +18,7 @@
     <label class="{{activeIndex == index ? 'active' : ''}}" 
            bindtap="doNavigate" data-index="{{index}}"
            style="flex: 0 0 {{cssWidth}};"
-           wx:for="{{navigators}}" wx:for-item="nav">
+           wx:for="{{navigators}}" wx:for-item="nav" wx:key="text">
       <text class="{{nav.icon}}"></text>
       <span>{{nav.text}}</span>
     </label>

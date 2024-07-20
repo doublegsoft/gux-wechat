@@ -1,0 +1,10 @@
+<gx-navigation-bar id="navigationBar" title="日历导航" 
+                   background="#c6f68d"/>
+<view class="gx-pos-relative" style="top: {{top}}px;">
+  <gx-calendar id="event" isOpen="{{true}}" 
+               background="#c6f68d" 
+               selected="{{selectedDays}}" lockDay="{{lockday}}" 
+               bind:select="cmfclick" bind:getdate="getdate" 
+               bind:checkall="checkall" 
+               bind:clear="clear"></gx-calendar>           
+</view>

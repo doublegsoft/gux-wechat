@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "gx-dialog": "/vendor/gux/widget/gx-dialog/index",
+    "gx-slide-captcha": "/vendor/gux/widget/gx-slide-captcha/index",
+    "gx-typepad":"/vendor/gux/widget/gx-typepad/index",
+    "gx-navigation-bar": "/vendor/gux/widget/gx-navigation-bar/index"
+  }
+}

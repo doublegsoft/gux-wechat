@@ -2,9 +2,6 @@
   "pages": [
     "page/welcome/index",
     "page/index",
-    "page/demo/list-view/no-data",
-    "page/demo/list-view/pull-to-refresh",
-    "page/demo/list-view/load-more",
     "page/common/search/index",
     "page/common/success/index",
     "page/common/failure/index",
@@ -18,12 +15,37 @@
     "page/classic/my-order/index",
     "page/classic/order-list/index",
     "page/classic/display-window/index",
-    
-    "page/demo/tabs/date",
-    "page/demo/tabs/image",
-    "page/demo/tabs/segment",
-    "page/demo/form/two-column-form"
-    
+    "page/widget/tabs/date",
+    "page/widget/tabs/image",
+    "page/widget/tabs/segment",
+    "page/widget/form/two-column-form",
+    "page/widget/calendar/calendar-on-top",
+    "page/widget/chart/pie",
+    "page/widget/tabs/swiper",
+    "page/widget/list-view/no-data",
+    "page/widget/list-view/pull-to-refresh",
+    "page/widget/list-view/load-more",
+    "page/classic/credit-card/index",
+    "page/classic/shoe-in-grid/index",
+    "page/classic/shoe-in-order/index",
+    "page/classic/traffic/index",
+    "page/classic/favourite-podcast/index",
+    "page/classic/profile/index",
+    "page/classic/key-vallue-pairs/index",
+    "page/classic/skeleton101/index",
+    "page/classic/skeleton003/index",
+    "page/classic/skeleton210/index",
+    "page/classic/skeleton209/index",
+    "page/classic/skeleton206/index",
+    "page/classic/scroll-notification/index",
+    "page/widget/grid-view/pull-to-refresh",
+    "page/widget/grid-view/load-more",
+    "page/flow/payment/index",
+    "page/flow/signup/index",
+    "page/flow/pin/index",
+    "page/classic/courses/index",
+    "page/widget/rich-view/article",
+    "page/widget/quiz-view/test"
   ],
   "subpackages": [],
   "window": {
@@ -34,5 +56,8 @@
     "navigationStyle": "custom"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "resolveAlias": {
+    "@/*": "/*"
+  }
 }

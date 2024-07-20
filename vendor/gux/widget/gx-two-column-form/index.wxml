@@ -15,11 +15,12 @@
  -->
 <form catchsubmit='doSubmit' class="form-horizontal" catch:tap="hideAllCustomInputs">
 	<block wx:for="{{fields}}" wx:key="name" wx:for-item="field">
-		<view class="title" wx:if="{{field.input==='title'}}">{{field.title}}</view>
-		<view wx:else class="field" 
+    <view wx:if="{{field.input==='hidden'}}" style="display: none"></view>
+		<view class="title" wx:elif="{{field.input==='title'}}">{{field.title}}</view>
+		<view wx:else class="field field-ex" 
           style="{{field.input == 'longtext' || field.input == 'images'  ? 'align-items: unset;' : ''}}">
 			<view class="label {{field.required?'redstar':''}}" 
-            style="{{labelWidth > 0? ('min-width:'+labelWidth+'rpx;'):''}} {{field.input == 'longtext' ? 'line-height: 56rpx;' : ''}} {{field.input == 'images' ? 'margin-top: 4px;' : ''}}"
+            style="min-width: {{labelWidth}}rpx; {{field.input == 'longtext' ? 'line-height: 56rpx;' : ''}} {{field.input == 'images' ? 'margin-top: 4px;' : ''}}"
             wx:if="{{field.title && field.input!='hidden'}}">{{field.title}}：
 			</view>
       <!-- readonly -->
@@ -27,10 +28,10 @@
         <view wx:if="{{field.input == 'images'}}" style="width: 100%; border-bottom: 1px solid #eee; padding-bottom: 8px;">
           <images class="df w100" images="{{field.value}}" readonly="true"></images>
         </view>
-        <view wx:elif="{{field.input == 'longtext'}}" class="input-group form-item-longtext" style="width: 100%;">
+        <view wx:elif="{{field.input == 'longtext'}}" class="input-group input-group-ex form-item-longtext" style="width: 100%;">
           <view class="input">{{field.value}}</view>
         </view>
-        <view wx:else class="input-group" style="width: 100%;">
+        <view wx:else class="input-group input-group-ex" style="width: 100%;">
           <view class="input">{{field.value}}</view>
         </view>
       </block>  
@@ -76,7 +77,7 @@
       <!-- time -->
       <view wx:elif="{{field.input === 'time'}}" class="input-group">
         <view class="input">
-          <picker class='mt15 c9' mode="time" id="{{field.name}}" bindchange="onChangeValue" data-typekey='c2' value="{{field.value}}">
+          <picker class='mt15 c9' mode="time" id="{{field.name}}" bind:change="onChangeValue" data-typekey='c2' value="{{field.value}}">
             <view class="{{field.value?'c2':'cb'}}">{{field.value?field.value:'请选择时间'}}</view>
           </picker>
           <view class="form-srarrow">
@@ -157,7 +158,11 @@
       </view>
 			<!-- longtext -->
 			<view wx:elif="{{field.input==='longtext'}}" class="form-item-longtext" style="width: 100%; border-bottom: 1px solid #eee;">
-        <textarea class="c2" maxlength='-1' id="{{field.name}}" name="{{field.name}}" bindblur="bindKeyInput" model:value='{{field.value}}' placeholder='{{field.placeholder?field.placeholder:"请输入"}}' placeholder-class="cb placeholder" style="height: 80px;"></textarea>
+        <textarea class="c2" maxlength='-1' 
+                  id="{{field.name}}" name="{{field.name}}" 
+                  model:value='{{field.value}}' 
+                  placeholder='{{field.placeholder?field.placeholder:"请输入"}}' placeholder-class="cb placeholder" style="height: 80px;"
+                  bind:input="onChangeValue"></textarea>
       </view>
 			<!-- check -->
       <view wx:elif="{{field.input==='check'}}" class="form-item-checkbox df">
@@ -182,20 +187,68 @@
           </label>
         </radio-group>
       </view>
+      <!-- segment -->
+      <view wx:elif="{{field.input==='segment'}}" class="btn-group">
+        <view wx:for="{{field.options.values}}" wx:key="value"
+                bind:tap="doClickSegment"
+                data-value="{{item.value}}" data-name="{{field.name}}"
+                class="btn {{field.value == item.value ? 'active' : ''}}" 
+                style="width: {{field.width || 60}}px; {{index != field.options.values.length - 1 ? 'margin-right: -1px;' : ''}}">{{item.text}}</view>
+      </view>
+      <!-- single -->
+      <view wx:elif="{{field.input==='single'}}" class="btn-group">
+        <block wx:if="{{field.options.type == 'icon'}}">
+          <view wx:for="{{field.options.values}}" wx:key="value"
+                bind:tap="doClickSingle"
+                data-value="{{item.value}}" data-name="{{field.name}}"
+                class="gx-fs-28 gx-pos-relative {{item.icon}} {{field.value == item.value ? item.active : item.icon}}" 
+                style="margin-right: 24px; top: 4px;"></view>
+        </block>    
+        <block wx:else>
+          <view wx:for="{{field.options.values}}" wx:key="value"
+                  bind:tap="doClickSingle"
+                  data-value="{{item.value}}" data-name="{{field.name}}"
+                  class="btn {{field.value == item.value ? 'active' : ''}}" 
+                  style="margin-right: 16px;">{{item.text}}</view>
+        </block>        
+      </view>
+      <!-- multiple -->
+      <view wx:elif="{{field.input==='multiple'}}" class="btn-group">
+        <button wx:for="{{field.options.values}}" wx:key="value"
+                bind:tap="doClickSegment"
+                data-value="{{item.value}}" data-name="{{field.name}}"
+                class="btn {{field.value == item.value ? 'active' : ''}}" 
+                style="width: {{field.width || 60}}px; {{index != field.options.values.length - 1 ? 'margin-right: -1px;' : ''}}">{{item.text}}</button>
+      </view>
+      <!-- rating -->
+      <view wx:elif="{{field.input==='rating'}}" class="btn-group">
+        <button wx:for="{{field.options.values}}" wx:key="value"
+                bind:tap="doClickSegment"
+                data-value="{{item.value}}" data-name="{{field.name}}"
+                class="btn {{field.value == item.value ? 'active' : ''}}" 
+                style="width: {{field.width || 60}}px; {{index != field.options.values.length - 1 ? 'margin-right: -1px;' : ''}}">{{item.text}}</button>
+      </view>
       <!-- bool -->
-      <view wx:elif="{{field.input==='bool'}}" class="input-group">
+      <view wx:elif="{{field.input==='bool'}}">
         <label id="{{field.name}}" class="c-switch c-switch-label c-switch-pill c-switch-info" style="min-width: 48px;" bindtap="onChangeSwitch">
           <span class="c-switch-slider {{field.value === true || field.value === 'T' ? 'checked' : ''}}" data-checked="是" data-unchecked="否"></span>
         </label>
       </view>
 			<!-- images -->
       <view wx:elif="{{field.input==='images'}}" style="width: 100%; border-bottom: 1px solid #eee; padding-bottom: 8px;">
-        <gx-images class="df w100" images="{{field.value}}"></gx-images>
+        <gx-images name="{{field.name}}" images="{{field.value}}"
+                   bind:didAddImage="didAddImage">
+        </gx-images>
       </view>
       <!--  text -->
       <view wx:else class="input-group">
         <view class="input">
-          <input wx:if="{{disabled !== true}}" id="{{field.name}}" name="{{field.name}}" disabled="{{field.disabled}}" value='{{field.value}}' bindinput="bindKeyInput" placeholder='{{field.placeholder?field.placeholder:"请输入"}}' placeholder-class='placeholder'></input>
+          <input wx:if="{{disabled !== true}}" 
+                 id="{{field.name}}" name="{{field.name}}" 
+                 disabled="{{field.disabled}}" 
+                 value='{{field.value}}' 
+                 placeholder='{{field.placeholder?field.placeholder:"请输入"}}' placeholder-class='placeholder' 
+                 bind:change="onChangeValue"></input>
           <input wx:else class="form-item-ipt" id="{{field.name}}" name="{{field.name}}" disabled="true" value='{{field.value}}'></input>
         </view>
         <view wx:if="{{field.unit}}" class="unit">{{field.unit}}</view>
