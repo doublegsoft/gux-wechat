@@ -18,9 +18,22 @@ Page({
       name: 'amount',
       input: 'number',
     },{
+      title: '日期',
+      name: 'date',
+      input: 'date',
+    },{
+      title: '时间',
+      name: 'time',
+      input: 'time',
+    },{
       title: '地区',
       name: 'district',
       input: 'district',
+    },{
+      title: '身高',
+      name: 'height',
+      input: 'ruler',
+      unit: 'cm',
     },{
       title: '文本',
       name: 'text',

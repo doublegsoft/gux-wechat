@@ -1,7 +1,8 @@
 <gx-navigation-bar id="navigationBar" title="编辑表单"></gx-navigation-bar>
 <view style="margin-top: {{marginTop}}px;">
   <gx-two-column-form id="form" fields="{{fields}}" labelWidth="150" />
-  <button class="gx-bg-primary gx-text-reversed gx-b-round" 
-            bind:tap="doSave"
-            style="height: 36px; line-height: 20px;text-align: center; width: 80%;">保存</button>
+  <button class="gx-bg-primary gx-text-reversed gx-b-round gx-mt-16" 
+          bind:tap="doSave"
+          style="height: 36px; line-height: 20px;text-align: center; width: 80%;">保存</button>
+  <view style="height:32px;"></view>   
 </view>

@@ -103,6 +103,16 @@
   </view>
   <view class="gx-m-8 gx-fs-14">
     <text class="gx-ml-8 fas fa-list-ul"></text>
+    <text class="gx-ml-8 gx-fb gx-fs-15">图表示例</text>
+  </view>
+  <view>
+    <navigator url="/page/widget/chart/pie" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+      <view class="gx-tile-body">饼状图形</view>
+      <view class="fas fa-angle-right gx-fs-18 access"></view>
+    </navigator>
+  </view>
+  <view class="gx-m-8 gx-fs-14">
+    <text class="gx-ml-8 fas fa-list-ul"></text>
     <text class="gx-ml-8 gx-fb gx-fs-15">整体部件</text>
   </view>
   <view>
@@ -112,16 +122,6 @@
     </navigator>
     <navigator url="/page/widget/quiz-view/test" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <text class="gx-tile-body">简短测试</text>
-      <view class="fas fa-angle-right gx-fs-18 access"></view>
-    </navigator>
-  </view>
-  <view class="gx-m-8 gx-fs-14">
-    <text class="gx-ml-8 fas fa-list-ul"></text>
-    <text class="gx-ml-8 gx-fb gx-fs-15">图标示例</text>
-  </view>
-  <view>
-    <navigator url="/page/widget/chart/pie" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
-      <view class="gx-tile-body">饼状图形</view>
       <view class="fas fa-angle-right gx-fs-18 access"></view>
     </navigator>
   </view>

@@ -172,7 +172,7 @@ Component({
     },
 
     onChangeRuler(e) {
-      let select = this.selectComponent('#selectRuler');
+      let select = this.selectComponent('#ruler');
       select.setOnClosed(val => {
         this.setValue(e.target.id, val);
       });

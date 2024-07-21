@@ -16,29 +16,11 @@
 @import "/asset/font/fontawesome.wxss";
 @import "/vendor/gux/gux.wxss";
 
-.input_view {
-  width: 700rpx;
-  height: 500rpx;
-  background: #C5C9D0;
-  margin: 25rpx auto;
-  border-radius: 10rpx;
-  padding: 40rpx;
-  box-sizing: border-box;
-}
-
 .title {
   display: block;
   line-height: 90rpx;
   font-size: 30rpx;
   color: #aaa;
-}
-
-.input_box {
-  display: flex;
-  align-items: center;
-  padding: 20rpx 0;
-  height: 90rpx;
-  border-bottom: 1px solid #efefef;
 }
 
 .input_label {

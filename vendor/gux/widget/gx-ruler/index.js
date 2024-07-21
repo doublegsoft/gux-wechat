@@ -25,6 +25,7 @@ Component({
 
     isOpen: false,
     height: 0,
+
     canvasWidth: 750,
     canvasHeight: 152,
     
@@ -46,6 +47,7 @@ Component({
     },
   },
   methods: {
+
     _setValue: function (newData, oldData) {
       this.setData({
         value: newData.value,
@@ -66,8 +68,8 @@ Component({
         unit: params.unit,
         value: params.value || 50,
       });
-      this.drawRuler();
-      let res = await wx.getSystemInfo();
+      
+      let res = wx.getSystemInfoSync();
       let height = res.windowHeight * res.pixelRatio;
       // 背景遮罩层
       var animation = wx.createAnimation({
@@ -90,6 +92,8 @@ Component({
           animationData: animation.export(),
         });
       }.bind(this), 0);
+
+      this.drawRuler();
     },
 
     hide(value) {
@@ -115,25 +119,38 @@ Component({
 
     //获取系统信息
     getSystemInfo: function () {
-      let _this = this;
-      wx.getSystemInfo({
-        success: function (res) {
-          let canvasWidth = res.windowWidth;
-          let screenHeight = res.windowHeight;
-          let pixelRatio = res.pixelRatio;
-          _this.setData({
-            canvasWidth,
-            screenHeight,
-            pixelRatio,
-          });
-        },
+      let res = wx.getSystemInfoSync();
+      this.setData({
+        canvasWidth: res.windowWidth,
+        screenHeight: res.windowHeight,
+        pixelRatio: res.pixelRatio,
       });
     },
 
     drawRuler: function () {
+      if (!this.canvas) {
+        wx.createSelectorQuery().in(this)
+        .select('#canvas').fields({ node: true, size: true }).exec(res => {
+          this.canvas = res[0].node
+          let ctx = this.canvas.getContext('2d');
+
+          let dpr = wx.getSystemInfoSync().pixelRatio;
+          this.canvas.width = res[0].width * dpr;
+          this.canvas.height = res[0].height * dpr;
+          ctx.scale(dpr, dpr);
+          this.draw();
+        });
+      } else {
+        this.draw();
+      }
+
+    },
+
+    draw: function() {
       let _this = this;
       let pixelRatio = this.data.pixelRatio;
-      let canvasHeight = this.data.canvasHeight - 59; //canvas高度
+      let canvasHeight = this.canvas.height;
+      let canvasWidth = this.canvas.width;
       let ratio = this.data.ratio; //偏移量
       let ruleOrigin = 0; //rule起点
       let color = "177,177,177"; //渐变颜色
@@ -144,11 +161,7 @@ Component({
         { range: 1, color: "rgba(" + color + ",0)" },
       ];
 
-      let canvasWidth = _this.data.canvasWidth;
-      let canvas = wx.createSelectorQuery().select('#canvas');
-      console.log(canvas);
-      // let ctx = canvas.getContext('2d');
-      let ctx = wx.createCanvasContext('canvas', this);
+      let ctx = this.canvas.getContext('2d');
       ctx.clearRect(0, 0, canvasWidth, canvasHeight);
       const grd = ctx.createLinearGradient(
         ruleOrigin,
@@ -160,28 +173,28 @@ Component({
       grd.addColorStop(opacityRange[1].range, opacityRange[1].color);
       grd.addColorStop(opacityRange[2].range, opacityRange[2].color);
       grd.addColorStop(opacityRange[3].range, opacityRange[3].color);
-      ctx.setStrokeStyle(grd);
-
+      ctx.strokeStyle = grd;
+      
       let value = _this.data.value * 10;
       //误差修正
-      if (2 < pixelRatio && pixelRatio < 3) {
-        pixelRatio = 4;
-      }
-      let centerPoint = Math.ceil(canvasWidth / 2 + pixelRatio); //中心点
+      // if (2 < pixelRatio && pixelRatio < 3) {
+      //   pixelRatio = 4;
+      // }
+      let centerPoint = Math.ceil(canvasWidth / 2 / pixelRatio); //中心点
       let preScale = Math.ceil(centerPoint / ratio); //中心点左边平均刻度份数
       let maxVal = Math.ceil(value - centerPoint) + canvasWidth; //最大刻度
       let minVal = Math.ceil(value - preScale); //最小刻度
-      ctx.setLineWidth(1);
-      ctx.setTextAlign("center");
+      ctx.lineWidth = 1;
+      ctx.textAlign = "center";
       //中间线
       ctx.beginPath();
-      ctx.setFontSize(36);
-      ctx.setFillStyle(this.data.valueColor); //顶部颜色
+      ctx.font = "bold 16px serif";
+      ctx.fillStyle = this.data.valueColor; //顶部颜色
       let metrics = ctx.measureText(this.data.value);
       ctx.fillText(this.data.value, centerPoint, 30);
-      ctx.setFontSize(14);
+      ctx.fontSize = 14;
       ctx.fillText(this.data.unit, centerPoint + 15 + metrics.width / 2, 30);
-      ctx.setStrokeStyle(this.data.pointerColor); //选中刻度线颜色-红色
+      ctx.strokeStyle = this.data.pointerColor; //选中刻度线颜色-红色
       ctx.moveTo(centerPoint, 59);
       ctx.lineTo(centerPoint, 152);
       ctx.stroke();
@@ -189,13 +202,13 @@ Component({
 
       //刻度值
       ctx.beginPath();
-      ctx.setFontSize(12);
-      ctx.setStrokeStyle(grd);
-      ctx.setFillStyle("rgb(177,177,177)");
+      ctx.strokeStyle = grd;
+      ctx.fillStyle = "rgb(177,177,177)";
       let n = 0;
       let drawX = "";
       for (let i = minVal; i <= maxVal; i++) {
         drawX = n.toFixed(1) * ratio + ruleOrigin;
+        drawX = drawX - 8 /* FIXME: WHY IS 8? */;
         if (i % ratio == 0) {
           ctx.fillText(i > 30 ? i / ratio : "", i >= 30 ? drawX : "", 80);
           ctx.moveTo(i > 30 ? drawX : "", 86);
@@ -210,7 +223,6 @@ Component({
       }
       ctx.stroke();
       ctx.closePath();
-      ctx.draw();
     },
 
     start: function (e) {
@@ -220,6 +232,7 @@ Component({
 
     move: function (e) {
       let min = e.touches[0].x - this.touchStart;
+
       let value = (Number(this.data.touchEnd * 10) + Number(-min)).toFixed(
         1
       );
@@ -232,11 +245,19 @@ Component({
       if (value > maxValue) {
         value = maxValue;
       }
-      value = (value / 10).toFixed(1);
+      let val = parseInt(value);
+      console.log(val, value);
+      value = (val / 10 - 0.1).toFixed(1);
       this.setData({
-        value,
+        value: value,
       });
       this.drawRuler();
     },
-  },
+
+    end: function(ev) {
+      
+    },
+
+  }, // methods
+
 });

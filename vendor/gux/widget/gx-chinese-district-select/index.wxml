@@ -15,17 +15,17 @@
  -->
 <view class="dialog" hidden="{{!isOpen}}">
   <view class="bottom-dialog" animation="{{animationData}}" 
-        style="height: 90vh; background-color: #f0f0f0;">
+        style="height: 80vh; background-color: #f0f0f0;">
     <view class="bottom-dialog-title">
-      <a style="color: var(--color-success); font-size: 16px; position: absolute; top: 12px; right: 15px;" 
-        bindtap="onConfirm">确定</a>
-      <span>{{title}}</span>
+      <view style="color: var(--color-success); font-size: 16px; position: absolute; top: 12px; right: 15px;" 
+        bindtap="onConfirm">确定</view>
+      <!-- <view class="gx-fs-16 gx-fb gx-pos-relative" style="top:12px;">{{title}}</view> -->
       <a style="color: var(--color-error); font-size: 16px; position: absolute; top: 12px; left: 75px;" 
         bindtap="onClear">清除</a>
       <a style="color: var(--color-error); font-size: 16px; position: absolute; top: 12px; left: 15px;" 
         bindtap="onHide">关闭</a>
     </view>
-    <view class="bottom-dialog-body" style="padding-top: 12px;">
+    <view class="bottom-dialog-body" style="margin-top: 48px;">
       <view style="padding-bottom: 4px;">
         <view bindtap="onSelectProvince" class="nav">{{selectedProvinceName}}
           <text class="fas fa-chevron-right hint-icon arrow"></text>
@@ -40,7 +40,7 @@
           <text class="fas fa-chevron-right hint-icon arrow"></text>
         </view>
       </view>
-      <view style="border-top: 2px solid #10aeff; margin-right: 12px;"></view>
+      <view style="border-top: 2px solid #10aeff;"></view>
       <scroll-view style="height: {{height}}vh;" scroll-y="true">
         <view bindtap="onSelectDistrict" wx:for="{{districts}}" wx:key="chineseDistrictCode" wx:for-item="district" class="nav" data-district="{{district}}">{{district.chineseDistrictName}}</view>
       </scroll-view>
