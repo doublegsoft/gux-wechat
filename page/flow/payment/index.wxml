@@ -1,13 +1,13 @@
 <gx-navigation-bar id="navigationBar" title="支付流程" />
-<view class="gx-pos-relative" style="top:{{top}}px;height:{{viewHeight}}px;">
-  <view class="gx-d-flex gx-pos-absolute gx-w-full gx-px-16" 
+<view class="page gx-pos-relative" style="top:{{top}}px;height:{{viewHeight}}px;">
+  <view class="gx-d-flex gx-pos-absolute gx-w-full gx-mx-16" 
         style="height:48px;bottom:0px;align-items: center;">
     <view class="gx-fs-18 gx-fb">合计：312.45元</view>
     <button class="gx-ml-auto gx-text-reversed gx-bg-primary" 
-            style="width:120px;margin-right:0;" bind:tap="doPay">立即支付</button>
+            style="width:120px;margin-right:64rpx;" bind:tap="doPay">立即支付</button>
   </view>
   <gx-dialog id="dialog" height="240" top="120">
-    <view>
+    <view class="gx-p-16">
       <text class="gx-fs-20">红旗商贸科技有限责任公司</text>
       <view class="price">¥1000.00</view>
       <view class="pin-input">

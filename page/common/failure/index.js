@@ -1,11 +1,12 @@
+const app = getApp();
+const { sdk } = require('@/sdk/' + app.sdk)
 const { gx } = require('@/vendor/gux/common/gx');
 
 Page({
 
   data: {
-
+    image: sdk.getFailureImage(),
   },
-
 
   onLoad(options) {
     options = options || {};

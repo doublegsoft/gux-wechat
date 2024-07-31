@@ -43,7 +43,7 @@
               <view class="{{field.value?'c2':'cb'}}">{{field.value?field.text:'请选择'}}</view>
             </picker>
             <view class="form-srarrow">
-              <text class="fas fa-chevron-right hint-icon"></text>
+              <text class="gx-i gx-i-arrow-down hint-icon"></text>
             </view>
           </block>
           <block wx:else>
@@ -59,7 +59,7 @@
             {{field.value?field.value.districtName:(field.placeholder || '请选择')}}
           </view>
           <view class="form-srarrow">
-            <text class="fas fa-chevron-right hint-icon"></text>
+            <text class="gx-i gx-i-arrow-down hint-icon"></text>
           </view>
         </view>
       </view>
@@ -70,7 +70,7 @@
             <view class="{{field.value?'c2':'cb'}}">{{field.value?field.value:'请选择日期'}}</view>
           </picker>
           <view class="form-srarrow">
-            <text class="far fa-calendar hint-icon"></text>
+            <text class="gx-i gx-i-date gx-fs-20 hint-icon"></text>
           </view>
         </view>
       </view>
@@ -81,7 +81,7 @@
             <view class="{{field.value?'c2':'cb'}}">{{field.value?field.value:'请选择时间'}}</view>
           </picker>
           <view class="form-srarrow">
-            <text class="far fa-clock hint-icon"></text>
+            <text class="gx-i gx-i-time gx-fs-20 hint-icon"></text>
           </view>
         </view>
       </view>
@@ -97,9 +97,6 @@
             {{field.value?field.value:(field.placeholder || '请选择')}}
           </view>
           <view wx:if="{{field.unit}}" class="unit">{{field.unit}}</view>
-          <!-- <view class="form-srarrow">
-            <text class="fas fa-ruler-horizontal hint-icon"></text>
-          </view> -->
         </view>
       </view>
       <!-- number -->
@@ -114,7 +111,7 @@
                  catch:tap="doShowTypepad"
                  data-input="number"
                  placeholder="{{field.placeholder?field.placeholder:'请输入'}}" 
-                 placeholder-class="placeholder"
+                 placeholder-class="cb"
                  class="gx-w-full gx-text-primary"></input>
           <input wx:else name="{{field.name}}" disabled="{{true}}" value='{{field.value}}'></input>
         </view>
@@ -132,7 +129,7 @@
                  data-input="mobile"
                  catch:tap="doShowTypepad"
                  placeholder="{{field.placeholder?field.placeholder:'请输入'}}" 
-                 placeholder-class="placeholder"
+                 placeholder-class="cb"
                  class="gx-w-full"></input>
           <input wx:else name="{{field.name}}" disabled="{{true}}" value='{{field.value}}'></input>
         </view>
@@ -150,7 +147,7 @@
                  data-input="id"
                  catch:tap="doShowTypepad"
                  placeholder="{{field.placeholder?field.placeholder:'请输入'}}" 
-                 placeholder-class="placeholder"
+                 placeholder-class="cb"
                  class="gx-w-full"></input>
           <input wx:else name="{{field.name}}" disabled="{{true}}" value='{{field.value}}'></input>
         </view>
@@ -201,7 +198,7 @@
           <view wx:for="{{field.options.values}}" wx:key="value"
                 bind:tap="doClickSingle"
                 data-value="{{item.value}}" data-name="{{field.name}}"
-                class="gx-fs-28 gx-pos-relative {{item.icon}} {{field.value == item.value ? item.active : item.icon}}" 
+                class="gx-fs-28 gx-pos-relative {{field.value == item.value ? item.active : item.icon}}" 
                 style="margin-right: 24px; top: 4px;"></view>
         </block>    
         <block wx:else>
@@ -247,7 +244,7 @@
                  id="{{field.name}}" name="{{field.name}}" 
                  disabled="{{field.disabled}}" 
                  value='{{field.value}}' 
-                 placeholder='{{field.placeholder?field.placeholder:"请输入"}}' placeholder-class='placeholder' 
+                 placeholder='{{field.placeholder?field.placeholder:"请输入"}}' placeholder-class='cb' 
                  bind:change="onChangeValue"></input>
           <input wx:else class="form-item-ipt" id="{{field.name}}" name="{{field.name}}" disabled="true" value='{{field.value}}'></input>
         </view>

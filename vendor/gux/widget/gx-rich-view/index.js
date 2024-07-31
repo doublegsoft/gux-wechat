@@ -57,7 +57,6 @@ Component({
             type: 'img',
             ...attrs,
           });
-          console.log(attrs);
         }
       }
       this.setData({

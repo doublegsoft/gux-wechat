@@ -13,7 +13,7 @@
  ### ─██████████████─██████████████─████████──████████─
  ### ──────────────────────────────────────────────────
  -->
-<view class="mask" hidden="{{!isOpen}}"></view>
+<view class="gx-mask" hidden="{{!isOpen}}"></view>
 <view class="dialog" animation="{{animationData}}"
       style="top:-{{height}}px;height:{{height}}px;background-color:#ffffff;">
   <slot></slot>

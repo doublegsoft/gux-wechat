@@ -1,23 +1,101 @@
 @import '/vendor/gux/gux.wxss';
 
+page {
+  --color-primary: #3a693a!important;
+  --color-primary-inverse: #a0d49b;
+  --color-primary-light: #8BBFFF;
+  --color-primary-dark: #1F4CB7;
+
+  --color-secondary: #52634f;
+  --color-tertiary: #39656b;
+
+  --color-success: #3BAA27!important;
+  --color-error: #ba1a1a!important;
+  --color-danger: #D81E7B!important;
+  --color-warning: #BC9A03!important;
+  --color-info: #017FB5!important;
+  --color-light: rgba(0, 0, 0, 0.2);
+
+  --color-text-primary: #181d17!important;
+  --color-text-primary-inverse: #eef2e9;
+  --color-text-secondary: #424940;
+  --color-text-tertiary: #72796f;
+
+  --color-text-disabled: #c2c9bd;
+
+  /*
+  ** 页面整体的背景
+  */
+  --color-background: #f7fbf1!important;
+
+  /*
+  ** 子元素表面的背景
+  */
+  --color-surface: #bbf0b5!important;
+  --color-surface-primary: #bbf0b5;
+  --color-surface-secondary: #d5e8cf;
+  --color-surface-tertiary: #bcebf1;
+  --color-surface-error: #ffdad6;
+  --color-surface-inverse: #2d322c;
+
+  /*
+  ** 分隔线的颜色
+  */
+  --color-divider: rgba(126, 79, 79, 0.12);
+
+  /*
+  ** 边缘线的颜色
+  */
+  --color-border: rgba(0, 0, 0, 0.12);
+
+  --color-primary-light: #42a5f5;
+  --color-secondary-light: #ba68c8;
+  --color-success-light: #4caf50; 
+  --color-error-light: #ef5350;
+  
+  --color-warning-light: #ff9800;
+  --color-info-light: #03a9f4;
+
+  --color-primary-dark: #1565c0;
+  --color-secondary-dark: #7b1fa2;
+  --color-success-dark: #1b5e20;
+  --color-error-dark: #c62828;
+  --color-warning-dark: #e65100;
+  --color-info-dark: #01579b;
+
+  --color-text-primary-dark: #fff;
+  --color-text-secondary-dark: rgba(255, 255, 255, 0.7);
+  --color-text-disabled-dark: rgba(255, 255, 255, 0.5);
+  --color-background-dark: #121212;
+  --color-divider-dark: rgba(255, 255, 255, 0.12);
+
+  --color-success-lighter: rgba(46, 125, 50, 0.1);
+  --color-error-lighter: rgba(211, 47, 47, 0.1);
+}
+
+.page {
+  background: var(--color-background);
+}
+
 .search-bar {
   display: flex;
   padding: 14rpx 20rpx;
   width: calc(100%-64rpx);
   margin: 0 32rpx;
-  height: 80rpx;
-  background: #F5F5F5;
+  height: 48rpx;
+  background: var(--color-surface-inverse);
   border-radius: 16rpx;
-  border: 2rpx solid rgba(255, 255, 255, 0.05);
+  border: 2rpx solid var(--color-text-primary-inverse);
 }
 
 .search-bar .icon {
   margin-right: 24rpx;
   width: 30rpx;
   height: 30rpx;
+  color: var(--color-text-primary-inverse)!important;
 }
 
 .search-bar .placeholder {
-  color: #999999;
+  color: var(--color-text-primary-inverse)!important;
   font-size: 24rpx;
 }

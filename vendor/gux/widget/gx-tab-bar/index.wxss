@@ -13,15 +13,15 @@
 ** ─██████████████─██████████████─████████──████████─
 ** ──────────────────────────────────────────────────
 */
-@import "/asset/font/fontawesome.wxss";
+@import '../../gux.wxss';
 
 .tab-bar {
-  --icon-active: #fff;
-  --icon-inactive: #4c83f0;
+  --icon-active: var(--color-text-primary-inverse);
+  --icon-inactive: var(--color-primary);
   --icon-hover: #99a3ba;
-  --text: #4c83f0;
-  --circle: #4c83f0;
-  --background: #fafafa;
+  --text: var(--color-primary);
+  --circle: var(--color-primary);
+  --background: var(--color-text-primary-inverse);
   --shadow: rgba(18, 22, 33, .1);
   position: fixed;
   left: 0;
@@ -30,7 +30,6 @@
   background: var(--background);
   width: 100%;
   height: 72px;
-  padding: 0 12px;
   box-shadow: 0 8px 16px var(--shadow);
   z-index: 9999;
 }
@@ -168,7 +167,7 @@
 }
 
 .tab-bar > view.active-1 > span:after {
-  margin: -14px 0 0 -22px;
+  margin: -14px 0 0 -23px;
 }
 
 .tab-bar > view.active-2 > span:after {

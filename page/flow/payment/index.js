@@ -1,6 +1,7 @@
 
 const app = getApp();
 const { util } = require("@/vendor/gux/common/util");
+const { gx } = require("@/vendor/gux/common/gx");
 const { sdk } = require("@/sdk/gux");
 
 Page({
@@ -71,13 +72,15 @@ Page({
     wx.showLoading({
       title: '支付中',
     });
-    setTimeout(() => {
-      // Hide the loading dialog after 2 seconds
+    if (this.tmPay) {
+      clearTimeout(this.tmPay);
+    }
+    this.tmPay = setTimeout(() => {
       wx.hideLoading();
       let dialog = this.selectComponent('#dialog');
       dialog.hide();
-      wx.navigateTo({
-        url: '/page/common/success/index',
+      gx.navigateTo({
+        url: '/page/common/success/index?detailPage=/page/flow/payment/detail',
       });
     }, 3000);
   }

@@ -13,8 +13,7 @@
 ** ─██████████████─██████████████─████████──████████─
 ** ──────────────────────────────────────────────────
 */
-@import '/asset/font/fontawesome.wxss';
-@import '/vendor/gux/gux.wxss';
+@import '../../gux.wxss';
 
 .no-more-data {
   color: #cdcdcd;

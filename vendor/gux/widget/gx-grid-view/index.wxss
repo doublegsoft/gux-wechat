@@ -1,4 +1,3 @@
-@import '/asset/font/fontawesome.wxss';
 @import '/vendor/gux/gux.wxss';
 
 .no-more-data {

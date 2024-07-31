@@ -1,4 +1,4 @@
-@import '/asset/font/fontawesome.wxss';
+@import '../../gux.wxss';
 
 .images {
   display: flex;

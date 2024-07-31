@@ -1,1 +1,1 @@
-@import "/vendor/gux/gux.wxss";
+@import "/app.wxss";

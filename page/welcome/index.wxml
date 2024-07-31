@@ -1,10 +1,10 @@
-<view class="page">
+<view class="page" style="background: transparent!important;">
   <view class="gx-d-flex">
     <view class="content">
-      <image src="/asset/image/demo/welcome.png" mode="aspectFit"></image>
+      <image src="{{welcomeImage}}" mode="aspectFit"></image>
       <view style="margin-top: 32px;">
         <text class="title">欢迎浏览GUX橱窗</text>
-        <view class="description">在这里您会找到适合自己的营养餐</view>
+        <view class="description">为最终的无代码编程打下坚实的基础</view>
       </view>
     </view>
   </view>

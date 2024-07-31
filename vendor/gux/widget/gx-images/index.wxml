@@ -4,6 +4,6 @@
     <image mode="aspectFill" src="{{image.url}}" style="width: 80px; height: 80px;"></image>
   </view>
   <view wx:if="{{readonly !== true}}" class='image' bindtap="onChooseImage">
-    <text class="fas fa-plus" style="color: #bbb;"></text>
+    <text class="gx-i gx-i-plus" style="color: #bbb;"></text>
   </view>
 </view>

@@ -13,11 +13,11 @@
 ** ─██████████████─██████████████─████████──████████─
 ** ──────────────────────────────────────────────────
 */
-@import "/vendor/gux/gux.wxss";
+@import "../../gux.wxss";
 
 form .title {
-  background: #f8f8f9;
-  color: #888888;
+  background: var(--color-background);
+  color: var(--color-text-primary);
   font-size: 24rpx;
   padding: 0 40rpx;
   line-height: 50rpx;
@@ -41,7 +41,7 @@ form .field .input {
 }
 
 form .field .label {
-  color: #333;
+  color: var(--color-text-primary);
   font-weight: bold;
   font-size: 28rpx;
   line-height: 72rpx;
@@ -75,10 +75,11 @@ input:placeholder {
   width: 100%;
   overflow: auto;
 }
+
 .form-item-ipt {
   height: 64rpx;
   border: 0;
-  color: #222;
+  color: var(--color-text-primary);
   width: 100%;
 }
 
@@ -371,12 +372,12 @@ radio .wx-radio-input.wx-radio-input-checked::before{
 }
 
 .c-switch-slider.checked {
-  background-color: #63c2de;
-  border-color: #39b2d5;
+  background-color: var(--color-info);
+  border-color: var(--color-info);
 }
 
 .c-switch-slider.checked::before {
-  border-color: #39b2d5;
+  border-color: var(--color-info);
 }
 
 .c-switch-pill .c-switch-slider {

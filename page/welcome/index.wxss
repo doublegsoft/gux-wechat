@@ -51,7 +51,7 @@ view.description {
 }
 
 button.enter {
-  background-color: #22C678;
+  background-color: var(--color-success);
   position: relative;
   top: 50px;
   width: 185px;

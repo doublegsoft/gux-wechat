@@ -2,13 +2,13 @@
   <view class="gx-d-flex" style="height: 75vh;">
     <view class="content">
       <!-- <view class="theme-image fas fa-check-circle"></view> -->
-      <image src="success.png" mode="aspectFit"></image>
+      <image src="{{image}}" mode="aspectFit"></image>
       <view style="margin-top: 16px;">
         <text class="title">{{title}}</text>
         <text class="description">{{description}}</text>
       </view>
     </view>
   </view>
-  <button class="primary">查看详情</button>
+  <button class="primary" bind:tap="gotoDetail">查看详情</button>
   <button class="secondary" bind:tap="gotoHome" style="margin-top: 16px;">返回首页</button>
 </view>

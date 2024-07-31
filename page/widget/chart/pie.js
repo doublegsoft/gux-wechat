@@ -1,4 +1,5 @@
-import * as echarts from '@/vendor/ec-canvas/echarts.min';
+const app = getApp();
+const Charts = require('@/vendor/gcharts/gcharts-min');
 
 Page({
 
@@ -12,106 +13,70 @@ Page({
   },
 
   onLoad() {
-    let navbar = this.selectComponent('#navigationBar');
-    this.setData({
-      marginTop: navbar.getHeight(),
+    app.onShowPage(this);
+    let dpr = wx.getSystemInfoSync().pixelRatio;
+
+    wx.createSelectorQuery().in(this)
+    .select('#pie_chart_1').fields({ node: true, size: true }).exec(res => {
+      this.canvas = res[0].node
+      let ctx = this.canvas.getContext('2d');
+      this.canvas.width = res[0].width * dpr;
+      this.canvas.height = res[0].height * dpr;
+      ctx.scale(dpr, dpr);
+      ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+      new Charts({
+        animation: true,
+        type: 'pie',
+        series: [{
+          name: '成交量1',
+          data: 15,
+        },{
+          name: '成交量2',
+          data: 35,
+        },{
+          name: '成交量3',
+          data: 78,
+        },{
+          name: '成交量4',
+          data: 63,
+        }],
+        context: ctx,
+        width: this.data.viewWidth,
+        height: 300,
+        dataLabel: false,
+      });
     });
 
-    let ec0 = this.selectComponent('#pie_chart_0');
-    ec0.init((canvas, width, height, dpr) => {
-      const chart = echarts.init(canvas, null, {
-        width: width,
-        height: height,
-        devicePixelRatio: dpr // 像素比
-      });
-      canvas.setChart(chart);
-    
-      let option = {
-        tooltip: {
-          trigger: 'item'
-        },
-        legend: {
-          top: '5%',
-          left: 'center'
-        },
+    wx.createSelectorQuery().in(this)
+    .select('#pie_chart_2').fields({ node: true, size: true }).exec(res => {
+      this.canvas = res[0].node
+      let ctx = this.canvas.getContext('2d');
+      this.canvas.width = res[0].width * dpr;
+      this.canvas.height = res[0].height * dpr;
+      ctx.scale(dpr, dpr);
+      ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+      new Charts({
+        animation: true,
+        type: 'ring',
         series: [{
-          name: 'Access From',
-          type: 'pie',
-          radius: ['40%', '70%'],
-          avoidLabelOverlap: false,
-          label: {
-            show: false,
-            position: 'center'
-          },
-          emphasis: {
-            label: {
-              show: true,
-              fontSize: 40,
-              fontWeight: 'bold'
-            }
-          },
-          labelLine: {
-            show: false
-          },
-          data: [
-            { value: 1048, name: 'Search Engine' },
-            { value: 735, name: 'Direct' },
-            { value: 580, name: 'Email' },
-            { value: 484, name: 'Union Ads' },
-            { value: 300, name: 'Video Ads' }
-          ]
-        }]
-      };
-      chart.setOption(option);
-      return chart;
-    });
-    let ec1 = this.selectComponent('#pie_chart_1');
-    ec1.init((canvas, width, height, dpr) => {
-      const chart = echarts.init(canvas, null, {
-        width: width,
-        height: height,
-        devicePixelRatio: dpr // 像素比
+          name: '成交量1',
+          data: 15,
+        },{
+          name: '成交量2',
+          data: 35,
+        },{
+          name: '成交量3',
+          data: 78,
+        },{
+          name: '成交量4',
+          data: 63,
+        }],
+        context: ctx,
+        width: this.data.viewWidth,
+        height: 300,
+        dataLabel: false,
       });
-      canvas.setChart(chart);
-    
-      let option = {
-        tooltip: {
-          trigger: 'item'
-        },
-        legend: {
-          top: '5%',
-          left: 'center'
-        },
-        series: [{
-          name: 'Access From',
-          type: 'pie',
-          radius: ['40%', '70%'],
-          avoidLabelOverlap: false,
-          label: {
-            show: false,
-            position: 'center'
-          },
-          emphasis: {
-            label: {
-              show: true,
-              fontSize: 40,
-              fontWeight: 'bold'
-            }
-          },
-          labelLine: {
-            show: false
-          },
-          data: [
-            { value: 1048, name: 'Search Engine' },
-            { value: 735, name: 'Direct' },
-            { value: 580, name: 'Email' },
-            { value: 484, name: 'Union Ads' },
-            { value: 300, name: 'Video Ads' }
-          ]
-        }]
-      };
-      chart.setOption(option);
-      return chart;
     });
+
   },
 })

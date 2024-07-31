@@ -1,3 +1,4 @@
+const app = getApp();
 const { sdk } = require('@/sdk/gux');
 
 Page({
@@ -21,12 +22,7 @@ Page({
   },
 
   onShow() {
-    let navbar = this.selectComponent('#navigationBar');
-    if (navbar != null) {
-      this.setData({
-        marginTop: navbar.getHeight(),
-      });
-    }
+    app.onShowPage(this);
     this.doFetchCriteria();
   },
 

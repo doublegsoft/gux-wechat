@@ -14,7 +14,6 @@
 ** ──────────────────────────────────────────────────
 */
 .ad-container {
-  width: 600rpx;
   padding: 60rpx;
   background: #fff;
   border-radius: 32rpx;

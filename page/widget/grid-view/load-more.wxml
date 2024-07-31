@@ -1,5 +1,5 @@
 <gx-navigation-bar id="navigationBar" title="栅格列表（加载更多）" />
-<view class="gx-pos-relative" style="top:{{top}}px;">
+<view class="page gx-pos-relative" style="top:{{top}}px;">
   <gx-grid-vew id="listMerchandise" local="{{items}}" height="{{height}}" 
                enableLoadMore="{{true}}" bind:doLoad="doReload">
                <view class="gx-row">

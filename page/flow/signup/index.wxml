@@ -1,6 +1,6 @@
 <gx-navigation-bar id="navigationBar" title="用户注册" />
-<view class="container gx-pos-relative" style="top:{{top}}px;height:{{viewHeight}}px;">
-  <view class="gx-fs-24">新用户注册</view>
+<view class="page gx-px-16 gx-pos-relative" style="top:{{top}}px;height:{{viewHeight}}px;">
+  <view class="gx-fs-24 gx-pt-16">新用户注册</view>
   <view class="gx-mt-16">
     <input name="mobile" placeholder="请输入手机号" disabled 
            type="number" maxlength="11" class="input" value="{{mobile}}"
@@ -22,12 +22,12 @@
         </view>
       </view>
       <text class="gx-fs-12 gx-text-secondary">请同意</text>
-      <text class="gx-fs-12 gx-color-primary" bind:tap="gotoPrivacyPolicy">《个人隐私保护协议》</text>
+      <text class="gx-fs-12 gx-color-info" bind:tap="gotoPrivacyPolicy">《个人隐私保护协议》</text>
       <text class="gx-fs-12 gx-text-secondary">中所定义的条款。</text>
     </view>   
   </view>
   <gx-dialog id="dialogPin" height="200" top="120">
-    <view>
+    <view class="gx-p-16">
       <text class="gx-fs-18">短信验证码：</text>
       <view class="pin-input" style="margin-top: 30px;">
         <input value="{{code0}}" disabled="{{true}}"

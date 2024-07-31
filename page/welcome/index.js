@@ -1,10 +1,10 @@
 const app = getApp();
-const { xhr } = require("@/vendor/gux/common/xhr");
+const { sdk } = require("@/sdk/" + app.sdk);
 
 Page({
 
   data: {
-
+    welcomeImage: sdk.getWelcomeImage(),
   },
 
   onShow() {
@@ -13,7 +13,7 @@ Page({
 
   gotoHome() {
     wx.redirectTo({
-      url: '/page/index',
+      url: '/page/main/index',
     })
   }
 })

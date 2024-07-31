@@ -53,7 +53,7 @@ view.sticky-top {
   display: block;
   height: 8rpx;
   width: 90%;
-  background: #4675F9;
+  background: var(--color-primary);
   position: absolute;
   bottom: 0;
   left: 5%;

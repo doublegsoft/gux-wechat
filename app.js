@@ -2,7 +2,7 @@ const { util } = require("@/vendor/gux/common/util");
 
 App({
   
-  sdk: 'stdbiz-test',
+  sdk: 'gux',
 
   host: 'http://localhost:8888',
 
@@ -47,6 +47,7 @@ App({
         viewHeight: this.sysinfo.safeArea.bottom - offset,
         bottonHeight: this.sysinfo.screenHeight - this.sysinfo.safeArea.height - this.sysinfo.safeArea.top,
         viewWidth: this.sysinfo.screenWidth,
+        screenHeight: this.sysinfo.screenHeight,
       });
     } 
   },

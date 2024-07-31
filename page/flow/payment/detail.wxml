@@ -1,0 +1,52 @@
+<gx-navigation-bar id="navigationBar" title="支付详情" />
+<view class="receipt gx-pos-relative" style="top:{{top}}px;height:{{viewHeight}}px;">
+  <view class="header">
+    <image class="logo" style="width: 100%;" 
+           src="/asset/image/demo/shoe.png"
+           mode="aspectFit"></image>
+    <text class="date">Wed, May 27, 2020 • 9:27:53 AM</text>
+  </view>
+  <view class="section token-section">
+    <text class="token-label">Token</text>
+    <view class="token-box">0237-7746-8981-9028-5626</view>
+  </view>
+  <view class="section">
+    <text class="label">Token Type</text>
+    <text class="value">Credit</text>
+  </view>
+  <view class="section">
+    <text class="label">Customer Name</text>
+    <text class="value">Victor Shoaga</text>
+  </view>
+  <view class="section">
+    <text class="label">Customer Type</text>
+    <text class="value">R3</text>
+  </view>
+  <view class="section">
+    <text class="label">Address</text>
+    <text class="value">7953 Oakland St. Honolulu, HI 96815</text>
+  </view>
+  <view class="section">
+    <text class="label">Meter Number</text>
+    <text class="value">04172997324</text>
+  </view>
+  <view class="section">
+    <text class="label">Amount</text>
+    <text class="value">950 NGN</text>
+  </view>
+  <view class="section">
+    <text class="label">Tax</text>
+    <text class="value">50 NGN</text>
+  </view>
+  <view class="section">
+    <text class="label">Total</text>
+    <text class="value">1000 NGN</text>
+  </view>
+  <view class="section">
+    <text class="label">Operator</text>
+    <text class="value">Ade</text>
+  </view>
+  <!-- <view class="footer">
+    <image class="footer-logo" src="/images/acme-logo.png" mode="widthFix"></image>
+  </view> -->
+</view>

@@ -1,5 +1,5 @@
 <gx-navigation-bar id="navigationBar" title="首页" backable="{{false}}"></gx-navigation-bar>
-<view style="margin-top: {{marginTop}}px;">
+<view class="page" style="margin-top: {{marginTop}}px;">
   <view class="gx-m-8 gx-fs-14">
     <text class="gx-ml-8 fas fa-list-ul"></text>
     <text class="gx-ml-8 gx-fb gx-fs-15">交互设计</text>

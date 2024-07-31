@@ -16,13 +16,13 @@
 @import '/vendor/gux/gux.wxss';
 
 .container {
-  background: #EDE8E3;
+  background: var(--color-background);
   height: 100%;
 }
 
 .question .option {
   height:56px;
-  background-color:#F4F3F6;
+  background-color:var(--color-surface);
   align-items:center;
   border-radius:5px;
   margin-top:30px;
@@ -31,23 +31,23 @@
 .question .option .symbol {
   height:36px;
   width:36px;
-  background-color:#EDE8E3;
+  background-color:var(--color-background);
   margin-left:18px;
 }
 
 .question .option .text {
-  color: #060710;
+  color: var(--color-text-primary);
 }
 
 .question .option.active {
-  background-color:#45C486;
+  background-color:var(--color-success);
 }
 
 .question .option.active .symbol {
-  background-color:#F4F3F6;
-  color: #31CD63;
+  background-color:var(--color-success);
+  color: var(--color-text-primary-inverse);
 }
 
 .question .option.active .text {
-  color: #F4F3F6;
+  color:  var(--color-text-primary-inverse);
 }

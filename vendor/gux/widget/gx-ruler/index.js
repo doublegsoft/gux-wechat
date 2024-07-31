@@ -246,7 +246,6 @@ Component({
         value = maxValue;
       }
       let val = parseInt(value);
-      console.log(val, value);
       value = (val / 10 - 0.1).toFixed(1);
       this.setData({
         value: value,

@@ -10,7 +10,7 @@
   padding: 14rpx 20rpx;
   width: calc(100%-64rpx);
   height: 48rpx;
-  background: #F5F5F5;
+  background: var(--color-surface-inverse);
   border-radius: 16rpx;
   border: 2rpx solid rgba(255, 255, 255, 0.05);
 }

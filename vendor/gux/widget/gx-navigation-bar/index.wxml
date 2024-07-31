@@ -11,7 +11,7 @@
   <view wx:if="{{backable == true}}" class="gx-d-flex gx-w-full">
     <view class="gx-wh-{{heightOfBack}} gx-b-round gx-b-1 gx-d-flex gx-pos-relative" 
           bind:tap="doNavigateBack" style="top: {{topOfBack}}px; left: 8px; z-index: 99999;">
-      <text class="fas fa-chevron-left gx-fs-20 gx-m-auto gx-pos-relative" 
+      <text class="gx-i gx-i-arrow-left gx-fb gx-fs-20 gx-m-auto gx-pos-relative" 
             style="left: -1px; color: {{foreground}};"></text>   
     </view>
   </view>

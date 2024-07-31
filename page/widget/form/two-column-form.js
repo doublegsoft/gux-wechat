@@ -67,14 +67,14 @@ Page({
       options: {
         type: 'icon',
         values: [{
-          value: 'A', icon: 'fas fa-frown gx-text-secondary', 
-          active: 'fas fa-frown gx-color-primary'
+          value: 'A', icon: 'gx-i gx-i-mood-sad gx-text-secondary', 
+          active: 'gx-i gx-i-mood-sad-fill gx-text-secondary'
         },{
-          value: 'B', icon: 'fas fa-meh gx-text-secondary', 
-          active: 'fas fa-meh gx-color-primary'
+          value: 'B', icon: 'gx-i gx-i-mood-normal gx-text-secondary', 
+          active: 'gx-i gx-i-mood-normal-fill gx-text-secondary'
         },{
-          value: 'C', icon: 'fas fa-smile gx-text-secondary', 
-          active: 'fas fa-smile gx-color-primary'
+          value: 'C', icon: 'gx-i gx-i-mood-smile gx-text-secondary', 
+          active: 'gx-i gx-i-mood-smile-fill gx-text-secondary'
         }],
       }, 
     },{
