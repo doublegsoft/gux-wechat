@@ -75,6 +75,31 @@
   color: var(--icon-active);
 }
 
+.tab-bar > view label.active text.active-0 {
+  top: -4px;
+  left: -4px;
+}
+
+.tab-bar > view label.active text.active-1 {
+  top: -4px;
+  left: -4px;
+}
+
+.tab-bar > view label.active text.active-2 {
+  top: -4px;
+  left: -4px;
+}
+
+.tab-bar > view label.active text.active-3 {
+  top: -4px;
+  left: -4px;
+}
+
+.tab-bar > view label.active text.active-4 {
+  top: -4px;
+  left: -4px;
+}
+
 .tab-bar > view label span {
   --y: -12px;
   --s: 0.92;
@@ -163,21 +188,21 @@
 }
 
 .tab-bar > view.active-0 > span:after {
-  margin: -14px 0 0 -20px;
+  margin: -14px 0 0 -22px;
 }
 
 .tab-bar > view.active-1 > span:after {
-  margin: -14px 0 0 -23px;
+  margin: -14px 0 0 -22px;
 }
 
 .tab-bar > view.active-2 > span:after {
-  margin: -14px 0 0 -23px;
+  margin: -14px 0 0 -22px;
 }
 
 .tab-bar > view.active-3 > span:after {
-  margin: -14px 0 0 -23px;
+  margin: -14px 0 0 -22px;
 }
 
 .tab-bar > view.active-4 > span:after {
-  margin: -14px 0 0 -23px;
+  margin: -14px 0 0 -22px;
 }

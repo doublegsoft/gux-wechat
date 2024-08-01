@@ -1,4 +1,4 @@
-@import '/vendor/gux/gux.wxss';
+@import '../../gux.wxss';
 
 .no-more-data {
   color: #cdcdcd;

@@ -1,4 +1,4 @@
-@import "/asset/font/gx-iconfont.wxss";
+@import "font/gx-iconfont.wxss";
 
 page {
   --color-primary: #3f86ff;
