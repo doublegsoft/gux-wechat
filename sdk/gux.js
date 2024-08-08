@@ -1,4 +1,7 @@
-const sdk = {};
+const app = getApp();
+const sdk = {
+  host4Image: app.host,
+};
 
 sdk.fetchEmployees = function (params) {
   let start = params.start;
@@ -76,15 +79,15 @@ sdk.fetchSearchCriteria = async function (params) {
 };
 
 sdk.getWelcomeImage = () => {
-  return 'http://192.168.0.207:9098/img/gux/welcome.png';
+  return sdk.host4Image + '/img/demo/gux/welcome.png';
 };
 
 sdk.getSuccessImage = () => {
-  return 'http://192.168.0.207:9098/img/app/success.png';
+  return sdk.host4Image + '/img/app/success.png';
 };
 
 sdk.getFailureImage = () => {
-  return 'http://192.168.0.207:9098/img/app/failure.png';
+  return sdk.host4Image + '/img/app/failure.png';
 };
 
 module.exports = { sdk };

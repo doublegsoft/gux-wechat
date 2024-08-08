@@ -47,7 +47,7 @@ Component({
         timingFunction: 'ease',
       })
       this.animation = animation
-      animation.translateY(info.screenHeight - this.data.height).step();
+      animation.translateY(0).step();
       this.setData({
         animationData: animation.export(),
         isOpen: true,

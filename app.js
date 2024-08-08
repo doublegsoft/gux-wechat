@@ -4,7 +4,7 @@ App({
   
   sdk: 'gux',
 
-  host: 'http://localhost:8888',
+  host: 'http://192.168.0.207:9098',
 
   onLaunch() {
     // 展示本地存储能力

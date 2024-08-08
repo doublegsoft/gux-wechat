@@ -1,6 +1,6 @@
 const app = getApp();
 const { sdk } = require('@/sdk/' + app.sdk)
-const { gx } = require('@/vendor/gux/common/gx');
+const { gux } = require('@/vendor/gux/common/gux');
 
 Page({
 
@@ -27,7 +27,7 @@ Page({
   },
 
   gotoDetail() {
-    gx.navigateTo({
+    gux.navigateTo({
       url: this.data.detailPage,
     })
   },

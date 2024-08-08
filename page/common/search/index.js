@@ -1,5 +1,5 @@
 const app = getApp();
-const { sdk } = require('@/sdk/gux');
+const { sdk } = require('@/sdk/' + app.sdk);
 
 Page({
 

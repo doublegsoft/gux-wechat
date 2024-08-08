@@ -15,7 +15,7 @@
  -->
 <view class="keyboard {{shown && 'shown'}}" style="height:{{height}}px;">
   <view class="feedback" wx:if="{{headless === false}}">
-    <view class="clear" bindtap="doClear">清空</view>
+    <view class="clear" catch:tap="doClear">清除</view>
     <view class="input">
       <view class="content" wx:if="{{content.length}}">
         <view wx:for="{{content}}" wx:key="index" data-str-index="{{index + 1}}">
@@ -25,7 +25,8 @@
       </view>
       <view class="cursor" wx:if="{{!cursorIndex}}"></view>
     </view>
-    <view class="confirm" bindtap="doConfirm">确定</view>
+    <view class="cancel" catch:tap="doCancel">取消</view>
+    <view class="confirm" catch:tap="doConfirm">确定</view>
   </view>
   <view class="keys">
     <text class="key" data-key="1" catch:tap="doTapKey" style="width:{{keyWidth}}px;">1</text>

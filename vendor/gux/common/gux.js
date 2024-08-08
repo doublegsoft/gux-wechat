@@ -13,14 +13,14 @@
 ** ─██████████████─██████████████─████████──████████─
 ** ──────────────────────────────────────────────────
 */
-const gx = {
+const gux = {
   presentPath: null,
 };
 
-gx.navigateBack = function (opt) {
+gux.navigateBack = function (opt) {
   wx.navigateBack({
     success: (res) => {
-      gx.presentPath = null;
+      gux.presentPath = null;
       if (opt && opt.success) {
         opt.success();
       }
@@ -28,7 +28,7 @@ gx.navigateBack = function (opt) {
   });
 };
 
-gx.navigateTo = function (opt) {
+gux.navigateTo = function (opt) {
   let url = opt.url;
   let path;
   let index = url.indexOf('?');
@@ -37,20 +37,22 @@ gx.navigateTo = function (opt) {
   } else {
     path = url;
   }
-  if (gx.presentPath === path) {
+  if (gux.presentPath === path) {
     return;
   }
   wx.navigateTo({
     url: url,
     events: opt.events || {},
     success: () => {
-      gx.presentPath = path;
+      gux.presentPath = path;
     },
   })
 };
 
-gx.redirectTo = function (opt) {
-  
+gux.redirectTo = function (opt) {
+  wx.redirectTo({
+    url: opt.url,
+  })
 };
 
-module.exports = { gx };
+module.exports = { gux };

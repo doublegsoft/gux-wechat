@@ -39,10 +39,17 @@
       <view wx:elif="{{field.input==='select'}}" class="input-group">
         <view class="input" wx:if="{{field.options.values}}">
           <block wx:if="{{field.disabled !== true}}">
-            <picker id="{{field.name}}" name="{{field.name}}" bindchange="onSelectValue" range="{{field.options.values}}" range-key="text" value="{{field.value}}">
+            <!-- <picker id="{{field.name}}" name="{{field.name}}" bindchange="onSelectValue" range="{{field.options.values}}" range-key="text" value="{{field.value}}">
               <view class="{{field.value?'c2':'cb'}}">{{field.value?field.text:'请选择'}}</view>
-            </picker>
-            <view class="form-srarrow">
+            </picker> -->
+            <view id="{{field.name}}" 
+                  data-name="{{field.name}}"
+                  class="form-item-ipt {{field.value || 'cb'}}"
+                  style="line-height: 32px;"
+                  bind:tap="doClickPicker">
+              {{field.value ? field.text: (field.placeholder || '请选择')}}
+            </view>
+            <view>
               <text class="gx-i gx-i-arrow-down hint-icon"></text>
             </view>
           </block>
@@ -58,7 +65,7 @@
           <view id="{{field.name}}" class="form-item-ipt {{field.value?'c2':'cb'}} ph" style="line-height: 32px;">
             {{field.value?field.value.districtName:(field.placeholder || '请选择')}}
           </view>
-          <view class="form-srarrow">
+          <view>
             <text class="gx-i gx-i-arrow-down hint-icon"></text>
           </view>
         </view>
@@ -66,10 +73,17 @@
 			<!-- date -->
       <view wx:elif="{{field.input === 'date'}}" class="input-group">
         <view class="input">
-          <picker class='mt15 c9' mode="date" id="{{field.name}}" bindchange="onChangeValue" data-typekey='c2' value="{{field.value}}">
-            <view class="{{field.value?'c2':'cb'}}">{{field.value?field.value:'请选择日期'}}</view>
-          </picker>
-          <view class="form-srarrow">
+          <!-- <picker class='mt15 c9' mode="date" id="{{field.name}}" bindchange="onChangeValue" data-typekey='c2' value="{{field.value}}">
+            <view class="{{field.value?'c2':'cb'}}">{{field.value?field.value:'请选择'}}</view>
+          </picker> -->
+          <view id="{{field.name}}" 
+                data-name="{{field.name}}"
+                class="form-item-ipt {{field.value || 'cb'}}"
+                style="line-height: 32px;"
+                bind:tap="doClickDatePicker">
+            {{field.value ? field.text: (field.placeholder || '请选择')}}
+          </view>
+          <view>
             <text class="gx-i gx-i-date gx-fs-20 hint-icon"></text>
           </view>
         </view>
@@ -77,10 +91,17 @@
       <!-- time -->
       <view wx:elif="{{field.input === 'time'}}" class="input-group">
         <view class="input">
-          <picker class='mt15 c9' mode="time" id="{{field.name}}" bind:change="onChangeValue" data-typekey='c2' value="{{field.value}}">
+          <!-- <picker class='mt15 c9' mode="time" id="{{field.name}}" bind:change="onChangeValue" data-typekey='c2' value="{{field.value}}">
             <view class="{{field.value?'c2':'cb'}}">{{field.value?field.value:'请选择时间'}}</view>
-          </picker>
-          <view class="form-srarrow">
+          </picker> -->
+          <view id="{{field.name}}" 
+                data-name="{{field.name}}"
+                class="form-item-ipt {{field.value || 'cb'}}"
+                style="line-height: 32px;"
+                bind:tap="doClickTimePicker">
+            {{field.value ? field.text: (field.placeholder || '请选择')}}
+          </view>
+          <view>
             <text class="gx-i gx-i-time gx-fs-20 hint-icon"></text>
           </view>
         </view>
@@ -91,7 +112,7 @@
           <view id="{{field.name}}" 
                 data-title="{{field.title}}" data-unit="{{field.unit}}" 
                 data-value="{{field.value}}"
-                bindtap="onChangeRuler"
+                bind:tap="doClickRuler"
                 class="form-item-ipt {{field.value?'c2':'cb'}} ph" 
                 style="line-height: 32px;">
             {{field.value?field.value:(field.placeholder || '请选择')}}
@@ -256,3 +277,4 @@
 <gx-ruler id="ruler"/>
 <gx-chinese-district-select id="selectChineseDistrict" title="所在地区" />
 <gx-typepad id="inputCustomText"></gx-typepad>
+<gx-picker id="picker"></gx-picker>

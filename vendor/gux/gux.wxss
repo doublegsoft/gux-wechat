@@ -1,3 +1,18 @@
+/*
+** ──────────────────────────────────────────────────
+** ─██████████████─██████──██████─████████──████████─
+** ─██░░░░░░░░░░██─██░░██──██░░██─██░░░░██──██░░░░██─
+** ─██░░██████████─██░░██──██░░██─████░░██──██░░████─
+** ─██░░██─────────██░░██──██░░██───██░░░░██░░░░██───
+** ─██░░██─────────██░░██──██░░██───████░░░░░░████───
+** ─██░░██──██████─██░░██──██░░██─────██░░░░░░██─────
+** ─██░░██──██░░██─██░░██──██░░██───████░░░░░░████───
+** ─██░░██──██░░██─██░░██──██░░██───██░░░░██░░░░██───
+** ─██░░██████░░██─██░░██████░░██─████░░██──██░░████─
+** ─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░██──██░░░░██─
+** ─██████████████─██████████████─████████──████████─
+** ──────────────────────────────────────────────────
+*/
 @import "font/gx-iconfont.wxss";
 
 page {
@@ -2172,4 +2187,56 @@ page {
   line-height: 32px; 
   height: 32px; 
   font-size: 16px;
+}
+
+/*
+********************************************************************************
+**                                                                            **
+**                                   SEGMENT                                  **
+**                                                                            **
+********************************************************************************
+*/
+
+.gx-segment-group {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.gx-segment-group > .gx-segment-group:not(:last-child)>.bgx-segment, .gx-segment-group.gx-segment:not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.gx-segment-group > .gx-segment:not(:first-child) {
+  margin-left: -1px;
+}
+
+.gx-segment-group > .gx-segment {
+  margin-bottom: 0;
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.gx-segment {
+  display: inline-block;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: unset!important;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  border-color: var(--color-text-secondary);
+}
+
+.gx-segment.active {
+  color: var(--color-text-primary-reverse);
+  background-color: var(--color-text-secondary);
+  border-color: var(--color-text-secondary);
 }

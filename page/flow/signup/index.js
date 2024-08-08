@@ -1,7 +1,7 @@
 
 const app = getApp();
 const { util } = require("@/vendor/gux/common/util");
-const { gx } = require("@/vendor/gux/common/gx");
+const { gux } = require("@/vendor/gux/common/gux");
 const { sdk } = require("@/sdk/gux");
 
 Page({
@@ -150,7 +150,7 @@ Page({
       wx.hideLoading();
       let dialog = this.selectComponent('#dialogPin');
       dialog.hide();
-      gx.navigateTo({
+      gux.navigateTo({
         url: '/page/common/success/index',
       });
     }, 3000);

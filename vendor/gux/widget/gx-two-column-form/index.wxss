@@ -44,7 +44,7 @@ form .field .label {
   color: var(--color-text-primary);
   font-weight: bold;
   font-size: 28rpx;
-  line-height: 72rpx;
+  line-height: 76rpx;
 }
 
 form .field .unit {
@@ -101,9 +101,11 @@ input:placeholder {
 .df {
   display: flex;
 }
+
 .cb {
   color: #bbb !important;
 }
+
 .mtb40 {
   margin-top: 40rpx;
   margin-bottom: 40rpx;

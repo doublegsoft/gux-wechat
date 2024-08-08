@@ -119,10 +119,23 @@ Component({
       for (let i = 0; i < fields.length; i++) {
         let field = fields[i];
         if (field.name === name) {
+          if (!value) {
+            field.value = null;
+            field.text = null;
+            continue;
+          } 
           if (field.input == 'select') {
-            let index = parseInt(value);
-            value = field.options.values[index].value;
-            field.text = field.options.values[index].text;
+            // let index = parseInt(value);
+            // value = field.options.values[index].value;
+            // field.text = field.options.values[index].text;
+            field.text = value[name].text;
+            value = value[name].value;
+          } else if (field.input == 'time') {
+            field.text = value.text;
+            value = value.text + ':00';
+          } else if (field.input == 'date') {
+            field.text = value.text;
+            value = value.text;
           }
           if (Array.isArray(field.value)) {
             if (Array.isArray(value)) {
@@ -138,6 +151,14 @@ Component({
       this.setData({
         fields: fields,
       });
+    },
+
+    getField(name) {
+      for (let field of this.data.fields) {
+        if (field.name == name) {
+          return field;
+        }
+      }
     },
     
     setReadonly(readonly) {
@@ -171,14 +192,85 @@ Component({
       this.setValue(e.target.id, e.detail.value);
     },
 
-    onChangeRuler(e) {
-      let select = this.selectComponent('#ruler');
-      select.setOnClosed(val => {
+    doClickRuler(e) {
+      let ruler = this.selectComponent('#ruler');
+      ruler.setOnClosed(val => {
         this.setValue(e.target.id, val);
       });
-      select.show({
+      ruler.show({
         ...e.target.dataset,
       })
+    },
+
+    doClickPicker(e) {
+      let picker = this.selectComponent('#picker');
+      let field = this.getField(e.target.dataset.name);
+      picker.show({
+        ...e.target.dataset,
+        mode: 'single',
+        columns: [{
+          name: field.name,
+          values: field.options.values,
+        }],
+        onClosed: val => {
+          if (typeof val === 'undefined') return;
+          this.setValue(e.target.id, val);
+        },
+      });
+    },
+
+    doClickTimePicker(e) {
+      let picker = this.selectComponent('#picker');
+      picker.show({
+        ...e.target.dataset,
+        mode: 'time',
+        onClosed: val => {
+          if (typeof val === 'undefined') return;
+          let text = '';
+          if (val) {
+            if (val.hour < 10) {
+              text += '0';
+            }
+            text += val.hour;
+            text += ':';
+            if (val.minute < 10) {
+              text += '0';
+            }
+            text += val.minute;
+            val.text = text;
+          }
+          
+          this.setValue(e.target.id, val);
+        },
+      });
+    },
+
+    doClickDatePicker(e) {
+      let picker = this.selectComponent('#picker');
+      picker.show({
+        ...e.target.dataset,
+        mode: 'date',
+        onClosed: val => {
+          if (typeof val === 'undefined') return;
+          let text = '';
+          if (val) {
+            text += val.year;
+            text += '-';
+            if (val.month < 10) {
+              text += '0';
+            }
+            text += val.month;
+            text += '-';
+            if (val.day < 9) {
+              text += '0';
+            }
+            text += val.day;
+            val.text = text;
+          }
+          
+          this.setValue(e.target.id, val);
+        },
+      });
     },
 
     /*!
@@ -269,5 +361,5 @@ Component({
       this.setValue(name, value);
     },
 
-  }, /* methods */
+  },
 });

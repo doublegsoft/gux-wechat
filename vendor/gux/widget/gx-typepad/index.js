@@ -92,6 +92,13 @@ Component({
       this.onClosed = null;
     },
 
+    doCancel() {
+      this.setData({
+        shown: false,
+        height: 0,
+      });
+    },
+
     /*!
     ** 点击确认后，回调onClosed
     */

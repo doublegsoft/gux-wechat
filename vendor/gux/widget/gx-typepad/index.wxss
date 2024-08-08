@@ -50,6 +50,13 @@
   line-height: 88rpx;
 }
 
+.cancel {
+  width: 147rpx;
+  color: var(--color-error);
+  text-align: center;
+  line-height: 88rpx;
+}
+
 .input {
   display: flex;
   align-items: center;

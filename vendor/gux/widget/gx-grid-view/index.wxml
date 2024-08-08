@@ -34,6 +34,6 @@
   </view>
 </scroll-view>
 <view wx:else class="no-data">
-  <image src="/asset/image/no-data.png" class="no-data-img"></image>
+  <image src="../../image/no-data.png" class="no-data-img"></image>
   <view style="margin-top:24px; font-size: 16px;">没有任何数据</view>
 </view>

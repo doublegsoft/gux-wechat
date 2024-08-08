@@ -1,15 +1,33 @@
 <gx-navigation-bar id="navigationBar" title="饼状图形"></gx-navigation-bar>
 <view class="gx-pos-relative" style="top:{{top}}px;">
-  <view style="height:300px;width:100%;">
+  <view style="height:200px;width:100%;">
     <canvas id="pie_chart_1" type="2d"
-            style="height:300px;width:100%;" bindtouchstart="touchHandler"></canvas>
+            style="height:200px;width:100%;"></canvas>
   </view>
-  <view style="height:300px;width:100%;">
-    <canvas id="pie_chart_2" type="2d"
-            style="height:300px;width:100%;" bindtouchstart="touchHandler"></canvas>
+  <view class="gx-d-flex">
+    <view class="gx-segment-group gx-m-auto">
+      <view style="background:{{segmentIndex == 0 ? 'white' : colors[0]}};color:{{segmentIndex == 0 ? colors[0] : 'white'}};border-color:{{colors[0]}};" 
+            class="gx-segment"
+            bind:tap="doClickSegment" data-segment-index="0">成交量1</view>
+      <view style="background:{{segmentIndex == 1 ? 'white' : colors[1]}};color:{{segmentIndex == 1 ? colors[1] : 'white'}};border-color:{{colors[1]}};" 
+            class="gx-segment"
+            bind:tap="doClickSegment" data-segment-index="1">成交量2</view>
+      <view style="background:{{segmentIndex == 2 ? 'white' : colors[2]}};color:{{segmentIndex == 2 ? colors[2] : 'white'}};border-color:{{colors[2]}};" 
+            class="gx-segment"
+            bind:tap="doClickSegment" data-segment-index="2">成交量3</view>
+      <view style="background:{{segmentIndex == 3 ? 'white' : colors[3]}};color:{{segmentIndex == 3 ? colors[3] : 'white'}};border-color:{{colors[3]}};" 
+            class="gx-segment"
+            bind:tap="doClickSegment" data-segment-index="3">成交量4</view>
+    </view>
   </view>
-  <view style="height:300px;width:100%;">
-    <canvas id="pie_chart_3" type="2d"
-            style="height:300px;width:100%;" bindtouchstart="touchHandler"></canvas>
+  <view class="gx-mx-16 gx-mt-16 gx-p-16" 
+        style="background: #eeeeee;border-radius: 25px;">
+    <gx-list-view local="{{items}}">
+      <view wx:for="{{items}}" wx:key="index" 
+            style="line-height: 42px;height:42px; border-bottom: 1px solid white;">
+        {{item.text}}
+      </view>
+    </gx-list-view>
   </view>
+  
 </view>

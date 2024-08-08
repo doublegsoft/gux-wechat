@@ -1,11 +1,13 @@
-<view class="dialog" hidden="{{!isOpen}}">
+<view class="dialog" hidden="{{!isOpen}}" bind:tap="onHide">
   <view class="bottom-dialog" animation="{{animationData}}" style="height: 40vh;">
     <view class="bottom-dialog-title">
       <a style="color: var(--color-error); font-size: 16px; position: absolute; top: 12px; left: 15px;" 
-      bindtap="onHide">关闭</a>
+      catch:tap="onClear">清除</a>
       <!-- <text>{{title}}</text> -->
+      <a style="color: var(--color-error); font-size: 16px; position: absolute; top: 12px; right: 71px;" 
+      catch:tap="onHide">取消</a>
       <a style="color: var(--color-success); font-size: 16px; position: absolute; top: 12px; right: 15px;" 
-      bindtap="onConfirm">确定</a>
+      catch:tap="onConfirm">确定</a>
     </view>
     <view class="bottom-dialog-body" style="padding-top: 48px;">
       <canvas type="2d" bindtouchstart='start' bindtouchmove='move' bindtouchend='end' style="width:100%;height:{{canvasHeight}}px;" id="canvas" canvas-id="canvas" disable-scroll='true'></canvas>

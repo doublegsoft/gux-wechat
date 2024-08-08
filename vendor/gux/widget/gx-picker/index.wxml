@@ -1,0 +1,84 @@
+<view class="dialog" hidden="{{!isOpen}}" bind:tap="onHide">
+  <view class="bottom-dialog" animation="{{animationData}}" style="height: 300px;">
+    <view class="bottom-dialog-title">
+      <a style="color: var(--color-error); font-size: 16px; position: absolute; top: 12px; left: 15px;" 
+      catch:tap="onClear">清除</a>
+      <a style="color: var(--color-error); font-size: 16px; position: absolute; top: 12px; right: 71px;" 
+      catch:tap="onHide">取消</a>
+      <a style="color: var(--color-success); font-size: 16px; position: absolute; top: 12px; right: 15px;" 
+      catch:tap="onConfirm">确定</a>
+    </view>
+    <view class="bottom-dialog-body" style="padding-top: 48px;">
+      <picker-view
+        wx:if="{{mode == 'date'}}"
+        value="{{selectedIndexes}}"
+        class="picker-content"
+        bindchange="doChangePickerValue"
+        indicator-style="{{indicatorStyle}}"
+        mask-style="{{maskStyle}}">
+        <picker-view-column>
+          <view wx:for="{{years}}" wx:for-item="year" wx:key="index"
+                data-name="year"
+                data-text="{{year}}" data-value="{{year}}"
+                class="picker-line" >
+            <text class="line-item">{{year}}</text>
+          </view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{months}}" wx:for-item="month" wx:key="index"
+                data-name="month"
+                data-text="{{minute}}" data-value="{{index}}"
+                class="picker-line" >
+            <text class="line-item">{{month}}</text>
+          </view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{days}}" wx:for-item="day" wx:key="index"
+                data-name="day"
+                data-text="{{day}}" data-value="{{day}}"
+                class="picker-line" >
+            <text class="line-item">{{day}}</text>
+          </view>
+        </picker-view-column>
+      </picker-view>
+      <picker-view
+        wx:elif="{{mode == 'time'}}"
+        value="{{selectedIndexes}}"
+        class="picker-content"
+        bindchange="doChangePickerValue">
+        <picker-view-column>
+          <view wx:for="{{hours}}" wx:for-item="hour" wx:key="index"
+                data-name="hour"
+                data-text="{{hour}}" data-value="{{hour}}"
+                class="picker-line" >
+            <text class="line-item">{{hour}}</text>
+          </view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{minutes}}" wx:for-item="minute" wx:key="index"
+                data-name="minute"
+                data-text="{{minute}}" data-value="{{minute}}"
+                class="picker-line" >
+            <text class="line-item">{{minute}}</text>
+          </view>
+        </picker-view-column>
+      </picker-view>
+      <picker-view
+        wx:else=""
+        value="{{selectedIndexes}}"
+        class="picker-content"
+        bindchange="doChangePickerValue"
+        indicator-style="{{indicatorStyle}}"
+        mask-style="{{maskStyle}}">
+        <picker-view-column wx:for="{{columns}}" wx:key="index">
+          <view wx:for="{{item.values}}" wx:for-item="inner" wx:key="index"
+                data-name="{{item.name}}"
+                data-text="{{inner.text}}" data-value="{{inner.value}}"
+                class="picker-line" >
+            <text class="line-item">{{inner.text}}</text>
+          </view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+</view>

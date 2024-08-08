@@ -13,7 +13,7 @@
 ** ─██████████████─██████████████─████████──████████─
 ** ──────────────────────────────────────────────────
 */
-const { gx } = require('../../common/gx');
+const { gux } = require('../../common/gux');
 
 Component({
 
@@ -79,7 +79,7 @@ Component({
   methods: {
     
     doNavigateBack(ev) {
-      gx.navigateBack();
+      gux.navigateBack();
     },
 
     getHeight() {
