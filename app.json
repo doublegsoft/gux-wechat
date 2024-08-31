@@ -46,7 +46,9 @@
     "page/classic/courses/index",
     "page/widget/rich-view/article",
     "page/widget/quiz-view/test",
-    "page/flow/payment/detail"
+    "page/flow/payment/detail",
+    "page/common/under-construction/index",
+    "page/common/article/index"
   ],
   "subpackages": [],
   "window": {

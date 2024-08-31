@@ -116,7 +116,7 @@
     <text class="gx-ml-8 gx-fb gx-fs-15">整体部件</text>
   </view>
   <view>
-    <navigator url="/page/widget/rich-view/article" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
+    <navigator url="/page/widget/rich-view/article?articleId=100" class="gx-tile gx-py-12 gx-mx-12 gx-fs-14" role="navigator">
       <text class="gx-tile-body">浏览文章</text>
       <view class="gx-i gx-i-arrow-right gx-fs-16 access"></view>
     </navigator>

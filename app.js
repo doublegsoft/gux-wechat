@@ -4,7 +4,7 @@ App({
   
   sdk: 'gux',
 
-  host: 'http://192.168.0.207:9098',
+  host: 'http://localhost:9098',
 
   onLaunch() {
     // 展示本地存储能力
@@ -37,6 +37,7 @@ App({
         top: navbar.getHeight(),
         viewHeight: this.sysinfo.safeArea.bottom - navbar.getHeight() - offset,
         viewWidth: this.sysinfo.screenWidth,
+        screenHeight: this.sysinfo.screenHeight,
       });
     } else {
       let rect = wx.getMenuButtonBoundingClientRect();

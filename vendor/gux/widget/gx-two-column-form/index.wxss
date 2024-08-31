@@ -432,7 +432,7 @@ radio .wx-radio-input.wx-radio-input-checked::before{
 }
 
 .btn.active {
-  color: var(--color-text-primary-reverse);
+  color: var(--color-text-primary-inverse);
   background-color: var(--color-text-secondary);
   border-color: var(--color-text-secondary);
 }

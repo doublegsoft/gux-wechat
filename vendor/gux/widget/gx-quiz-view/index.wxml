@@ -32,7 +32,7 @@
           data-questionnaire-question-option-id="{{item.questionnaireQuestionOptionId}}"
           bind:tap="doTapOption">
       <view class="gx-d-flex gx-mr-8 gx-b-round symbol">
-        <text wx:if="{{item.checked}}" class="gx-m-auto gx-fb fas fa-check"></text>
+        <text wx:if="{{item.checked}}" class="gx-m-auto gx-fb gx-i gx-i-checked"></text>
         <text wx:else class="gx-m-auto gx-fb">{{index+1}}</text>
       </view>
       <view class="gx-fs-16 text">{{item.questionnaireQuestionOptionName}}</view>

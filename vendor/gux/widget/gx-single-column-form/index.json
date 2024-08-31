@@ -1,4 +1,10 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "gx-chinese-district-select":"/vendor/gux/widget/gx-chinese-district-select/index",
+    "gx-typepad":"/vendor/gux/widget/gx-typepad/index",
+    "gx-images":"/vendor/gux/widget/gx-images/index",
+    "gx-ruler":"/vendor/gux/widget/gx-ruler/index",
+    "gx-picker":"/vendor/gux/widget/gx-picker/index"
+  }
 }

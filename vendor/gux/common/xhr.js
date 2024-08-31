@@ -75,13 +75,35 @@ xhr.get = function (opts) {
   req.send(null);
 };
 
-xhr.post = function (opts) {
-  let url = opts.url;
-  if (url.indexOf("http") == -1) {
-    url = xhr.host + url;
-    opts.url = url;
-  }
-  xhr.request(opts, "POST");
+xhr.post = function (opt) {
+  return new Promise(function (resolve, reject) {
+    let url = opt.url;
+    if (url.indexOf("http") == -1) {
+      url = xhr.host + url;
+      opt.url = url;
+    }
+    wx.request({
+      url: url,
+      method: "POST",
+      header: {
+        "content-type": "application/json",
+      },
+      data: opt.params || {},
+      success: function (resp) {
+        if (resp.error) {
+          resolve(resp);
+          return;
+        }
+        resolve(resp.data);
+      },
+      fail: function (resp) {
+        wx.showToast({
+          icon: "error",
+          title: "网络不给力！",
+        });
+      },
+    });
+  });
 };
 
 xhr.put = function (opts) {

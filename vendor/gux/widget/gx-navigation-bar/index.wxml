@@ -1,8 +1,8 @@
 <block wx:if="{{custom === true}}">
-  <view class="gx-w-full gx-d-flex gx-pos-top" 
-        style="height: {{height}}px; z-index: 9999; background: {{background}};">
+  <!-- <view class="gx-w-full gx-d-flex gx-pos-top" 
+        style="height: {{height}}px; z-index: 9999; background: {{background}};"> -->
     <slot id="customNavigationBar"></slot>
-  </view>
+  <!-- </view> -->
 </block>
 <block wx:else>
 <view wx:if="{{transparent == false}}" 

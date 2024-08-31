@@ -46,6 +46,11 @@ gux.navigateTo = function (opt) {
     success: () => {
       gux.presentPath = path;
     },
+    fail: (err) => {
+      wx.navigateTo({
+        url: '/page/common/under-construction/index',
+      });
+    },
   })
 };
 

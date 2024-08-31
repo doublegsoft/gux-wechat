@@ -1,7 +1,9 @@
 const app = getApp();
 const sdk = {
   host4Image: app.host,
+  host4Api: app.host,
 };
+const { xhr } = require('@/vendor/gux/common/xhr');
 
 sdk.fetchEmployees = function (params) {
   let start = params.start;
@@ -88,6 +90,20 @@ sdk.getSuccessImage = () => {
 
 sdk.getFailureImage = () => {
   return sdk.host4Image + '/img/app/failure.png';
+};
+
+sdk.getUnderConstructionImage = () => {
+  return sdk.host4Image + '/img/app/under-construction.png';
+};
+
+sdk.fetchArticle = async (params) => {
+  if (!params.articleId) return;
+  return xhr.post({
+    url: sdk.host4Api + '/api/v3/common/script/stdbiz/cm/article/find',
+    params: {
+      articleId: params.articleId,
+    },
+  });
 };
 
 module.exports = { sdk };

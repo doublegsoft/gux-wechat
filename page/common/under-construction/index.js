@@ -5,15 +5,16 @@ const { gux } = require('@/vendor/gux/common/gux');
 Page({
 
   data: {
-    image: sdk.getFailureImage(),
+    image: sdk.getUnderConstructionImage(),
+    title: '正在建设中...',
+  },
+
+  onShow() {
+    app.onShowPage(this);
   },
 
   onLoad(options) {
     options = options || {};
-    this.setData({
-      title: options.title || '错误消息标题',
-      description: options.description || '说明具体的错误原因',
-    });
   },
 
   gotoBack() {

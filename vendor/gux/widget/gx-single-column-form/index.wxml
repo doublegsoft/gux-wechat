@@ -1,2 +1,280 @@
-<!--vendor/gux/widget/gx-single-column-form/index.wxml-->
-<text>vendor/gux/widget/gx-single-column-form/index.wxml</text>
+<!--
+ ### ──────────────────────────────────────────────────
+ ### ─██████████████─██████──██████─████████──████████─
+ ### ─██░░░░░░░░░░██─██░░██──██░░██─██░░░░██──██░░░░██─
+ ### ─██░░██████████─██░░██──██░░██─████░░██──██░░████─
+ ### ─██░░██─────────██░░██──██░░██───██░░░░██░░░░██───
+ ### ─██░░██─────────██░░██──██░░██───████░░░░░░████───
+ ### ─██░░██──██████─██░░██──██░░██─────██░░░░░░██─────
+ ### ─██░░██──██░░██─██░░██──██░░██───████░░░░░░████───
+ ### ─██░░██──██░░██─██░░██──██░░██───██░░░░██░░░░██───
+ ### ─██░░██████░░██─██░░██████░░██─████░░██──██░░████─
+ ### ─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░██──██░░░░██─
+ ### ─██████████████─██████████████─████████──████████─
+ ### ──────────────────────────────────────────────────
+ -->
+ <form catchsubmit='doSubmit' class="form-horizontal" catch:tap="hideAllCustomInputs">
+	<block wx:for="{{fields}}" wx:key="name" wx:for-item="field">
+    <view wx:if="{{field.input==='hidden'}}" style="display: none"></view>
+		<view class="title" wx:elif="{{field.input==='title'}}">{{field.title}}</view>
+		<view wx:else class="field field-ex" 
+          style="{{field.input == 'longtext' || field.input == 'images'  ? 'align-items: unset;' : ''}}">
+			<view wx:if="{{field.title != ''}}"class="label {{field.required?'redstar':''}}" 
+            style="width: 100%;{{field.input == 'longtext' ? 'line-height: 56rpx;' : ''}} {{field.input == 'images' ? 'margin-top: 4px;' : ''}}"
+            wx:if="{{field.title && field.input!='hidden'}}">{{field.title}}：
+			</view>
+      <!-- readonly -->
+      <block wx:if="{{readonly === true || field.input === 'readonly'}}">
+        <view wx:if="{{field.input == 'images'}}" style="width: 100%; border-bottom: 1px solid #eee; padding-bottom: 8px;">
+          <images class="df w100" images="{{field.value}}" readonly="true"></images>
+        </view>
+        <view wx:elif="{{field.input == 'longtext'}}" class="input-group input-group-ex form-item-longtext" style="width: 100%;">
+          <view class="input">{{field.value}}</view>
+        </view>
+        <view wx:else class="input-group input-group-ex" style="width: 100%;">
+          <view class="input">{{field.value}}</view>
+        </view>
+      </block>  
+			<!--select  -->
+      <view wx:elif="{{field.input==='select'}}" class="input-group">
+        <view class="input" wx:if="{{field.options.values}}">
+          <block wx:if="{{field.disabled !== true}}">
+            <!-- <picker id="{{field.name}}" name="{{field.name}}" bindchange="onSelectValue" range="{{field.options.values}}" range-key="text" value="{{field.value}}">
+              <view class="{{field.value?'c2':'cb'}}">{{field.value?field.text:'请选择'}}</view>
+            </picker> -->
+            <view id="{{field.name}}" 
+                  data-name="{{field.name}}"
+                  class="form-item-ipt {{field.value || 'cb'}}"
+                  style="line-height: 32px;"
+                  bind:tap="doClickPicker">
+              {{field.value ? field.text: (field.placeholder || '请选择')}}
+            </view>
+            <view>
+              <text class="gx-i gx-i-arrow-down hint-icon"></text>
+            </view>
+          </block>
+          <block wx:else>
+            <input class="form-item-ipt" disabled="true" value="{{field.options.values[field.value]['text']}}" placeholder-class='cb'></input>
+          </block>
+        </view>
+        <view wx:if="{{field.unit}}" class="unit">{{field.unit}}</view>
+      </view>
+			<!--district -->
+      <view wx:elif="{{field.input==='district'}}" class="input-group">
+        <view class="input city" bindtap="doChangeDistrict">
+          <view id="{{field.name}}" class="form-item-ipt {{field.value?'c2':'cb'}} ph" style="line-height: 32px;">
+            {{field.value?field.value.districtName:(field.placeholder || '请选择')}}
+          </view>
+          <view>
+            <text class="gx-i gx-i-arrow-down hint-icon"></text>
+          </view>
+        </view>
+      </view>
+			<!-- date -->
+      <view wx:elif="{{field.input === 'date'}}" class="input-group">
+        <view class="input">
+          <!-- <picker class='mt15 c9' mode="date" id="{{field.name}}" bindchange="onChangeValue" data-typekey='c2' value="{{field.value}}">
+            <view class="{{field.value?'c2':'cb'}}">{{field.value?field.value:'请选择'}}</view>
+          </picker> -->
+          <view id="{{field.name}}" 
+                data-name="{{field.name}}"
+                class="form-item-ipt {{field.value || 'cb'}}"
+                style="line-height: 32px;"
+                bind:tap="doClickDatePicker">
+            {{field.value ? field.text: (field.placeholder || '请选择')}}
+          </view>
+          <view>
+            <text class="gx-i gx-i-date gx-fs-20 hint-icon"></text>
+          </view>
+        </view>
+      </view>
+      <!-- time -->
+      <view wx:elif="{{field.input === 'time'}}" class="input-group">
+        <view class="input">
+          <!-- <picker class='mt15 c9' mode="time" id="{{field.name}}" bind:change="onChangeValue" data-typekey='c2' value="{{field.value}}">
+            <view class="{{field.value?'c2':'cb'}}">{{field.value?field.value:'请选择时间'}}</view>
+          </picker> -->
+          <view id="{{field.name}}" 
+                data-name="{{field.name}}"
+                class="form-item-ipt {{field.value || 'cb'}}"
+                style="line-height: 32px;"
+                bind:tap="doClickTimePicker">
+            {{field.value ? field.text: (field.placeholder || '请选择')}}
+          </view>
+          <view>
+            <text class="gx-i gx-i-time gx-fs-20 hint-icon"></text>
+          </view>
+        </view>
+      </view>
+      <!-- ruler -->
+      <view wx:elif="{{field.input === 'ruler'}}" class="input-group">
+        <view class="input">
+          <view id="{{field.name}}" 
+                data-title="{{field.title}}" data-unit="{{field.unit}}" 
+                data-value="{{field.value}}"
+                bind:tap="doClickRuler"
+                class="form-item-ipt {{field.value?'c2':'cb'}} ph" 
+                style="line-height: 32px;">
+            {{field.value?field.value:(field.placeholder || '请选择')}}
+          </view>
+          <view wx:if="{{field.unit}}" class="unit">{{field.unit}}</view>
+        </view>
+      </view>
+      <!-- number -->
+      <view wx:elif="{{field.input==='number'}}"
+            class="input-group">
+        <view class="input gx-w-full">
+          <input wx:if="{{disabled !== true}}" 
+                 id="{{field.name}}" 
+                 name="{{field.name}}" 
+                 disabled="{{true}}" 
+                 value="{{field.value}}" 
+                 catch:tap="doShowTypepad"
+                 data-input="number"
+                 placeholder="{{field.placeholder?field.placeholder:'请输入'}}" 
+                 placeholder-class="cb"
+                 class="gx-w-full gx-text-primary"></input>
+          <input wx:else name="{{field.name}}" disabled="{{true}}" value='{{field.value}}'></input>
+        </view>
+        <view wx:if="{{field.unit}}" class="unit">{{field.unit}}</view>
+      </view>
+      <!-- mobile -->
+      <view wx:elif="{{field.input==='mobile'}}"
+            class="input-group">
+        <view class="input gx-w-full">
+          <input wx:if="{{disabled !== true}}" 
+                 id="{{field.name}}" 
+                 name="{{field.name}}" 
+                 disabled="{{true}}" 
+                 value="{{field.value}}" 
+                 data-input="mobile"
+                 catch:tap="doShowTypepad"
+                 placeholder="{{field.placeholder?field.placeholder:'请输入'}}" 
+                 placeholder-class="cb"
+                 class="gx-w-full"></input>
+          <input wx:else name="{{field.name}}" disabled="{{true}}" value='{{field.value}}'></input>
+        </view>
+        <view wx:if="{{field.unit}}" class="unit">{{field.unit}}</view>
+      </view>
+      <!-- id -->
+      <view wx:elif="{{field.input==='id'}}"
+            class="input-group">
+        <view class="input gx-w-full">
+          <input wx:if="{{disabled !== true}}" 
+                 id="{{field.name}}" 
+                 name="{{field.name}}" 
+                 disabled="{{true}}" 
+                 value="{{field.value}}" 
+                 data-input="id"
+                 catch:tap="doShowTypepad"
+                 placeholder="{{field.placeholder?field.placeholder:'请输入'}}" 
+                 placeholder-class="cb"
+                 class="gx-w-full"></input>
+          <input wx:else name="{{field.name}}" disabled="{{true}}" value='{{field.value}}'></input>
+        </view>
+        <view wx:if="{{field.unit}}" class="unit">{{field.unit}}</view>
+      </view>
+			<!-- longtext -->
+			<view wx:elif="{{field.input==='longtext'}}" class="form-item-longtext" style="width: 100%; border-bottom: 1px solid #eee;">
+        <textarea class="c2" maxlength='-1' 
+                  id="{{field.name}}" name="{{field.name}}" 
+                  model:value='{{field.value}}' 
+                  placeholder='{{field.placeholder?field.placeholder:"请输入"}}' placeholder-class="cb placeholder" style="height: 80px;"
+                  bind:input="onChangeValue"></textarea>
+      </view>
+			<!-- check -->
+      <view wx:elif="{{field.input==='check'}}" class="form-item-checkbox df">
+        <checkbox-group bindchange="onChangeValue" id="{{field.name}}">
+          <label class="check-label" wx:for="{{field.options.values}}" wx:for-item="child" wx:key="value">
+            <view class="weui-cell__hd">
+              <checkbox value="{{child.value}}" checked="{{field.values[child.value] === true}}" color="#3F86FF" class="wx-checkbox-input" style="transform:scale(0.9);"/>
+            </view>
+            <view class="weui-cell__bd" style="position: relative; margin-left: 8rpx; margin-right: 16rpx; font-size: 30rpx; top: 1px;">{{child.text}}</view>
+          </label>
+        </checkbox-group>
+      </view>
+			<!-- radio -->
+      <view wx:elif="{{field.input==='radio'}}" class="form-item-checkbox df">
+        <radio-group bindchange="onChangeValue" id="{{field.name}}" 
+                     model:value="{{field.value}}">
+          <label class="check-label" wx:for="{{field.options.values}}" wx:for-item="child" wx:for-index="childindex" wx:key="value">
+            <view class="weui-cell__hd">
+              <radio value="{{child.value}}" checked="{{field.value === child.value}}" color="#3F86FF" class="wx-radio-input" style="transform:scale(0.9);"/>
+            </view>
+            <view class="weui-cell__bd" style="position: relative; margin-left: 8rpx; margin-right: 16rpx; font-size: 30rpx; top: 1px;">{{child.text}}</view>
+          </label>
+        </radio-group>
+      </view>
+      <!-- segment -->
+      <view wx:elif="{{field.input==='segment'}}" class="btn-group">
+        <view wx:for="{{field.options.values}}" wx:key="value"
+                bind:tap="doClickSegment"
+                data-value="{{item.value}}" data-name="{{field.name}}"
+                class="btn {{field.value == item.value ? 'active' : ''}}" 
+                style="width: {{field.width || 60}}px; {{index != field.options.values.length - 1 ? 'margin-right: -1px;' : ''}}">{{item.text}}</view>
+      </view>
+      <!-- single -->
+      <view wx:elif="{{field.input==='single'}}" class="btn-group">
+        <block wx:if="{{field.options.type == 'icon'}}">
+          <view wx:for="{{field.options.values}}" wx:key="value"
+                bind:tap="doClickSingle"
+                data-value="{{item.value}}" data-name="{{field.name}}"
+                class="gx-fs-28 gx-pos-relative {{field.value == item.value ? item.active : item.icon}}" 
+                style="margin-right: 24px; top: 4px;"></view>
+        </block>    
+        <block wx:else>
+          <view wx:for="{{field.options.values}}" wx:key="value"
+                  bind:tap="doClickSingle"
+                  data-value="{{item.value}}" data-name="{{field.name}}"
+                  class="btn {{field.value == item.value ? 'active' : ''}}" 
+                  style="margin-right: 16px;">{{item.text}}</view>
+        </block>        
+      </view>
+      <!-- multiple -->
+      <view wx:elif="{{field.input==='multiple'}}" class="btn-group">
+        <button wx:for="{{field.options.values}}" wx:key="value"
+                bind:tap="doClickSegment"
+                data-value="{{item.value}}" data-name="{{field.name}}"
+                class="btn {{field.value == item.value ? 'active' : ''}}" 
+                style="width: {{field.width || 60}}px; {{index != field.options.values.length - 1 ? 'margin-right: -1px;' : ''}}">{{item.text}}</button>
+      </view>
+      <!-- rating -->
+      <view wx:elif="{{field.input==='rating'}}" class="btn-group">
+        <button wx:for="{{field.options.values}}" wx:key="value"
+                bind:tap="doClickSegment"
+                data-value="{{item.value}}" data-name="{{field.name}}"
+                class="btn {{field.value == item.value ? 'active' : ''}}" 
+                style="width: {{field.width || 60}}px; {{index != field.options.values.length - 1 ? 'margin-right: -1px;' : ''}}">{{item.text}}</button>
+      </view>
+      <!-- bool -->
+      <view wx:elif="{{field.input==='bool'}}">
+        <label id="{{field.name}}" class="c-switch c-switch-label c-switch-pill c-switch-info" style="min-width: 48px;" bindtap="onChangeSwitch">
+          <span class="c-switch-slider {{field.value === true || field.value === 'T' ? 'checked' : ''}}" data-checked="是" data-unchecked="否"></span>
+        </label>
+      </view>
+			<!-- images -->
+      <view wx:elif="{{field.input==='images'}}" style="width: 100%; border-bottom: 1px solid #eee; padding-bottom: 8px;">
+        <gx-images name="{{field.name}}" images="{{field.value}}"
+                   bind:didAddImage="didAddImage">
+        </gx-images>
+      </view>
+      <!--  text -->
+      <view wx:else class="input-group">
+        <view class="input">
+          <input wx:if="{{disabled !== true}}" 
+                 id="{{field.name}}" name="{{field.name}}" 
+                 disabled="{{field.disabled}}" 
+                 value='{{field.value}}' 
+                 placeholder='{{field.placeholder?field.placeholder:"请输入"}}' placeholder-class='cb' 
+                 bind:change="onChangeValue"></input>
+          <input wx:else class="form-item-ipt" id="{{field.name}}" name="{{field.name}}" disabled="true" value='{{field.value}}'></input>
+        </view>
+        <view wx:if="{{field.unit}}" class="unit">{{field.unit}}</view>
+      </view>
+		</view>
+	</block>
+</form>
+<gx-ruler id="ruler"/>
+<gx-chinese-district-select id="selectChineseDistrict" title="所在地区" />
+<gx-typepad id="inputCustomText"></gx-typepad>
+<gx-picker id="picker"></gx-picker>

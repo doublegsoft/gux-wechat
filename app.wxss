@@ -69,8 +69,6 @@ page {
   --color-background-dark: #121212;
   --color-divider-dark: rgba(255, 255, 255, 0.12);
 
-  --color-success-lighter: rgba(46, 125, 50, 0.1);
-  --color-error-lighter: rgba(211, 47, 47, 0.1);
 }
 
 .page {

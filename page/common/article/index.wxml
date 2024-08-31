@@ -1,0 +1,4 @@
+<gx-navigation-bar id="navigationBar" title="文章阅读" />
+<view class="gx-pos-relative" style="top:{{top}}px;padding:8px;">
+  <gx-rich-view id="article" />
+</view>

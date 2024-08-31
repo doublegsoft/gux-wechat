@@ -1,5 +1,6 @@
-<view style="height: 100vh;">
-  <view class="gx-d-flex" style="height: 75vh;">
+<gx-navigation-bar id="navigationBar" title="{{title}}"/>
+<view class="page" style="top: {{top}}px;height:{{screenHeight-top}}px;">
+  <view class="gx-d-flex" style="height: 60vh;">
     <view class="content">
       <image src="{{image}}" mode="aspectFit"></image>
       <view style="margin-top: 16px">
@@ -8,6 +9,6 @@
       </view>
     </view>
   </view>
-  <button class="primary" bind:tap="gotoBack">返回重试</button>
+  <button class="primary" bind:tap="gotoBack">返回</button>
   <button class="secondary" bind:tap="gotoHome" style="margin-top: 16px;">返回首页</button>
 </view>
